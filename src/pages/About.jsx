@@ -56,7 +56,7 @@ export default function About() {
         <div className={styles.headshotWrap}>
           <div className={styles.headshotFrame}>
             <img
-              src="/headshot.png"
+              src="/headshot_bg.png"
               alt="Denky Girasaki Begonja"
               className={styles.headshot}
               onError={(e) => { e.target.style.display = 'none' }}
