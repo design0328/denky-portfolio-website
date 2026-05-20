@@ -59,11 +59,7 @@ export default function About() {
               src="/headshot_bg.png"
               alt="Denky Girasaki Begonja"
               className={styles.headshot}
-              onError={(e) => { e.target.style.display = 'none' }}
             />
-            <div className={styles.headshotFallback}>
-              <span className={styles.headshotInitials}>DGB</span>
-            </div>
           </div>
           <div className={styles.headshotTag}>
             <span className={styles.headshotTagDot} />
