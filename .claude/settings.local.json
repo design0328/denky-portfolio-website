@@ -5,7 +5,14 @@
       "Read(//Users/denky/Downloads/**)",
       "Bash(unzip -l ~/Downloads/denky-portfolio.zip)",
       "Bash(unzip -o ~/Downloads/denky-portfolio.zip \"denky-portfolio/src/*\" -d /tmp/denky-portfolio-extract)",
-      "Bash(cp -r /tmp/denky-portfolio-extract/denky-portfolio/src/. /Users/denky/Documents/GitHub/denky-portfolio-website/src/ && echo \"Done\")"
+      "Bash(cp -r /tmp/denky-portfolio-extract/denky-portfolio/src/. /Users/denky/Documents/GitHub/denky-portfolio-website/src/ && echo \"Done\")",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website status)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website log --oneline -5)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website status -u)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website show --name-only 4979c56)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website diff .claude/settings.local.json)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website add .claude/settings.local.json)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website commit -m ' *)"
     ]
   }
 }
