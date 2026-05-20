@@ -7,7 +7,8 @@ import Nav         from './components/Nav'
 import Home        from './pages/Home'
 import Work        from './pages/Work'
 import CaseStudy   from './pages/CaseStudy'
-import { About, Process, Contact } from './pages/Placeholders'
+import About from './pages/About'
+import { Process, Contact } from './pages/Placeholders'
 
 export default function App() {
   return (
