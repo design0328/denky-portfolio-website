@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find ~/Downloads -name \"*.zip\" -newer ~/Downloads -maxdepth 2 2>/dev/null | head -10 && ls ~/Downloads/*.zip 2>/dev/null | head -10)",
+      "Read(//Users/denky/Downloads/**)",
+      "Bash(unzip -l ~/Downloads/denky-portfolio.zip)",
+      "Bash(unzip -o ~/Downloads/denky-portfolio.zip \"denky-portfolio/src/*\" -d /tmp/denky-portfolio-extract)",
+      "Bash(cp -r /tmp/denky-portfolio-extract/denky-portfolio/src/. /Users/denky/Documents/GitHub/denky-portfolio-website/src/ && echo \"Done\")"
+    ]
+  }
+}

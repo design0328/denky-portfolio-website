@@ -1,0 +1,41 @@
+.page {
+  position: relative;
+  z-index: 2;
+  padding: 160px 48px 80px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 20px;
+}
+.rule { width: 36px; height: 1px; background: var(--cyan); display: block; }
+.title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(64px, 9vw, 120px);
+  color: var(--text);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  margin-bottom: 32px;
+}
+.note {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--dim);
+  border: 1px dashed var(--border);
+  padding: 16px 22px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .page { padding: 100px 24px 48px; }
+}
