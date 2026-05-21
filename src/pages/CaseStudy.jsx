@@ -8,7 +8,7 @@ export default function CaseStudy() {
 
   if (!project) return <Navigate to="/work" replace />
 
-  const { title, company, year, discipline, desc, chips, overview, role, impact } = project
+  const { title, company, year, discipline, desc, chips, thumbnail, overview, role, impact } = project
 
   return (
     <main className={styles.page}>
@@ -23,9 +23,7 @@ export default function CaseStudy() {
 
       {/* Hero banner */}
       <div className={styles.banner}>
-        <div className={styles.bannerDots} />
-        <div className={styles.bannerGlow} />
-        <div className={styles.bannerLabel}>{discipline}</div>
+        <img src={thumbnail} alt={title} style={{width:'100%', height:'100%', objectFit:'contain', objectPosition:'center', background:'#13131f'}} />
       </div>
 
       {/* Header */}
