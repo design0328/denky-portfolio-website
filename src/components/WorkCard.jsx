@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import styles from './WorkCard.module.css'
 
 export default function WorkCard({ project, index }) {
-  const { slug, title, company, year, discipline, desc, chips, visual } = project
+  const { slug, title, company, year, discipline, desc, chips, thumbnail } = project
 
   return (
     <Link
@@ -10,11 +10,21 @@ export default function WorkCard({ project, index }) {
       className={styles.card}
       style={{ animationDelay: `${index * 0.14}s` }}
     >
-      {/* Visual area */}
-      <div className={`${styles.visual} ${styles[visual]}`}>
-        <div className={styles.visualDots} />
-        <div className={styles.visualGlow} />
-        <div className={styles.visualLabel}>{title}</div>
+      {/* Thumbnail */}
+      <div className={styles.visual}>
+        {thumbnail ? (
+          <img
+            src={thumbnail}
+            alt={`${title} thumbnail`}
+            className={styles.thumbnail}
+          />
+        ) : (
+          <div className={styles.visualFallback}>
+            <div className={styles.visualDots} />
+            <div className={styles.visualGlow} />
+            <div className={styles.visualLabel}>{title}</div>
+          </div>
+        )}
       </div>
 
       {/* Content */}
