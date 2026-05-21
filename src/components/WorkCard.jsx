@@ -17,6 +17,7 @@ export default function WorkCard({ project, index }) {
             src={thumbnail}
             alt={`${title} thumbnail`}
             className={styles.thumbnail}
+            onError={(e) => { e.currentTarget.style.display = 'none' }}
           />
         ) : (
           <div className={styles.visualFallback}>
