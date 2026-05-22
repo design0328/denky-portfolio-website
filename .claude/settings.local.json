@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find ~/Downloads -name \"*.zip\" -newer ~/Downloads -maxdepth 2 2>/dev/null | head -10 && ls ~/Downloads/*.zip 2>/dev/null | head -10)",
+      "Read(//Users/denky/Downloads/**)",
+      "Bash(unzip -l ~/Downloads/denky-portfolio.zip)",
+      "Bash(unzip -o ~/Downloads/denky-portfolio.zip \"denky-portfolio/src/*\" -d /tmp/denky-portfolio-extract)",
+      "Bash(cp -r /tmp/denky-portfolio-extract/denky-portfolio/src/. /Users/denky/Documents/GitHub/denky-portfolio-website/src/ && echo \"Done\")",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website status)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website log --oneline -5)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website status -u)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website show --name-only 4979c56)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website diff .claude/settings.local.json)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website add .claude/settings.local.json)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website commit -m ' *)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website push)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website add src/pages/About.jsx)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website commit -m \"fix: use headshot with background\")",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website add public/headshot_bg.png)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website commit -m \"add headshot image\")",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website commit -m \"fix: simplify headshot img tag\")",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website add src/pages/About.jsx src/pages/About.module.css)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website commit -m \"feat: circular headshot with cyan glow hover\")",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website commit -m \"fix: use bg headshot in circle frame\")",
+      "Bash(git pull *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(mkdir -p /Users/denky/Documents/GitHub/denky-portfolio-website/public/thumbnails)",
+      "Bash(mv /Users/denky/Documents/GitHub/denky-portfolio-website/public/dqe_thumbnail.svg /Users/denky/Documents/GitHub/denky-portfolio-website/public/thumbnails/dqe.svg)",
+      "Bash(mv /Users/denky/Documents/GitHub/denky-portfolio-website/public/ai_training_thumbnail.svg /Users/denky/Documents/GitHub/denky-portfolio-website/public/thumbnails/ai-training-portal.svg)",
+      "Bash(mv /Users/denky/Documents/GitHub/denky-portfolio-website/public/aiui_pattern_library_thumbnail.svg /Users/denky/Documents/GitHub/denky-portfolio-website/public/thumbnails/aiui-pattern-library.svg)",
+      "Bash(mv /Users/denky/Documents/GitHub/denky-portfolio-website/public/design_hub_thumbnail.svg /Users/denky/Documents/GitHub/denky-portfolio-website/public/thumbnails/design-hub.svg)",
+      "Bash(git rm *)"
+    ]
+  }
+}
