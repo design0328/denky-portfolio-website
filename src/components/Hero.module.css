@@ -64,9 +64,12 @@
   transition: text-shadow 0.3s;
 }
 .nameLine2:hover {
-  text-shadow: 0 0 40px rgba(196,20,110,0.7), 0 0 80px rgba(248,75,0,0.4), 0 0 120px rgba(196,20,110,0.3);
-  filter: brightness(1.15);
-  transition: text-shadow 0.3s, filter 0.3s;
+  filter: brightness(1.1);
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(90deg, #e8559a, #F84B00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: filter 0.3s;
 }
 
 /* ── Title row ── */
@@ -190,7 +193,11 @@
   opacity: 0;
   transition: opacity 0.3s;
 }
-.statCard:hover { border-color: #F84B00; box-shadow: 0 0 12px rgba(248,75,0,0.4); transform: translateX(-4px); }
+.statCard:hover {
+  border-color: var(--border);
+  transform: translateX(-4px);
+  box-shadow: none;
+}
 .statCard:hover::before { opacity: 1; }
 
 .statValue {
