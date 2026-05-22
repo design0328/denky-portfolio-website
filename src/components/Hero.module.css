@@ -64,11 +64,7 @@
   transition: text-shadow 0.3s;
 }
 .nameLine2:hover {
-  filter: brightness(1.1);
-  -webkit-text-fill-color: transparent;
-  background: linear-gradient(90deg, #e8559a, #F84B00);
-  -webkit-background-clip: text;
-  background-clip: text;
+  filter: brightness(1.25) saturate(1.1);
   transition: filter 0.3s;
 }
 
