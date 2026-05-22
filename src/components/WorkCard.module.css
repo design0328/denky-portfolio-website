@@ -174,19 +174,19 @@
   border-radius: 3px;
   background: var(--bg4);
   border: 1px solid var(--border);
-  color: var(--muted);
+  color: #e0e0e0;
 }
 
 .chip.cyan {
-  background: var(--cyan-dim);
+  background: rgba(196, 20, 110, 0.25);
   border-color: rgba(0, 229, 255, 0.25);
-  color: var(--cyan);
+  color: #ffffff;
 }
 
 .chip.green {
-  background: rgba(16, 185, 129, 0.08);
+  background: rgba(248, 75, 0, 0.25);
   border-color: rgba(16, 185, 129, 0.2);
-  color: var(--emerald);
+  color: #ffffff;
 }
 
 .arrow {
