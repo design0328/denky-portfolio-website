@@ -55,17 +55,31 @@
 
 .nameLine2 {
   display: block;
-  background: linear-gradient(90deg, #c4146e, #F84B00);
+  background: linear-gradient(90deg, #E20B8C, #F84B00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: slideUp 0.7s 0.78s both;
-  cursor: none;
-  transition: text-shadow 0.3s;
-}
-.nameLine2:hover {
-  filter: brightness(1.25) saturate(1.1);
+  position: relative;
   transition: filter 0.3s;
+}
+
+.nameLine2::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #E20B8C, transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.nameLine2:hover {
+  filter: brightness(1.15);
+}
+
+.nameLine2:hover::after {
+  opacity: 1;
 }
 
 /* ── Title row ── */
