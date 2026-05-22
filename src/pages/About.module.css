@@ -170,9 +170,10 @@
 
 .bioPull {
   font-family: var(--font-display);
-  font-size: clamp(22px, 2.5vw, 30px);
+  font-size: 30px;
+  font-weight: 600;
   color: var(--text);
-  line-height: 1.2;
+  line-height: 36px;
   letter-spacing: 0.01em;
   margin-bottom: 28px;
 }
@@ -180,7 +181,7 @@
 .bioPara {
   font-size: 16px;
   color: var(--muted);
-  line-height: 1.8;
+  line-height: 24px;
   font-weight: 300;
   margin-bottom: 18px;
 }
@@ -210,7 +211,7 @@
   margin-bottom: 6px;
 }
 .bioCardValue {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--text);
   margin-bottom: 4px;
@@ -218,7 +219,7 @@
 }
 .bioCardSub {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   color: var(--dim);
   line-height: 1.5;
 }
@@ -260,16 +261,16 @@
 }
 .valueTitle {
   font-family: var(--font-body);
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   color: var(--text);
   margin-bottom: 10px;
   line-height: 1.3;
 }
 .valueDesc {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 24px;
   font-weight: 300;
 }
 
@@ -292,7 +293,7 @@
 
 .skillCategory {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--dim);
@@ -307,7 +308,7 @@
 
 .skillTag {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.06em;
   padding: 5px 12px;
   border-radius: 3px;
@@ -332,7 +333,8 @@
 
 .communityPull {
   font-family: var(--font-display);
-  font-size: clamp(20px, 2.2vw, 26px);
+  font-size: 30px;
+  font-weight: 600;
   color: var(--text);
   line-height: 1.2;
   margin-bottom: 24px;
@@ -340,9 +342,9 @@
 }
 
 .communityPara {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
-  line-height: 1.8;
+  line-height: 24px;
   font-weight: 300;
   margin-bottom: 16px;
 }
@@ -416,7 +418,8 @@
 
 .ctaText {
   font-family: var(--font-display);
-  font-size: clamp(20px, 2.5vw, 28px);
+  font-size: 20px;
+  font-weight: 700;
   color: var(--text);
   letter-spacing: 0.02em;
 }

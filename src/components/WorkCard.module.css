@@ -116,7 +116,7 @@
 
 .meta {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--dim);
@@ -137,18 +137,18 @@
 
 .title {
   font-family: var(--font-body);
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   color: var(--text);
   margin-bottom: 8px;
-  line-height: 1.3;
+  line-height: 25px;
 }
 
 .desc {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--muted);
-  line-height: 1.65;
-  font-weight: 300;
+  line-height: 24px;
+  font-weight: 400;
   margin-bottom: 18px;
 }
 
@@ -168,7 +168,7 @@
 
 .chip {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.06em;
   padding: 4px 10px;
   border-radius: 3px;
