@@ -1,5 +1,109 @@
 import styles from './About.module.css'
 
+const BASE = '/denky-portfolio-website'
+
+const testimonials = [
+  {
+    id: 1,
+    quote:
+      "Denky is one of those rare people who elevates both the work and the people around her — someone who consistently led with empathy, positivity, curiosity, and a genuine desire to help others succeed. She has an exceptional ability to hold space for complexity while keeping the team grounded and moving forward. In every project she touched, she brought both rigor and heart.",
+    name: 'Megan Daoedsjah',
+    title: 'Product Design Manager',
+    company: 'ZoomInfo',
+    avatar: `${BASE}/testimonials/megan_D.png`,
+    initials: 'MD',
+  },
+  {
+    id: 2,
+    quote:
+      "Working with Denky was truly inspiring. She didn't just learn the rules of accessibility; she truly understood the purpose behind them. Her commitment to inclusive design was evident in every decision she made — always thoughtful, always intentional. She builds for impact, not just for the moment. I was particularly impressed by her ability to translate complex accessibility requirements into practical, user-centered solutions that the whole team could rally around.",
+    name: 'Talyah Aviran',
+    title: 'CPWA / HFI CUA — Accessibility Specialist',
+    company: '',
+    avatar: `${BASE}/testimonials/Talyah.jpeg`,
+    initials: 'TA',
+  },
+  {
+    id: 3,
+    quote:
+      "Denky is far from 'yet another creative' designer. Over the course of our collaboration, she consistently proved that this demanding work can be executed flawlessly, balancing high professional standards with an incredibly positive attitude. Her ability to navigate complex engineering constraints while maintaining design excellence was remarkable, and her willingness to deeply understand technical requirements made her an invaluable bridge between design and development.",
+    name: 'Denis Levkov',
+    title: 'Software Engineering Manager',
+    company: 'ZoomInfo',
+    avatar: `${BASE}/testimonials/denis_L.jpeg`,
+    initials: 'DL',
+  },
+  {
+    id: 4,
+    quote:
+      "The Design Quality Engine initiative created a lot of excitement across design, PM, and engineering teams. It was a great example of raising quality while still moving incredibly fast — Denky drove that initiative with conviction, clarity, and remarkable cross-functional alignment. She managed to get everyone on the same page about quality standards without slowing down delivery, which is a genuinely rare skill.",
+    name: 'Roni Mergie',
+    title: 'UX Manager',
+    company: 'ZoomInfo',
+    avatar: `${BASE}/testimonials/roni_mergie.jpeg`,
+    initials: 'RM',
+  },
+  {
+    id: 5,
+    quote:
+      "When it came to anything UI/UX, I always reached out to Denky to get well-written, well-thought-out feedback. Her insights consistently pushed my work to a higher level, and she had a unique ability to articulate design problems in a way that engineers could immediately act on. Her combination of strong aesthetic sensibility and systems thinking made collaboration with her genuinely productive.",
+    name: 'Urmzd Mukhammadnaim',
+    title: 'AI Engineer',
+    company: 'ZoomInfo',
+    avatar: `${BASE}/testimonials/urmzd_M.jpeg`,
+    initials: 'UM',
+  },
+  {
+    id: 6,
+    quote:
+      "Her expertise in accessibility guided many decisions that were critical to the scalability and wide spread adoption of our work. Denky brought a level of care and precision to accessibility that elevated the entire product — she didn't just flag issues, she actively shaped solutions and helped the team build a shared vocabulary around inclusive design.",
+    name: 'Vineet Kaushik',
+    title: 'Senior Software Engineer',
+    company: 'ZoomInfo',
+    avatar: null,
+    initials: 'VK',
+  },
+]
+
+const experience = [
+  {
+    years: '2025–2026',
+    company: 'ZoomInfo',
+    role: 'UX/UI Product Designer — AI Enablement & Workflow Infrastructure',
+    desc: 'Built DQE guardrail system, Design Hub, AI Training Portal, and accessibility-aware evaluation workflows.',
+  },
+  {
+    years: '2023–2025',
+    company: 'ZoomInfo',
+    role: 'UX/UI Product Designer — Design Systems & Accessibility',
+    desc: 'WCAG operationalization, AIUI pattern library, cross-functional governance and design-engineering workflow alignment.',
+  },
+  {
+    years: '2021–2023',
+    company: 'ZoomInfo',
+    role: 'UX/UI Designer',
+    desc: 'Interface design across complex B2B SaaS ecosystems, workflow optimization, cross-functional product collaboration.',
+  },
+  {
+    years: '2016–2021',
+    company: 'RingLead / ZoomInfo',
+    role: 'Senior Graphic Designer → UX/UI Designer',
+    desc: 'Led digital creative initiatives; transitioned into UX during acquisition integration and platform scaling.',
+  },
+  {
+    years: '2013–2016',
+    company: 'Total Defense',
+    role: 'Digital Designer',
+    desc: 'Designed onboarding flows, dashboards, and in-product UI for cybersecurity software including the Xfinity BotScanner experience.',
+  },
+  {
+    years: '2006–2013',
+    company: 'CA Technologies',
+    role: 'Graphic Designer',
+    desc: 'Customer-facing digital and print for the Internet Security Business Unit; contributed to web campaigns, product collateral, and events including RSA and DEF CON.',
+  },
+]
+
 const skills = [
   { category: 'Design',       items: ['Figma', 'FigJam', 'MUI', 'Google Sites'] },
   { category: 'Development',  items: ['VS Code', 'GitHub', 'Netlify', 'Vite + React'] },
@@ -139,6 +243,79 @@ export default function About() {
                 {items.map((item) => (
                   <span key={item} className={styles.skillTag}>{item}</span>
                 ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Experience ── */}
+      <section className={styles.section}>
+        <div className={styles.experienceHeader}>
+          <div className={styles.sectionLabel}>
+            <span className={styles.labelNum}>04</span>
+            <span className={styles.labelText}>04 / Experience</span>
+          </div>
+          <a href="#" className={styles.resumeBtn} aria-label="Download resume">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 11h10M7 2v7M4 6l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            Resume
+          </a>
+        </div>
+
+        <div className={styles.timeline}>
+          {experience.map((entry, i) => (
+            <div key={i} className={styles.timelineItem}>
+              <div className={styles.timelineRail}>
+                <div className={styles.timelineDot} />
+                {i < experience.length - 1 && <div className={styles.timelineLine} />}
+              </div>
+              <div className={styles.timelineCard}>
+                <div className={styles.timelineMeta}>
+                  <span className={styles.timelineYears}>{entry.years}</span>
+                  <span className={styles.timelineCompany}>{entry.company}</span>
+                </div>
+                <div className={styles.timelineRole}>{entry.role}</div>
+                <div className={styles.timelineDesc}>{entry.desc}</div>
+              </div>
+            </div>
+          ))}
+
+          {/* Education */}
+          <div className={styles.timelineEdu}>
+            <div className={styles.timelineEduLabel}>Education</div>
+            <div className={styles.timelineEduSchool}>New York Institute of Technology</div>
+            <div className={styles.timelineEduDegree}>BFA Graphic Design / Fine Arts / Computer Graphics</div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Testimonials ── */}
+      <section className={styles.section}>
+        <div className={styles.sectionLabel}>
+          <span className={styles.labelNum}>05</span>
+          <span className={styles.labelText}>05 / Testimonials</span>
+        </div>
+
+        <div className={styles.testimonialsGrid}>
+          {testimonials.map((t) => (
+            <div key={t.id} className={styles.testimonialCard}>
+              <p className={styles.testimonialQuote}>"{t.quote}"</p>
+              <div className={styles.testimonialPerson}>
+                <div className={styles.testimonialAvatar}>
+                  {t.avatar ? (
+                    <img src={t.avatar} alt={t.name} className={styles.testimonialAvatarImg} />
+                  ) : (
+                    <span className={styles.testimonialInitials}>{t.initials}</span>
+                  )}
+                </div>
+                <div>
+                  <div className={styles.testimonialName}>{t.name}</div>
+                  <div className={styles.testimonialTitle}>
+                    {t.title}{t.company ? ` @ ${t.company}` : ''}
+                  </div>
+                </div>
               </div>
             </div>
           ))}

@@ -33,7 +33,12 @@
       "Bash(mv /Users/denky/Documents/GitHub/denky-portfolio-website/public/design_hub_thumbnail.svg /Users/denky/Documents/GitHub/denky-portfolio-website/public/thumbnails/design-hub.svg)",
       "Bash(git rm *)",
       "Bash(git commit *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(mkdir -p /Users/denky/Documents/GitHub/denky-portfolio-website/public/testimonials)",
+      "Bash(cp \"/Users/denky/Documents/GitHub/denky-portfolio-website/public/denis L.jpeg\" /Users/denky/Documents/GitHub/denky-portfolio-website/public/testimonials/denis_L.jpeg)",
+      "Bash(cp \"/Users/denky/Documents/GitHub/denky-portfolio-website/public/megan D.png\" /Users/denky/Documents/GitHub/denky-portfolio-website/public/testimonials/megan_D.png)",
+      "Bash(cp \"/Users/denky/Documents/GitHub/denky-portfolio-website/public/roni mergie.jpeg\" /Users/denky/Documents/GitHub/denky-portfolio-website/public/testimonials/roni_mergie.jpeg)",
+      "Bash(cp /Users/denky/Documents/GitHub/denky-portfolio-website/public/Talyah.jpeg /Users/denky/Documents/GitHub/denky-portfolio-website/public/testimonials/Talyah.jpeg)"
     ]
   }
 }

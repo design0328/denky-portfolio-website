@@ -348,6 +348,239 @@
   background: var(--fuchsia-dim);
 }
 
+/* ── Experience / Timeline ── */
+.experienceHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.resumeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--fuchsia);
+  border: 1px solid rgba(232, 16, 122, 0.3);
+  background: var(--fuchsia-dim);
+  border-radius: 999px;
+  padding: 8px 20px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.resumeBtn:hover {
+  background: linear-gradient(90deg, var(--fuchsia), var(--orange));
+  color: #fff;
+  border-color: transparent;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timelineItem {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.timelineRail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 16px;
+  padding-top: 6px;
+}
+
+.timelineDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(232, 16, 122, 0.6);
+  border: 2px solid rgba(232, 16, 122, 0.3);
+  flex-shrink: 0;
+}
+
+.timelineLine {
+  width: 2px;
+  flex: 1;
+  min-height: 32px;
+  background: rgba(232, 16, 122, 0.2);
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.timelineCard {
+  background: var(--bg2);
+  border-radius: 8px;
+  padding: 20px 24px;
+  flex: 1;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: border-color 0.2s;
+}
+
+.timelineCard:hover { border-color: rgba(232, 16, 122, 0.2); }
+
+.timelineMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.timelineYears {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fuchsia);
+  opacity: 0.8;
+  letter-spacing: 0.08em;
+}
+
+.timelineCompany {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: 0.06em;
+}
+
+.timelineRole {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.timelineDesc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+.timelineEdu {
+  margin-top: 12px;
+  margin-left: 40px;
+  padding: 16px 20px;
+  border-left: 2px solid rgba(255, 255, 255, 0.06);
+}
+
+.timelineEduLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 6px;
+}
+
+.timelineEduSchool {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.timelineEduDegree {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: 0.04em;
+}
+
+/* ── Testimonials grid ── */
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.testimonialCard {
+  background: var(--bg2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: border-color 0.2s;
+}
+
+.testimonialCard:hover { border-color: rgba(232, 16, 122, 0.2); }
+
+.testimonialQuote {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--muted);
+  font-style: italic;
+  margin: 0;
+  flex: 1;
+}
+
+.testimonialPerson {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonialAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--bg3);
+  border: 1px solid rgba(232, 16, 122, 0.2);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonialAvatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.testimonialInitials {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--fuchsia);
+  opacity: 0.7;
+}
+
+.testimonialName {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+.testimonialTitle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+}
+
 /* ── Community ── */
 .communityWrap {
   display: grid;
@@ -496,4 +729,6 @@
   .communityWrap { grid-template-columns: 1fr; }
   .skillGroup { grid-template-columns: 1fr; gap: 12px; }
   .cta { flex-direction: column; align-items: flex-start; padding: 24px; }
+  .testimonialsGrid { grid-template-columns: 1fr; }
+  .experienceHeader { flex-direction: column; align-items: flex-start; }
 }
