@@ -20,8 +20,8 @@
 .qaButton:hover .qaQuestion { color: #fff; }
 .qaChevron { flex-shrink: 0; color: var(--text-muted); margin-top: 2px; transition: transform 0.25s ease; }
 .open .qaChevron { transform: rotate(180deg); color: var(--fuchsia); }
-.qaAnswer { padding: 0.5rem 1.5rem 1.75rem 1.5rem; }
-.qaAnswer p { font-size: 15px; line-height: 1.9; color: var(--text-muted); margin: 0 0 0.75rem; font-family: var(--font-body); }
+.qaAnswer { padding: 1rem 1.5rem 2rem 1.5rem; }
+.qaAnswer p { font-size: 16px; line-height: 1.85; color: var(--text-muted); margin: 0 0 1rem; font-family: var(--font-body); }
 .qaAnswer p:last-child { margin: 0; }
 .qaAnswer strong { color: var(--text); font-weight: 600; }
 .principlesSection { margin: 3rem 0 0; }
