@@ -1,0 +1,9 @@
+.cardIcon,
+.cardBody,
+.cardCta {
+  display: flex;
+}
+.cardIcon { align-items: center; justify-content: center; }
+.cardBody  { flex-direction: column; flex: 1; }
+.cardLabel,
+.cardValue { display: block; }
