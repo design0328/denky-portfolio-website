@@ -8,7 +8,7 @@ import Work        from './pages/Work'
 import CaseStudy   from './pages/CaseStudy'
 import About       from './pages/About'
 import Process             from './pages/Process'
-import { Contact }         from './pages/Placeholders'
+import Contact             from './pages/Contact'
 
 export default function App() {
   return (
