@@ -1,9 +1,4 @@
 /* ─────────────────────────────────────────────
-   GOOGLE FONTS
-───────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&family=Bebas+Neue&family=DM+Mono:wght@300;400;500&display=swap');
-
-/* ─────────────────────────────────────────────
    DESIGN TOKENS
 ───────────────────────────────────────────── */
 :root {
@@ -14,28 +9,28 @@
   --bg3:       #1c1e30;
   --bg4:       #22243a;
 
-  /* Primary accent — Fuchsia */
-  --fuchsia:      #c4146e;
-  --fuchsia-lt:   #d4267e;
-  --fuchsia-dim:  rgba(196, 20, 110, 0.12);
-  --fuchsia-glow: rgba(196, 20, 110, 0.3);
+  /* Primary accent — Fuchsia (pumped saturation) */
+  --fuchsia:      #e8107a;
+  --fuchsia-lt:   #f5208e;
+  --fuchsia-dim:  rgba(232, 16, 122, 0.12);
+  --fuchsia-glow: rgba(232, 16, 122, 0.55);
 
-  /* Secondary accent — Orange */
-  --orange:      #F84B00;
-  --orange-lt:   #ff6a24;
-  --orange-dim:  rgba(248, 75, 0, 0.12);
-  --orange-glow: rgba(248, 75, 0, 0.3);
+  /* Secondary accent — Orange (purer, more electric) */
+  --orange:      #ff5200;
+  --orange-lt:   #ff6e28;
+  --orange-dim:  rgba(255, 82, 0, 0.12);
+  --orange-glow: rgba(255, 82, 0, 0.45);
 
   /* Legacy aliases — keep existing components working */
-  --cyan:      #c4146e;
-  --cyan-dim:  rgba(196, 20, 110, 0.12);
-  --cyan-glow: rgba(196, 20, 110, 0.3);
-  --violet:    #F84B00;
-  --emerald:   #c4146e;
+  --cyan:      #e8107a;
+  --cyan-dim:  rgba(232, 16, 122, 0.12);
+  --cyan-glow: rgba(232, 16, 122, 0.55);
+  --violet:    #ff5200;
+  --emerald:   #e8107a;
 
   /* Borders */
   --border:    rgba(255, 255, 255, 0.06);
-  --border2:   rgba(196, 20, 110, 0.2);
+  --border2:   rgba(232, 16, 122, 0.25);
 
   /* Text */
   --text:      #f0f0f8;
@@ -110,6 +105,6 @@ button { cursor: none; }
   to   { opacity: 1; }
 }
 @keyframes pulse {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(196, 20, 110, 0.5); }
-  50%       { opacity: 0.7; box-shadow: 0 0 0 6px rgba(196, 20, 110, 0); }
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(232, 16, 122, 0.6); }
+  50%       { opacity: 0.7; box-shadow: 0 0 0 6px rgba(232, 16, 122, 0); }
 }

@@ -31,7 +31,9 @@
       "Bash(mv /Users/denky/Documents/GitHub/denky-portfolio-website/public/ai_training_thumbnail.svg /Users/denky/Documents/GitHub/denky-portfolio-website/public/thumbnails/ai-training-portal.svg)",
       "Bash(mv /Users/denky/Documents/GitHub/denky-portfolio-website/public/aiui_pattern_library_thumbnail.svg /Users/denky/Documents/GitHub/denky-portfolio-website/public/thumbnails/aiui-pattern-library.svg)",
       "Bash(mv /Users/denky/Documents/GitHub/denky-portfolio-website/public/design_hub_thumbnail.svg /Users/denky/Documents/GitHub/denky-portfolio-website/public/thumbnails/design-hub.svg)",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(git commit *)",
+      "Bash(npm run *)"
     ]
   }
 }

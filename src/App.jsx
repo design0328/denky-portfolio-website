@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 
 import Background  from './components/Background'
 import Cursor      from './components/Cursor'
@@ -12,7 +12,7 @@ import { Process, Contact } from './pages/Placeholders'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       {/* Global chrome */}
       <Cursor />
       <Background />
@@ -27,6 +27,6 @@ export default function App() {
         <Route path="/process"       element={<Process />}    />
         <Route path="/contact"       element={<Contact />}    />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }

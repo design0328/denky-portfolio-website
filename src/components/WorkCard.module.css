@@ -14,7 +14,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--cyan-dim), transparent 60%);
+  background: linear-gradient(135deg, var(--fuchsia-dim), transparent 60%);
   opacity: 0;
   transition: opacity 0.3s;
   pointer-events: none;
@@ -26,13 +26,13 @@
   transform: translateY(-5px);
   box-shadow:
     0 20px 60px rgba(0, 0, 20, 0.4),
-    0 0 8px rgba(196, 20, 110, 0.4),
-    0 0 2px rgba(248, 75, 0, 0.3);
+    0 0 0 1px rgba(232, 16, 122, 0.35),
+    0 0 24px rgba(232, 16, 122, 0.2);
 }
 
 .card:hover::before { opacity: 1; }
 .card:hover .arrow   { opacity: 1; transform: translate(3px, -3px); }
-.card:hover .visualLabel { color: var(--cyan); border-color: var(--border2); }
+.card:hover .visualLabel { color: var(--fuchsia); border-color: var(--border2); }
 
 /* ── Visual ── */
 .visual {
@@ -44,7 +44,6 @@
   justify-content: center;
   background: #0d0d1a;
 }
-
 
 .thumbnail {
   width: 100%;
@@ -77,8 +76,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 35% 55%, rgba(0, 229, 255, 0.1), transparent 55%),
-    radial-gradient(ellipse at 65% 40%, rgba(139, 92, 246, 0.08), transparent 50%);
+    radial-gradient(ellipse at 35% 55%, rgba(232, 16, 122, 0.12), transparent 55%),
+    radial-gradient(ellipse at 65% 40%, rgba(255, 82, 0, 0.09), transparent 50%);
   transition: opacity 0.4s;
 }
 
@@ -100,11 +99,11 @@
   transition: color 0.3s, border-color 0.3s;
 }
 
-/* Visual variant — design hub gets green tint */
+/* Visual variant — design hub */
 .dh .visualGlow {
   background:
-    radial-gradient(ellipse at 40% 50%, rgba(16, 185, 129, 0.09), transparent 55%),
-    radial-gradient(ellipse at 70% 60%, rgba(139, 92, 246, 0.07), transparent 50%);
+    radial-gradient(ellipse at 40% 50%, rgba(232, 16, 122, 0.1), transparent 55%),
+    radial-gradient(ellipse at 70% 60%, rgba(255, 82, 0, 0.08), transparent 50%);
 }
 
 /* ── Content ── */
@@ -130,8 +129,8 @@
   width: 3px;
   height: 3px;
   border-radius: 50%;
-  background: var(--cyan);
-  opacity: 0.5;
+  background: var(--fuchsia);
+  opacity: 0.6;
   flex-shrink: 0;
 }
 
@@ -178,20 +177,20 @@
 }
 
 .chip.cyan {
-  background: rgba(196, 20, 110, 0.25);
-  border-color: rgba(0, 229, 255, 0.25);
+  background: var(--fuchsia-dim);
+  border-color: rgba(232, 16, 122, 0.3);
   color: #ffffff;
 }
 
 .chip.green {
-  background: rgba(248, 75, 0, 0.25);
-  border-color: rgba(16, 185, 129, 0.2);
+  background: var(--orange-dim);
+  border-color: rgba(255, 82, 0, 0.25);
   color: #ffffff;
 }
 
 .arrow {
   font-size: 18px;
-  color: var(--cyan);
+  color: var(--fuchsia);
   opacity: 0;
   transition: transform 0.25s, opacity 0.25s;
 }

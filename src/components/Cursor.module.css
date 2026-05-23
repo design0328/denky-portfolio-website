@@ -2,7 +2,7 @@
   position: fixed;
   width: 10px;
   height: 10px;
-  background: var(--cyan);
+  background: var(--fuchsia);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
@@ -15,7 +15,7 @@
   position: fixed;
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(0, 229, 255, 0.5);
+  border: 1.5px solid rgba(0, 229, 255, 0.55);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
@@ -28,5 +28,5 @@
 :global(button:hover) ~ .ring {
   width: 56px;
   height: 56px;
-  border-color: var(--cyan);
+  border-color: var(--fuchsia);
 }

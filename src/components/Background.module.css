@@ -9,11 +9,11 @@
 .grid {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
-/* Top-left fuchsia glow */
+/* Top-left fuchsia glow — more vivid */
 .glow {
   position: absolute;
   top: -15%;
@@ -22,13 +22,13 @@
   height: 700px;
   background: radial-gradient(
     ellipse,
-    rgba(196, 20, 110, 0.1) 0%,
-    rgba(248, 75, 0, 0.06) 40%,
+    rgba(232, 16, 122, 0.16) 0%,
+    rgba(255, 82, 0, 0.08) 40%,
     transparent 70%
   );
 }
 
-/* Bottom-right orange glow */
+/* Bottom-right orange glow — more vivid */
 .glowBottom {
   position: absolute;
   bottom: -10%;
@@ -37,8 +37,8 @@
   height: 650px;
   background: radial-gradient(
     ellipse,
-    rgba(248, 75, 0, 0.09) 0%,
-    rgba(196, 20, 110, 0.05) 45%,
+    rgba(255, 82, 0, 0.14) 0%,
+    rgba(232, 16, 122, 0.07) 45%,
     transparent 70%
   );
 }
