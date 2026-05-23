@@ -540,8 +540,6 @@ export default function Process() {
           </p>
         </div>
 
-        <div className={styles.divider} />
-
         {/* Q&A */}
         <section className={styles.qaSection} aria-label="Process Q&A">
           {qaItems.map((item, i) => (
@@ -564,14 +562,14 @@ export default function Process() {
                   </svg>
                 </span>
               </button>
-              <div className={styles.qaAnswer} hidden={openIndex !== i}>
-                {item.answer}
-              </div>
+              {openIndex === i && (
+                <div className={styles.qaAnswer}>
+                  {item.answer}
+                </div>
+              )}
             </div>
           ))}
         </section>
-
-        <div className={styles.divider} />
 
         {/* Principles */}
         <section className={styles.principlesSection} aria-label="Core principles">
@@ -586,8 +584,6 @@ export default function Process() {
             ))}
           </div>
         </section>
-
-        <div className={styles.divider} />
 
         {/* Tools */}
         <section className={styles.toolsSection} aria-label="Tools and technologies">

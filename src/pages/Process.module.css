@@ -13,23 +13,28 @@
   margin-bottom: 3rem;
 }
 
+/* Pill badge eyebrow — matches site-wide treatment */
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-muted);
-  margin: 0 0 1rem;
-  display: flex;
+  color: var(--fuchsia);
+  margin: 0 0 1.25rem;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
+  padding: 4px 12px 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--fuchsia);
+  background: var(--fuchsia-dim);
 }
 
 .eyebrow::before {
   content: '';
-  display: inline-block;
-  width: 22px;
-  height: 1.5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
   background: var(--fuchsia);
   flex-shrink: 0;
 }
@@ -58,31 +63,30 @@
   margin: 0;
 }
 
-/* ── Divider ── */
-.divider {
-  height: 0.5px;
-  background: rgba(255, 255, 255, 0.07);
-  margin: 3rem 0;
-}
-
-/* ── Section label ── */
+/* ── Section pill label — matches eyebrow treatment ── */
 .sectionLabel {
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
+  font-size: 11px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--fuchsia);
   margin: 0 0 1.5rem;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
+  padding: 4px 12px 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--fuchsia);
+  background: var(--fuchsia-dim);
 }
 
-.sectionLabel::after {
+.sectionLabel::before {
   content: '';
-  flex: 1;
-  height: 0.5px;
-  background: rgba(255, 255, 255, 0.07);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--fuchsia);
+  flex-shrink: 0;
 }
 
 /* ── Q&A ── */
@@ -91,11 +95,17 @@
 }
 
 .qaItem {
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--bg2);
+  overflow: hidden;
+  transition: border-color 0.2s, background 0.2s;
 }
 
-.qaItem:first-child {
-  border-top: 0.5px solid rgba(255, 255, 255, 0.07);
+.open {
+  border-color: var(--fuchsia);
+  background: var(--bg3);
 }
 
 .qaButton {
@@ -103,7 +113,7 @@
   background: none;
   border: none;
   text-align: left;
-  padding: 1.25rem 0;
+  padding: 1.1rem 1.25rem;
   cursor: pointer;
   display: flex;
   align-items: flex-start;
@@ -114,8 +124,8 @@
 
 .qaButton:focus-visible {
   outline: 2px solid var(--fuchsia);
-  outline-offset: 2px;
-  border-radius: 4px;
+  outline-offset: -2px;
+  border-radius: 10px;
 }
 
 .qaLeft {
@@ -139,6 +149,10 @@
   flex-shrink: 0;
 }
 
+.open .qaTag {
+  background: var(--fuchsia-dim);
+}
+
 .qaQuestion {
   font-size: 15px;
   font-weight: 600;
@@ -160,11 +174,12 @@
 
 .open .qaChevron {
   transform: rotate(180deg);
+  color: var(--fuchsia);
 }
 
 .qaAnswer {
-  padding: 0 0 1.5rem;
-  padding-left: calc(12px + 1.75rem);
+  padding: 0 1.25rem 1.25rem;
+  padding-left: calc(1.25rem + 12px + 1.75rem);
 }
 
 .qaAnswer p {
@@ -186,7 +201,7 @@
 
 /* ── Principles ── */
 .principlesSection {
-  margin-bottom: 0;
+  margin: 3rem 0 0;
 }
 
 .principlesGrid {
@@ -197,45 +212,46 @@
 
 .principleCard {
   background: var(--bg2);
-  border: 0.5px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
-  padding: 1.25rem;
+  padding: 1.5rem;
   transition: border-color 0.2s, background 0.2s;
 }
 
 .principleCard:hover {
-  border-color: rgba(232, 16, 122, 0.3);
+  border-color: rgba(232, 16, 122, 0.35);
   background: var(--bg3);
 }
 
 .principleIcon {
   color: var(--fuchsia);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   display: flex;
 }
 
 .principleTitle {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   font-family: var(--font-body);
+  line-height: 1.3;
 }
 
 .principleBody {
-  font-size: 12px;
-  line-height: 1.6;
+  font-size: 13px;
+  line-height: 1.65;
   color: var(--text-muted);
   font-family: var(--font-body);
 }
 
 /* ── Tools ── */
 .toolsSection {
-  margin-bottom: 0;
+  margin: 3rem 0 0;
 }
 
 .toolCategory {
-  margin-bottom: 1.75rem;
+  margin-bottom: 2rem;
 }
 
 .toolCatLabel {
@@ -263,7 +279,7 @@
   gap: 8px;
 }
 
-/* Chip — gradient border via pseudo-element */
+/* Chip */
 .chip {
   display: inline-flex;
   align-items: center;
@@ -327,7 +343,7 @@
   margin-top: 3rem;
   padding: 1.5rem;
   background: var(--bg2);
-  border: 0.5px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 14px;
   display: flex;
   align-items: center;
@@ -388,7 +404,7 @@
   }
 
   .qaAnswer {
-    padding-left: 0;
+    padding-left: 1.25rem;
   }
 
   .principlesGrid {
