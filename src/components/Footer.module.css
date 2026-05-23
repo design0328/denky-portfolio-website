@@ -1,0 +1,112 @@
+.footer {
+  position: relative;
+  z-index: 2;
+  background: var(--bg-nav);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  margin-top: auto;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 48px 24px;
+}
+
+/* ── Top grid ── */
+.top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  margin-bottom: 20px;
+}
+
+/* Brand col */
+.brand {}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 24px;
+  letter-spacing: 0.08em;
+  background: linear-gradient(90deg, var(--fuchsia), var(--orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.tagline {
+  font-size: 12px;
+  color: var(--dim);
+  line-height: 1.7;
+  max-width: 200px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+
+/* Nav cols */
+.col {}
+
+.colLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 16px;
+}
+
+.colLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.colLink {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: color 0.2s;
+  font-family: var(--font-body);
+}
+
+.colLink:hover { color: var(--text); }
+
+/* ── Bottom bar ── */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.copy {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: 0.06em;
+}
+
+.copyAccent {
+  background: linear-gradient(90deg, var(--fuchsia), var(--orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.byline {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+  .inner { padding: 40px 24px 20px; }
+  .top { grid-template-columns: 1fr; gap: 32px; }
+  .bottom { flex-direction: column; align-items: flex-start; }
+}

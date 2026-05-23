@@ -13,33 +13,33 @@
   background-size: 28px 28px;
 }
 
-/* Top-left fuchsia glow — more vivid */
+/* Top-left fuchsia glow — Blotato-level intensity */
 .glow {
   position: absolute;
-  top: -15%;
-  left: -10%;
-  width: 700px;
-  height: 700px;
+  top: -20%;
+  left: -15%;
+  width: 800px;
+  height: 800px;
   background: radial-gradient(
     ellipse,
-    rgba(232, 16, 122, 0.16) 0%,
-    rgba(255, 82, 0, 0.08) 40%,
-    transparent 70%
+    rgba(232, 16, 122, 0.28) 0%,
+    rgba(255, 82, 0, 0.12) 35%,
+    transparent 65%
   );
 }
 
-/* Bottom-right orange glow — more vivid */
+/* Bottom-right orange glow */
 .glowBottom {
   position: absolute;
-  bottom: -10%;
-  right: -8%;
-  width: 650px;
-  height: 650px;
+  bottom: -15%;
+  right: -12%;
+  width: 750px;
+  height: 750px;
   background: radial-gradient(
     ellipse,
-    rgba(255, 82, 0, 0.14) 0%,
-    rgba(232, 16, 122, 0.07) 45%,
-    transparent 70%
+    rgba(255, 82, 0, 0.22) 0%,
+    rgba(232, 16, 122, 0.1) 40%,
+    transparent 65%
   );
 }
 
