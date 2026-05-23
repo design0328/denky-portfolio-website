@@ -8,23 +8,28 @@
 
 .header { margin-bottom: 48px; }
 
+/* ── Pill badge eyebrow ── */
 .eyebrow {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.2em;
+  font-size: 11px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--cyan);
-  margin-bottom: 14px;
+  color: var(--muted);
+  border: 1px solid rgba(232, 16, 122, 0.3);
+  background: rgba(232, 16, 122, 0.07);
+  border-radius: 999px;
+  padding: 5px 14px;
+  margin-bottom: 20px;
 }
-
-.eyebrowRule {
-  width: 36px;
-  height: 1px;
-  background: var(--cyan);
-  display: block;
+.eyebrow::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--fuchsia);
+  flex-shrink: 0;
 }
 
 .title {
@@ -59,15 +64,15 @@
 }
 
 .filter:hover {
-  color: var(--cyan);
+  color: var(--fuchsia);
   border-color: var(--border2);
-  background: var(--cyan-dim);
+  background: var(--fuchsia-dim);
 }
 
 .filterActive {
-  color: var(--cyan) !important;
+  color: var(--fuchsia) !important;
   border-color: var(--border2) !important;
-  background: var(--cyan-dim) !important;
+  background: var(--fuchsia-dim) !important;
 }
 
 /* Grid */

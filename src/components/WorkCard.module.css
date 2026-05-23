@@ -99,7 +99,6 @@
   transition: color 0.3s, border-color 0.3s;
 }
 
-/* Visual variant — design hub */
 .dh .visualGlow {
   background:
     radial-gradient(ellipse at 40% 50%, rgba(232, 16, 122, 0.1), transparent 55%),
@@ -126,8 +125,7 @@
 }
 
 .metaDot {
-  width: 3px;
-  height: 3px;
+  width: 3px; height: 3px;
   border-radius: 50%;
   background: var(--fuchsia);
   opacity: 0.6;
@@ -165,12 +163,13 @@
   flex-wrap: wrap;
 }
 
+/* softer radius on chips */
 .chip {
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.06em;
-  padding: 4px 10px;
-  border-radius: 3px;
+  padding: 4px 12px;
+  border-radius: 8px;
   background: var(--bg4);
   border: 1px solid var(--border);
   color: #e0e0e0;
@@ -195,7 +194,6 @@
   transition: transform 0.25s, opacity 0.25s;
 }
 
-/* ── Keyframes ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }

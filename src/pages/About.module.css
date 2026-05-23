@@ -6,21 +6,33 @@
   margin: 0 auto;
 }
 
-/* ── Eyebrow ── */
+/* ── Pill badge eyebrow (About hero) ── */
 .eyebrow {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.2em;
+  font-size: 11px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--cyan);
+  color: var(--muted);
+  border: 1px solid rgba(232, 16, 122, 0.3);
+  background: rgba(232, 16, 122, 0.07);
+  border-radius: 999px;
+  padding: 5px 14px;
   margin-bottom: 24px;
   animation: fadeUp 0.5s 0.3s both;
 }
-.eyebrowRule { width: 36px; height: 1px; background: var(--cyan); display: block; }
-.eyebrowText { color: var(--cyan); }
+.eyebrow::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--fuchsia);
+  flex-shrink: 0;
+}
+/* hide old rule + text children since we use ::before now */
+.eyebrowRule { display: none; }
+.eyebrowText { color: var(--muted); }
 
 /* ── Hero ── */
 .hero {
@@ -43,7 +55,12 @@
   color: var(--text);
   margin-bottom: 24px;
 }
-.titleAccent { color: var(--cyan); }
+.titleAccent {
+  background: linear-gradient(90deg, var(--fuchsia), var(--orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
 .location {
   display: flex;
@@ -58,7 +75,7 @@
 .locationDot {
   width: 6px; height: 6px;
   border-radius: 50%;
-  background: var(--emerald);
+  background: var(--fuchsia);
   animation: pulse 2s infinite;
 }
 
@@ -72,35 +89,31 @@
 }
 
 .headshotFrame {
-  width: 240px;
-  height: 240px;
+  width: 240px; height: 240px;
   border-radius: 50%;
   overflow: hidden;
   position: relative;
-  border: 1px solid var(--border2);
-  box-shadow: 0 0 0 4px rgba(0,229,255,0.06);
-  transition: border-color 0.3s, box-shadow 0.3s;
+  /* gradient border via padding trick */
+  padding: 3px;
+  background: linear-gradient(135deg, var(--fuchsia), var(--orange));
+  transition: filter 0.3s;
   cursor: none;
-  background: #f0f0f0;
 }
 
 .headshotFrame:hover {
-  border-color: var(--cyan);
-  box-shadow: 0 0 0 4px rgba(0,229,255,0.12), 0 0 40px rgba(0,229,255,0.2);
+  filter: drop-shadow(0 0 18px rgba(232, 16, 122, 0.55));
 }
 
 .headshot {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   object-fit: cover;
   object-position: center top;
   display: block;
+  border-radius: 50%;
   transition: transform 0.4s ease;
 }
 
-.headshotFrame:hover .headshot {
-  transform: scale(1.04);
-}
+.headshotFrame:hover .headshot { transform: scale(1.04); }
 
 .headshotFallback {
   position: absolute;
@@ -109,56 +122,66 @@
   align-items: center;
   justify-content: center;
   background: var(--bg3);
+  border-radius: 50%;
 }
 
 .headshotInitials {
   font-family: var(--font-display);
   font-size: 48px;
-  color: var(--cyan);
+  color: var(--fuchsia);
   opacity: 0.4;
 }
 
+/* Open to work — pill badge style */
 .headshotTag {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 7px;
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--emerald);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: var(--muted);
+  border: 1px solid rgba(232, 16, 122, 0.3);
   padding: 6px 14px;
-  border-radius: 2px;
-  background: rgba(16, 185, 129, 0.05);
+  border-radius: 999px;
+  background: rgba(232, 16, 122, 0.07);
 }
 .headshotTagDot {
   width: 5px; height: 5px;
   border-radius: 50%;
-  background: var(--emerald);
+  background: var(--fuchsia);
   animation: pulse 2s infinite;
 }
 
 /* ── Section shell ── */
-.section {
-  margin-bottom: 80px;
-}
+.section { margin-bottom: 80px; }
 
+/* Pill badge section labels */
 .sectionLabel {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
+  font-size: 11px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--cyan);
+  color: var(--muted);
+  border: 1px solid rgba(232, 16, 122, 0.3);
+  background: rgba(232, 16, 122, 0.07);
+  border-radius: 999px;
+  padding: 5px 14px;
   margin-bottom: 40px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border);
 }
-.labelNum { color: var(--dim); }
-.labelText { color: var(--cyan); }
+.sectionLabel::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--fuchsia);
+  flex-shrink: 0;
+}
+.labelNum { display: none; }
+.labelText { color: var(--muted); }
 
 /* ── Bio ── */
 .bioGrid {
@@ -196,7 +219,7 @@
 .bioCard {
   background: var(--bg3);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 16px 18px;
   transition: border-color 0.2s;
 }
@@ -243,18 +266,19 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, var(--cyan), transparent);
-  opacity: 0;
-  transition: opacity 0.3s;
+  height: 2px;
+  background: linear-gradient(90deg, var(--fuchsia), var(--orange));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 .valueCard:hover { border-color: var(--border2); }
-.valueCard:hover::before { opacity: 1; }
+.valueCard:hover::before { transform: scaleX(1); }
 
 .valueNum {
   font-family: var(--font-mono);
   font-size: 11px;
-  color: var(--cyan);
+  color: var(--fuchsia);
   opacity: 0.6;
   margin-bottom: 14px;
   letter-spacing: 0.1em;
@@ -306,12 +330,13 @@
   gap: 8px;
 }
 
+/* skill tags as pills */
 .skillTag {
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.06em;
-  padding: 5px 12px;
-  border-radius: 3px;
+  padding: 5px 14px;
+  border-radius: 999px;
   background: var(--bg3);
   border: 1px solid var(--border);
   color: var(--muted);
@@ -319,8 +344,8 @@
 }
 .skillTag:hover {
   border-color: var(--border2);
-  color: var(--cyan);
-  background: var(--cyan-dim);
+  color: var(--fuchsia);
+  background: var(--fuchsia-dim);
 }
 
 /* ── Community ── */
@@ -361,7 +386,7 @@
 
 .communityCardIcon {
   font-size: 20px;
-  color: var(--cyan);
+  color: var(--fuchsia);
   opacity: 0.5;
   margin-bottom: 14px;
 }
@@ -377,7 +402,7 @@
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--cyan);
+  color: var(--fuchsia);
   margin-bottom: 18px;
 }
 .communityCardItems {
@@ -397,7 +422,7 @@
   content: '';
   width: 3px; height: 3px;
   border-radius: 50%;
-  background: var(--cyan);
+  background: var(--fuchsia);
   opacity: 0.5;
   flex-shrink: 0;
 }
@@ -428,21 +453,22 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: var(--cyan);
-  color: #07070d;
+  background: linear-gradient(135deg, var(--fuchsia), var(--orange));
+  color: #ffffff;
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 13px 26px;
-  border-radius: 3px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 999px;
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
   white-space: nowrap;
 }
 .ctaBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px var(--cyan-glow);
+  filter: brightness(1.12);
+  box-shadow: 0 8px 28px var(--fuchsia-glow);
 }
 
 /* ── Keyframes ── */
@@ -455,8 +481,8 @@
   to   { opacity: 1; transform: translateX(0); }
 }
 @keyframes pulse {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(16,185,129,0.5); }
-  50%       { opacity: 0.7; box-shadow: 0 0 0 5px rgba(16,185,129,0); }
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(232, 16, 122, 0.5); }
+  50%       { opacity: 0.7; box-shadow: 0 0 0 5px rgba(232, 16, 122, 0); }
 }
 
 /* ── Responsive ── */
