@@ -256,18 +256,20 @@ export default function About() {
 
       {/* ── Experience ── */}
       <section className={styles.section}>
-        <div className={styles.sectionLabel}>
-          <span className={styles.labelNum}>03</span>
-          <span className={styles.labelText}>03 / Experience</span>
+        <div className={styles.sectionHeader}>
+          <div className={styles.sectionLabel}>
+            <span className={styles.labelNum}>03</span>
+            <span className={styles.labelText}>03 / Experience</span>
+          </div>
+          <a
+            href="/denky-portfolio-website/Resume_Denky_Begonja_2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.resumeBtn}
+          >
+            View Full Resume ↗
+          </a>
         </div>
-        <a
-          href="/denky-portfolio-website/Resume_Denky_Begonja_2026.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.resumeBtn}
-        >
-          View Full Resume ↗
-        </a>
 
         <div className={styles.timeline}>
           {experience.map((entry, i) => (
