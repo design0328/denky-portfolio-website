@@ -8,7 +8,26 @@ export default function CaseStudy() {
 
   if (!project) return <Navigate to="/work" replace />
 
-  const { title, company, year, discipline, desc, chips, thumbnail, overview, role, impact } = project
+  const {
+    title,
+    company,
+    year,
+    discipline,
+    desc,
+    chips,
+    thumbnail,
+    overview,
+    role,
+    impact,
+    roleLabel,
+    timeline,
+    team,
+    outcome,
+    heroImage,
+    heroCaption,
+    caseStudySections,
+  } = project
+  const heroSrc = heroImage || thumbnail
 
   return (
     <main className={styles.page}>
@@ -22,9 +41,10 @@ export default function CaseStudy() {
       </Link>
 
       {/* Hero banner */}
-      <div className={styles.banner}>
-        <img src={thumbnail} alt={title} style={{width:'100%', height:'100%', objectFit:'contain', objectPosition:'center', background:'#13131f'}} />
-      </div>
+      <figure className={styles.banner}>
+        <img src={heroSrc} alt={title} className={styles.bannerImg} />
+        {heroCaption && <figcaption className={styles.bannerCaption}>{heroCaption}</figcaption>}
+      </figure>
 
       {/* Header */}
       <header className={styles.header}>
@@ -46,6 +66,15 @@ export default function CaseStudy() {
         </div>
       </header>
 
+      <ProjectSnapshot
+        items={[
+          { label: 'Role', value: roleLabel },
+          { label: 'Timeline', value: timeline || year },
+          { label: 'Team', value: team || company },
+          { label: 'Outcome', value: outcome },
+        ]}
+      />
+
       {/* Content sections */}
       <div className={styles.body}>
 
@@ -53,7 +82,13 @@ export default function CaseStudy() {
         <Section title="My Role" items={role} />
         <Section title="Impact" items={impact} />
 
-        {project.screenshots && project.screenshots.length > 0 && (
+        {caseStudySections && caseStudySections.length > 0 ? (
+          <div className={styles.mediaSections}>
+            {caseStudySections.map((section) => (
+              <MediaSection key={`${section.label}-${section.title}`} projectSlug={project.slug} section={section} />
+            ))}
+          </div>
+        ) : project.screenshots && project.screenshots.length > 0 && (
           <div className={styles.screenshotsSection}>
             {[...new Set(project.screenshots.map((s) => s.section))].map((section) => (
               <div key={section} className={styles.screenshotGroup}>
@@ -86,6 +121,22 @@ export default function CaseStudy() {
   )
 }
 
+function ProjectSnapshot({ items }) {
+  const visibleItems = items.filter((item) => item.value)
+  if (visibleItems.length === 0) return null
+
+  return (
+    <section className={styles.snapshot} aria-label="Project snapshot">
+      {visibleItems.map((item) => (
+        <div key={item.label} className={styles.snapshotItem}>
+          <div className={styles.snapshotLabel}>{item.label}</div>
+          <div className={styles.snapshotValue}>{item.value}</div>
+        </div>
+      ))}
+    </section>
+  )
+}
+
 function Section({ title, items, accent }) {
   const num = { Overview: '01', 'My Role': '02', Impact: '03' }[title] || '00'
   return (
@@ -103,6 +154,65 @@ function Section({ title, items, accent }) {
         ))}
       </ul>
     </section>
+  )
+}
+
+function MediaSection({ projectSlug, section }) {
+  const imagePath = (file) => `/denky-portfolio-website/screenshots/${projectSlug}/${file}`
+
+  return (
+    <section className={styles.mediaSection}>
+      <div className={styles.mediaIntro}>
+        <div className={styles.mediaLabel}>{section.label}</div>
+        <h2 className={styles.mediaTitle}>{section.title}</h2>
+        {section.body && <p className={styles.mediaBody}>{section.body}</p>}
+      </div>
+
+      {section.type === 'featureImage' && (
+        <div className={styles.featureMedia}>
+          <figure className={styles.featureFigure}>
+            <a href={imagePath(section.image)} target="_blank" rel="noopener noreferrer" className={styles.imageLink}>
+              <img src={imagePath(section.image)} alt={section.caption || section.title} className={styles.featureImg} />
+            </a>
+            {section.caption && <figcaption className={styles.featureCaption}>{section.caption}</figcaption>}
+          </figure>
+          {section.notes && (
+            <ul className={styles.mediaNotes}>
+              {section.notes.map((note) => (
+                <li key={note}>{note}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
+
+      {section.type === 'imagePair' && (
+        <div className={styles.mediaPair}>
+          {section.images.map((image) => (
+            <MediaFigure key={image.file} src={imagePath(image.file)} caption={image.caption} />
+          ))}
+        </div>
+      )}
+
+      {section.type === 'imageGrid' && (
+        <div className={styles.mediaGrid}>
+          {section.images.map((image) => (
+            <MediaFigure key={image.file} src={imagePath(image.file)} caption={image.caption} />
+          ))}
+        </div>
+      )}
+    </section>
+  )
+}
+
+function MediaFigure({ src, caption }) {
+  return (
+    <figure className={styles.mediaFigure}>
+      <a href={src} target="_blank" rel="noopener noreferrer" className={styles.imageLink}>
+        <img src={src} alt={caption} className={styles.mediaImg} />
+      </a>
+      {caption && <figcaption className={styles.mediaCaption}>{caption}</figcaption>}
+    </figure>
   )
 }
 

@@ -65,6 +65,7 @@ export default function Work() {
             key={project.slug}
             ref={(el) => (cardRefs.current[i] = el)}
             style={{ animationPlayState: 'paused' }}
+            className={project.featured ? styles.featuredItem : ''}
           >
             <WorkCard project={project} index={i} />
           </div>

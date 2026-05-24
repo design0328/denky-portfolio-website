@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom'
 import styles from './WorkCard.module.css'
 
 export default function WorkCard({ project, index }) {
-  const { slug, title, company, year, discipline, desc, chips, thumbnail } = project
+  const { slug, title, company, year, discipline, desc, chips, thumbnail, featured, summary, outcome } = project
 
   return (
     <Link
       to={`/work/${slug}`}
-      className={styles.card}
+      className={`${styles.card} ${featured ? styles.featured : ''}`}
       style={{ animationDelay: `${index * 0.14}s` }}
     >
       {/* Thumbnail */}
@@ -38,7 +38,13 @@ export default function WorkCard({ project, index }) {
           {discipline}
         </div>
         <h3 className={styles.title}>{title}</h3>
-        <p className={styles.desc}>{desc}</p>
+        <p className={styles.desc}>{summary || desc}</p>
+        {featured && outcome && (
+          <div className={styles.outcome}>
+            <span className={styles.outcomeLabel}>Outcome</span>
+            <span>{outcome}</span>
+          </div>
+        )}
         <div className={styles.footer}>
           <div className={styles.chips}>
             {chips.map((chip) => (

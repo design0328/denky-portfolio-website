@@ -7,6 +7,14 @@ export const projects = [
     discipline: 'Design Systems',
     desc:       'A modular AI-powered audit system built in Claude Code that evaluates UI features against 5 guardrail domains — accessibility, usability, AIUI, content, and monetization — and outputs structured HTML reports, Markdown decision logs, and YAML findings files.',
     thumbnail:  '/denky-portfolio-website/screenshots/dqe/readme-overview.png',
+    featured:   true,
+    summary:    'A solo-built design governance system that turns static product evidence into structured, review-ready quality findings.',
+    roleLabel:  'Sole creator',
+    timeline:   '2026 pilot',
+    team:       'Design, PM, engineering stakeholders',
+    outcome:    'Created ZoomInfo\'s first automated multi-domain design quality checkpoint.',
+    heroImage:  '/denky-portfolio-website/screenshots/dqe/feed-html-report.png',
+    heroCaption: 'Stakeholder-ready HTML audit report generated from a structured DQE review.',
     chips: [
       { label: 'Governance',    accent: 'cyan'  },
       { label: 'Design Systems'                  },
@@ -33,6 +41,86 @@ export const projects = [
       'Generated 12 proposed system improvements and 6 feature requests from 3 pilot sessions — including Jira integration, Playwright screenshot capture, and MUI component context to reduce false positives',
       'Established a self-improving feedback loop: disputed findings become pattern candidates, pattern candidates feed a zi-patterns.md context file, DQE stops flagging approved patterns over time',
       'Created the first automated, multi-domain design quality checkpoint at ZoomInfo — covering 5 audit domains with no prior tooling in place',
+    ],
+    caseStudySections: [
+      {
+        type: 'featureImage',
+        label: 'System Overview',
+        title: 'The operating model',
+        body: 'DQE is structured as a reusable audit system: standards, skills, runs, and outputs stay separate so the review process can scale without becoming one-off documentation.',
+        image: 'readme-overview.png',
+        caption: 'README overview explaining what DQE is, how it runs, and what artifacts it creates.',
+        notes: [
+          'Makes the system understandable before a reviewer opens any audit output',
+          'Frames the work as operational infrastructure, not a single report',
+          'Shows the relationship between guardrails, audit stages, and deliverables',
+        ],
+      },
+      {
+        type: 'imagePair',
+        label: 'Architecture',
+        title: 'Designed for repeatable audits',
+        body: 'The repository is organized around repeatability: guardrails live as source standards, runs are timestamped, and every audit produces consistent evidence for review.',
+        images: [
+          {
+            file: 'repo-structure.png',
+            caption: 'Repo structure separating audits, skills, and standards.',
+          },
+          {
+            file: 'audit-folder-structure.png',
+            caption: 'Timestamped audit folder structure for versioned review history.',
+          },
+        ],
+      },
+      {
+        type: 'imageGrid',
+        label: 'Guardrails',
+        title: 'Rules that translate UX quality into reviewable checks',
+        body: 'Accessibility, usability, and AI interaction guidance were authored as reusable guardrail libraries so findings could be consistent across designers, product areas, and review stages.',
+        images: [
+          {
+            file: 'accessibility-guardrails.png',
+            caption: 'Accessibility guardrails mapped to WCAG 2.2 AA expectations.',
+          },
+          {
+            file: 'aiui-guardrails.png',
+            caption: 'AIUI guardrails for transparency, disclosure, and human control.',
+          },
+          {
+            file: 'u11y-guardrail-system.png',
+            caption: 'Usability guardrails for intent clarity, flow, states, and recoverability.',
+          },
+        ],
+      },
+      {
+        type: 'featureImage',
+        label: 'Outputs',
+        title: 'A report stakeholders can actually use',
+        body: 'The HTML report turns static UI evidence into grouped findings with severity, rationale, and review-ready language, making quality issues easier to discuss across design, PM, and engineering.',
+        image: 'feed-html-report.png',
+        caption: 'Full HTML audit report for a Feed component review.',
+        notes: [
+          'Groups findings by quality domain instead of burying issues in raw notes',
+          'Supports faster cross-functional review and sign-off',
+          'Pairs human-readable findings with machine-readable outputs',
+        ],
+      },
+      {
+        type: 'imagePair',
+        label: 'Structured Evidence',
+        title: 'Readable for people, structured for tooling',
+        body: 'Each audit produces multiple artifacts so the same review can serve stakeholder discussion, designer decision logs, and future tooling integration.',
+        images: [
+          {
+            file: 'feed-markdown-summary.png',
+            caption: 'Markdown decision log for review and sign-off.',
+          },
+          {
+            file: 'feed-yaml-findings.png',
+            caption: 'YAML findings output for structured downstream use.',
+          },
+        ],
+      },
     ],
     screenshots: [
       { section: 'Overview',      label: 'System README — what DQE is and what it does',                            file: 'readme-overview.png'           },
