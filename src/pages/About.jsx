@@ -1,6 +1,27 @@
+import { useState } from 'react'
 import styles from './About.module.css'
 
 const BASE = '/denky-portfolio-website'
+
+function CompanyLogo({ domain, initials }) {
+  const [imgError, setImgError] = useState(false)
+  return (
+    <div className={styles.companyLogo}>
+      {!imgError ? (
+        <img
+          src={`https://logo.clearbit.com/${domain}`}
+          alt=""
+          width={40}
+          height={40}
+          onError={() => setImgError(true)}
+          className={styles.companyLogoImg}
+        />
+      ) : (
+        <span className={styles.monogram}>{initials}</span>
+      )}
+    </div>
+  )
+}
 
 const testimonials = [
   {
@@ -69,47 +90,51 @@ const experience = [
   {
     years: '2025–2026',
     company: 'ZoomInfo',
+    domain: 'zoominfo.com',
+    logoInitials: 'ZI',
     role: 'UX/UI Product Designer — AI Enablement & Workflow Infrastructure',
     desc: 'Built DQE guardrail system, Design Hub, AI Training Portal, and accessibility-aware evaluation workflows.',
   },
   {
     years: '2023–2025',
     company: 'ZoomInfo',
+    domain: 'zoominfo.com',
+    logoInitials: 'ZI',
     role: 'UX/UI Product Designer — Design Systems & Accessibility',
     desc: 'WCAG operationalization, AIUI pattern library, cross-functional governance and design-engineering workflow alignment.',
   },
   {
     years: '2021–2023',
     company: 'ZoomInfo',
+    domain: 'zoominfo.com',
+    logoInitials: 'ZI',
     role: 'UX/UI Designer',
     desc: 'Interface design across complex B2B SaaS ecosystems, workflow optimization, cross-functional product collaboration.',
   },
   {
     years: '2016–2021',
     company: 'RingLead / ZoomInfo',
+    domain: 'ringlead.com',
+    logoInitials: 'RL',
     role: 'Senior Graphic Designer → UX/UI Designer',
     desc: 'Led digital creative initiatives; transitioned into UX during acquisition integration and platform scaling.',
   },
   {
     years: '2013–2016',
     company: 'Total Defense',
+    domain: 'totaldefense.com',
+    logoInitials: 'TD',
     role: 'Digital Designer',
     desc: 'Designed onboarding flows, dashboards, and in-product UI for cybersecurity software including the Xfinity BotScanner experience.',
   },
   {
     years: '2006–2013',
     company: 'CA Technologies',
+    domain: 'ca.com',
+    logoInitials: 'CA',
     role: 'Graphic Designer',
     desc: 'Customer-facing digital and print for the Internet Security Business Unit; contributed to web campaigns, product collateral, and events including RSA and DEF CON.',
   },
-]
-
-const skills = [
-  { category: 'Design',       items: ['Figma', 'FigJam', 'MUI', 'Google Sites'] },
-  { category: 'Development',  items: ['VS Code', 'GitHub', 'Netlify', 'Vite + React'] },
-  { category: 'Collaboration',items: ['Jira', 'Confluence', 'Slack', 'Slack Block Kit'] },
-  { category: 'Standards',    items: ['WCAG / W3C', 'Accessibility', 'Design Systems', 'Design Ops'] },
-  { category: 'AI & Tools',   items: ['Claude', 'Claude Code', 'ChatGPT', 'Google Gemini', 'Antigravity'] },
 ]
 
 const values = [
@@ -229,32 +254,12 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── Skills ── */}
-      <section className={styles.section}>
-        <div className={styles.sectionLabel}>
-          <span className={styles.labelNum}>03</span>
-          <span className={styles.labelText}>Tools & Skills</span>
-        </div>
-        <div className={styles.skillsGrid}>
-          {skills.map(({ category, items }) => (
-            <div key={category} className={styles.skillGroup}>
-              <div className={styles.skillCategory}>{category}</div>
-              <div className={styles.skillItems}>
-                {items.map((item) => (
-                  <span key={item} className={styles.skillTag}>{item}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* ── Experience ── */}
       <section className={styles.section}>
         <div className={styles.experienceHeader}>
           <div className={styles.sectionLabel}>
-            <span className={styles.labelNum}>04</span>
-            <span className={styles.labelText}>04 / Experience</span>
+            <span className={styles.labelNum}>03</span>
+            <span className={styles.labelText}>03 / Experience</span>
           </div>
           <a href="#" className={styles.resumeBtn} aria-label="Download resume">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -272,11 +277,16 @@ export default function About() {
                 {i < experience.length - 1 && <div className={styles.timelineLine} />}
               </div>
               <div className={styles.timelineCard}>
-                <div className={styles.timelineMeta}>
-                  <span className={styles.timelineYears}>{entry.years}</span>
-                  <span className={styles.timelineCompany}>{entry.company}</span>
+                <div className={styles.timelineCardHeader}>
+                  <CompanyLogo domain={entry.domain} initials={entry.logoInitials} />
+                  <div className={styles.timelineCardMain}>
+                    <div className={styles.timelineMeta}>
+                      <span className={styles.timelineYears}>{entry.years}</span>
+                      <span className={styles.timelineCompany}>{entry.company}</span>
+                    </div>
+                    <div className={styles.timelineRole}>{entry.role}</div>
+                  </div>
                 </div>
-                <div className={styles.timelineRole}>{entry.role}</div>
                 <div className={styles.timelineDesc}>{entry.desc}</div>
               </div>
             </div>
@@ -284,9 +294,14 @@ export default function About() {
 
           {/* Education */}
           <div className={styles.timelineEdu}>
-            <div className={styles.timelineEduLabel}>Education</div>
-            <div className={styles.timelineEduSchool}>New York Institute of Technology</div>
-            <div className={styles.timelineEduDegree}>BFA Graphic Design / Fine Arts / Computer Graphics</div>
+            <div className={styles.timelineEduInner}>
+              <CompanyLogo domain="nyit.edu" initials="NY" />
+              <div>
+                <div className={styles.timelineEduLabel}>Education</div>
+                <div className={styles.timelineEduSchool}>New York Institute of Technology</div>
+                <div className={styles.timelineEduDegree}>BFA Graphic Design / Fine Arts / Computer Graphics</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -294,8 +309,8 @@ export default function About() {
       {/* ── Testimonials ── */}
       <section className={styles.section}>
         <div className={styles.sectionLabel}>
-          <span className={styles.labelNum}>05</span>
-          <span className={styles.labelText}>05 / Testimonials</span>
+          <span className={styles.labelNum}>04</span>
+          <span className={styles.labelText}>04 / Testimonials</span>
         </div>
 
         <div className={styles.testimonialsGrid}>
@@ -325,7 +340,7 @@ export default function About() {
       {/* ── Community ── */}
       <section className={styles.section}>
         <div className={styles.sectionLabel}>
-          <span className={styles.labelNum}>04</span>
+          <span className={styles.labelNum}>05</span>
           <span className={styles.labelText}>Beyond the Work</span>
         </div>
         <div className={styles.communityWrap}>

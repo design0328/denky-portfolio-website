@@ -46,6 +46,6 @@
 .ctaText { display: flex; flex-direction: column; gap: 3px; }
 .ctaText strong { font-size: 20px; font-weight: 600; color: var(--text); font-family: var(--font-body); }
 .ctaText span { font-size: 15px; color: var(--text-muted); font-family: var(--font-body); line-height: 1.65; }
-.ctaBtn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 22px; border-radius: 999px; background: linear-gradient(90deg, var(--fuchsia), var(--orange)); color: #fff; font-size: 13px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: opacity 0.2s, filter 0.2s; font-family: var(--font-body); }
+.ctaBtn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 22px; border-radius: 999px; background: linear-gradient(90deg, var(--fuchsia), var(--orange)); color: #fff; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: opacity 0.2s, filter 0.2s; font-family: var(--font-mono); }
 .ctaBtn:hover { opacity: 0.9; filter: brightness(1.1); }
 @media (max-width: 600px) { .page { padding: 6rem 1rem 3rem; } .qaLeft { flex-direction: column; gap: 6px; } .qaAnswer { padding-left: 1.25rem; } .principlesGrid { grid-template-columns: 1fr 1fr; } .cta { flex-direction: column; align-items: flex-start; } }

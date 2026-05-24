@@ -298,54 +298,41 @@
   font-weight: 400;
 }
 
-/* ── Skills ── */
-.skillsGrid {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.skillGroup {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  align-items: flex-start;
-  gap: 24px;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--border);
-}
-.skillGroup:last-child { border-bottom: none; }
-
-.skillCategory {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--dim);
-  padding-top: 4px;
-}
-
-.skillItems {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-/* skill tags as pills */
-.skillTag {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  padding: 5px 14px;
-  border-radius: 999px;
+/* ── Company Logo badge ── */
+.companyLogo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
   background: var(--bg3);
-  border: 1px solid var(--border);
-  color: var(--muted);
-  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.skillTag:hover {
-  border-color: var(--border2);
-  color: var(--fuchsia);
+
+.companyLogoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.monogram {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
   background: var(--fuchsia-dim);
+  border: 1px solid rgba(232, 16, 122, 0.2);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fuchsia);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: 0.05em;
 }
 
 /* ── Experience / Timeline ── */
@@ -432,6 +419,18 @@
 
 .timelineCard:hover { border-color: rgba(232, 16, 122, 0.2); }
 
+.timelineCardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.timelineCardMain {
+  flex: 1;
+  min-width: 0;
+}
+
 .timelineMeta {
   display: flex;
   align-items: center;
@@ -477,6 +476,12 @@
   margin-left: 40px;
   padding: 16px 20px;
   border-left: 2px solid rgba(255, 255, 255, 0.06);
+}
+
+.timelineEduInner {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
 }
 
 .timelineEduLabel {
@@ -731,7 +736,6 @@
   .bioSide { display: none; }
   .valuesGrid { grid-template-columns: 1fr; }
   .communityWrap { grid-template-columns: 1fr; }
-  .skillGroup { grid-template-columns: 1fr; gap: 12px; }
   .cta { flex-direction: column; align-items: flex-start; padding: 24px; }
   .testimonialsGrid { grid-template-columns: 1fr; }
   .experienceHeader { flex-direction: column; align-items: flex-start; }
