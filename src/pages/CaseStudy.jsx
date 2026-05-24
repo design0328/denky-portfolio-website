@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { projects } from '../data/projects'
 import styles from './CaseStudy.module.css'
@@ -184,6 +184,7 @@ function CaseStudyContent({ project, slug }) {
 
       {activeImage && (
         <ImageLightbox
+          key={activeImage.id}
           image={activeImage}
           currentIndex={activeImageIndex}
           total={inspectableImages.length}
@@ -369,10 +370,26 @@ function InspectableImage({ src, alt, className, buttonClassName, onInspect }) {
 
 function ImageLightbox({ image, currentIndex, total, canStep, onClose, onPrevious, onNext }) {
   const caption = image.caption || image.alt
+  const closeButtonRef = useRef(null)
+  const [zoom, setZoom] = useState(1)
+  const isZoomed = zoom > 1
+
+  const zoomOut = () => setZoom((currentZoom) => Math.max(1, currentZoom - 0.25))
+  const zoomIn = () => setZoom((currentZoom) => Math.min(3, currentZoom + 0.25))
+  const resetZoom = () => setZoom(1)
+
+  useEffect(() => {
+    closeButtonRef.current?.focus()
+  }, [image.src])
 
   return (
     <div className={styles.lightbox} role="dialog" aria-modal="true" aria-label={caption}>
       <button type="button" className={styles.lightboxBackdrop} aria-label="Close image preview" onClick={onClose} />
+      <button ref={closeButtonRef} type="button" className={styles.lightboxClose} onClick={onClose} aria-label="Close image preview">
+        <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+          <path d="M4.5 4.5l9 9M13.5 4.5l-9 9" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+        </svg>
+      </button>
       <div className={styles.lightboxPanel}>
         <div className={styles.lightboxTopbar}>
           <div className={styles.lightboxMeta}>
@@ -380,11 +397,18 @@ function ImageLightbox({ image, currentIndex, total, canStep, onClose, onPreviou
             <span className={styles.lightboxDivider} />
             <span>{String(total).padStart(2, '0')}</span>
           </div>
-          <button type="button" className={styles.lightboxClose} onClick={onClose} aria-label="Close image preview">
-            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
-              <path d="M4.5 4.5l9 9M13.5 4.5l-9 9" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-            </svg>
-          </button>
+          <div className={styles.lightboxControls} aria-label="Image zoom controls">
+            <button type="button" className={styles.lightboxControl} onClick={zoomOut} disabled={zoom === 1} aria-label="Zoom out">
+              <span aria-hidden="true">-</span>
+            </button>
+            <button type="button" className={styles.lightboxControl} onClick={resetZoom} disabled={zoom === 1} aria-label="Reset image to fit screen">
+              Fit
+            </button>
+            <span className={styles.lightboxZoom} aria-live="polite">{Math.round(zoom * 100)}%</span>
+            <button type="button" className={styles.lightboxControl} onClick={zoomIn} disabled={zoom === 3} aria-label="Zoom in">
+              <span aria-hidden="true">+</span>
+            </button>
+          </div>
         </div>
 
         <div className={styles.lightboxImageWrap}>
@@ -395,7 +419,14 @@ function ImageLightbox({ image, currentIndex, total, canStep, onClose, onPreviou
               </svg>
             </button>
           )}
-          <img src={image.src} alt={image.alt} className={styles.lightboxImg} />
+          <div className={`${styles.lightboxViewport} ${isZoomed ? styles.lightboxViewportZoomed : ''}`} tabIndex={isZoomed ? 0 : -1} aria-label={isZoomed ? 'Zoomed image. Scroll to pan around the image.' : undefined}>
+            <img
+              src={image.src}
+              alt={image.alt}
+              className={`${styles.lightboxImg} ${isZoomed ? styles.lightboxImgZoomed : ''}`}
+              style={{ '--lightbox-zoom': zoom }}
+            />
+          </div>
           {canStep && (
             <button type="button" className={`${styles.lightboxNav} ${styles.lightboxNext}`} onClick={onNext} aria-label="Next image">
               <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
