@@ -53,20 +53,29 @@ export default function CaseStudy() {
         <Section title="My Role" items={role} />
         <Section title="Impact" items={impact} accent />
 
-        {/* Screenshots placeholder */}
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>
-            <span className={styles.sectionNum}>04</span>
-            Assets & Screenshots
-          </h2>
-          <div className={styles.assetGrid}>
-            {[1, 2, 3, 4].map((n) => (
-              <div key={n} className={styles.assetPlaceholder}>
-                <span>Screenshot {n}</span>
+        {project.screenshots && project.screenshots.length > 0 && (
+          <div className={styles.screenshotsSection}>
+            {[...new Set(project.screenshots.map((s) => s.section))].map((section) => (
+              <div key={section} className={styles.screenshotGroup}>
+                <h3 className={styles.screenshotGroupLabel}>{section}</h3>
+                <div className={styles.screenshotGrid}>
+                  {project.screenshots
+                    .filter((s) => s.section === section)
+                    .map((shot) => (
+                      <figure key={shot.file} className={styles.screenshotFigure}>
+                        <img
+                          src={`/denky-portfolio-website/screenshots/${project.slug}/${shot.file}`}
+                          alt={shot.label}
+                          className={styles.screenshotImg}
+                        />
+                        <figcaption className={styles.screenshotCaption}>{shot.label}</figcaption>
+                      </figure>
+                    ))}
+                </div>
               </div>
             ))}
           </div>
-        </section>
+        )}
 
       </div>
 
