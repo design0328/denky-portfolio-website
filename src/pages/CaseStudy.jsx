@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { projects } from '../data/projects'
 import styles from './CaseStudy.module.css'
@@ -8,6 +9,10 @@ export default function CaseStudy() {
 
   if (!project) return <Navigate to="/work" replace />
 
+  return <CaseStudyContent project={project} slug={slug} />
+}
+
+function CaseStudyContent({ project, slug }) {
   const {
     title,
     company,
@@ -28,6 +33,45 @@ export default function CaseStudy() {
     caseStudySections,
   } = project
   const heroSrc = heroImage || thumbnail
+  const hasCuratedMedia = caseStudySections && caseStudySections.length > 0
+  const hasScreenshots = project.screenshots && project.screenshots.length > 0
+  const inspectableImages = getInspectableImages(project, heroSrc, hasCuratedMedia)
+  const [activeImageId, setActiveImageId] = useState(null)
+  const activeImageIndex = inspectableImages.findIndex((image) => image.id === activeImageId)
+  const activeImage = activeImageIndex >= 0 ? inspectableImages[activeImageIndex] : null
+  const canStepImages = inspectableImages.length > 1
+
+  const openLightbox = (imageId) => setActiveImageId(imageId)
+  const closeLightbox = () => setActiveImageId(null)
+  const showImageAt = (index) => {
+    const nextIndex = (index + inspectableImages.length) % inspectableImages.length
+    setActiveImageId(inspectableImages[nextIndex].id)
+  }
+
+  useEffect(() => {
+    if (!activeImage) return undefined
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') closeLightbox()
+      if (event.key === 'ArrowLeft' && canStepImages) {
+        const nextIndex = (activeImageIndex - 1 + inspectableImages.length) % inspectableImages.length
+        setActiveImageId(inspectableImages[nextIndex].id)
+      }
+      if (event.key === 'ArrowRight' && canStepImages) {
+        const nextIndex = (activeImageIndex + 1 + inspectableImages.length) % inspectableImages.length
+        setActiveImageId(inspectableImages[nextIndex].id)
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = previousOverflow
+    }
+  }, [activeImage, activeImageIndex, canStepImages, inspectableImages])
 
   return (
     <main className={styles.page}>
@@ -42,7 +86,13 @@ export default function CaseStudy() {
 
       {/* Hero banner */}
       <figure className={styles.banner}>
-        <img src={heroSrc} alt={title} className={styles.bannerImg} />
+        <InspectableImage
+          src={heroSrc}
+          alt={title}
+          className={styles.bannerImg}
+          buttonClassName={styles.bannerImageButton}
+          onInspect={() => openLightbox('hero')}
+        />
         {heroCaption && <figcaption className={styles.bannerCaption}>{heroCaption}</figcaption>}
       </figure>
 
@@ -78,17 +128,30 @@ export default function CaseStudy() {
       {/* Content sections */}
       <div className={styles.body}>
 
-        <Section title="Overview" items={overview} />
-        <Section title="My Role" items={role} />
-        <Section title="Impact" items={impact} />
+        <StoryGrid
+          sections={[
+            { title: 'Overview', items: overview },
+            { title: 'My Role', items: role },
+            { title: 'Impact', items: impact },
+          ]}
+        />
 
-        {caseStudySections && caseStudySections.length > 0 ? (
+        {hasCuratedMedia ? (
           <div className={styles.mediaSections}>
             {caseStudySections.map((section) => (
-              <MediaSection key={`${section.label}-${section.title}`} projectSlug={project.slug} section={section} />
+              <MediaSection
+                key={`${section.label}-${section.title}`}
+                projectSlug={project.slug}
+                section={section}
+                onInspect={openLightbox}
+              />
             ))}
           </div>
-        ) : project.screenshots && project.screenshots.length > 0 && (
+        ) : (
+          <ProjectVisual project={project} onInspect={openLightbox} />
+        )}
+
+        {!hasCuratedMedia && hasScreenshots && (
           <div className={styles.screenshotsSection}>
             {[...new Set(project.screenshots.map((s) => s.section))].map((section) => (
               <div key={section} className={styles.screenshotGroup}>
@@ -98,10 +161,12 @@ export default function CaseStudy() {
                     .filter((s) => s.section === section)
                     .map((shot) => (
                       <figure key={shot.file} className={styles.screenshotFigure}>
-                        <img
+                        <InspectableImage
                           src={`/denky-portfolio-website/screenshots/${project.slug}/${shot.file}`}
                           alt={shot.label}
                           className={styles.screenshotImg}
+                          buttonClassName={styles.screenshotButton}
+                          onInspect={() => openLightbox(`screenshot-${shot.file}`)}
                         />
                         <figcaption className={styles.screenshotCaption}>{shot.label}</figcaption>
                       </figure>
@@ -117,7 +182,35 @@ export default function CaseStudy() {
       {/* Next project */}
       <NextProject current={slug} />
 
+      {activeImage && (
+        <ImageLightbox
+          image={activeImage}
+          currentIndex={activeImageIndex}
+          total={inspectableImages.length}
+          canStep={canStepImages}
+          onClose={closeLightbox}
+          onPrevious={() => showImageAt(activeImageIndex - 1)}
+          onNext={() => showImageAt(activeImageIndex + 1)}
+        />
+      )}
+
     </main>
+  )
+}
+
+function StoryGrid({ sections }) {
+  return (
+    <section className={styles.storySection} aria-label="Case study narrative">
+      <div className={styles.storyIntro}>
+        <span className={styles.mediaLabel}>Case Study</span>
+        <h2 className={styles.storyTitle}>What changed, how it worked, and why it mattered</h2>
+      </div>
+      <div className={styles.storyGrid}>
+        {sections.map((section, index) => (
+          <Section key={section.title} title={section.title} items={section.items} index={index + 1} />
+        ))}
+      </div>
+    </section>
   )
 }
 
@@ -137,10 +230,10 @@ function ProjectSnapshot({ items }) {
   )
 }
 
-function Section({ title, items, accent }) {
-  const num = { Overview: '01', 'My Role': '02', Impact: '03' }[title] || '00'
+function Section({ title, items, accent, index }) {
+  const num = String(index || { Overview: 1, 'My Role': 2, Impact: 3 }[title] || 0).padStart(2, '0')
   return (
-    <section className={styles.section}>
+    <section className={styles.sectionCard}>
       <h2 className={styles.sectionTitle}>
         <span className={styles.sectionNum}>{num}</span>
         {title}
@@ -157,7 +250,37 @@ function Section({ title, items, accent }) {
   )
 }
 
-function MediaSection({ projectSlug, section }) {
+function ProjectVisual({ project, onInspect }) {
+  return (
+    <section className={styles.visualSection}>
+      <div className={styles.mediaIntro}>
+        <div className={styles.mediaLabel}>Project Visual</div>
+        <h2 className={styles.mediaTitle}>The project at a glance</h2>
+        <p className={styles.mediaBody}>{project.desc}</p>
+      </div>
+
+      <figure className={styles.deviceFrame}>
+        <div className={styles.deviceBar}>
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className={styles.deviceScreen}>
+          <InspectableImage
+            src={project.thumbnail}
+            alt={`${project.title} project visual`}
+            className={styles.deviceImg}
+            buttonClassName={styles.deviceImageButton}
+            onInspect={() => onInspect('project-visual')}
+          />
+        </div>
+        {project.heroCaption && <figcaption className={styles.deviceCaption}>{project.heroCaption}</figcaption>}
+      </figure>
+    </section>
+  )
+}
+
+function MediaSection({ projectSlug, section, onInspect }) {
   const imagePath = (file) => `/denky-portfolio-website/screenshots/${projectSlug}/${file}`
 
   return (
@@ -171,9 +294,13 @@ function MediaSection({ projectSlug, section }) {
       {section.type === 'featureImage' && (
         <div className={styles.featureMedia}>
           <figure className={styles.featureFigure}>
-            <a href={imagePath(section.image)} target="_blank" rel="noopener noreferrer" className={styles.imageLink}>
-              <img src={imagePath(section.image)} alt={section.caption || section.title} className={styles.featureImg} />
-            </a>
+            <InspectableImage
+              src={imagePath(section.image)}
+              alt={section.alt || section.caption || section.title}
+              className={styles.featureImg}
+              buttonClassName={styles.imageButton}
+              onInspect={() => onInspect(`feature-${section.image}`)}
+            />
             {section.caption && <figcaption className={styles.featureCaption}>{section.caption}</figcaption>}
           </figure>
           {section.notes && (
@@ -189,7 +316,13 @@ function MediaSection({ projectSlug, section }) {
       {section.type === 'imagePair' && (
         <div className={styles.mediaPair}>
           {section.images.map((image) => (
-            <MediaFigure key={image.file} src={imagePath(image.file)} caption={image.caption} />
+            <MediaFigure
+              key={image.file}
+              src={imagePath(image.file)}
+              alt={image.alt}
+              caption={image.caption}
+              onInspect={() => onInspect(`media-${image.file}`)}
+            />
           ))}
         </div>
       )}
@@ -197,7 +330,13 @@ function MediaSection({ projectSlug, section }) {
       {section.type === 'imageGrid' && (
         <div className={styles.mediaGrid}>
           {section.images.map((image) => (
-            <MediaFigure key={image.file} src={imagePath(image.file)} caption={image.caption} />
+            <MediaFigure
+              key={image.file}
+              src={imagePath(image.file)}
+              alt={image.alt}
+              caption={image.caption}
+              onInspect={() => onInspect(`media-${image.file}`)}
+            />
           ))}
         </div>
       )}
@@ -205,15 +344,130 @@ function MediaSection({ projectSlug, section }) {
   )
 }
 
-function MediaFigure({ src, caption }) {
+function MediaFigure({ src, alt, caption, onInspect }) {
   return (
     <figure className={styles.mediaFigure}>
-      <a href={src} target="_blank" rel="noopener noreferrer" className={styles.imageLink}>
-        <img src={src} alt={caption} className={styles.mediaImg} />
-      </a>
+      <InspectableImage
+        src={src}
+        alt={alt || caption}
+        className={styles.mediaImg}
+        buttonClassName={styles.imageButton}
+        onInspect={onInspect}
+      />
       {caption && <figcaption className={styles.mediaCaption}>{caption}</figcaption>}
     </figure>
   )
+}
+
+function InspectableImage({ src, alt, className, buttonClassName, onInspect }) {
+  return (
+    <button type="button" className={buttonClassName} onClick={onInspect} aria-label={`Inspect image: ${alt}`}>
+      <img src={src} alt={alt} className={className} />
+    </button>
+  )
+}
+
+function ImageLightbox({ image, currentIndex, total, canStep, onClose, onPrevious, onNext }) {
+  const caption = image.caption || image.alt
+
+  return (
+    <div className={styles.lightbox} role="dialog" aria-modal="true" aria-label={caption}>
+      <button type="button" className={styles.lightboxBackdrop} aria-label="Close image preview" onClick={onClose} />
+      <div className={styles.lightboxPanel}>
+        <div className={styles.lightboxTopbar}>
+          <div className={styles.lightboxMeta}>
+            <span>{String(currentIndex + 1).padStart(2, '0')}</span>
+            <span className={styles.lightboxDivider} />
+            <span>{String(total).padStart(2, '0')}</span>
+          </div>
+          <button type="button" className={styles.lightboxClose} onClick={onClose} aria-label="Close image preview">
+            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+              <path d="M4.5 4.5l9 9M13.5 4.5l-9 9" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+            </svg>
+          </button>
+        </div>
+
+        <div className={styles.lightboxImageWrap}>
+          {canStep && (
+            <button type="button" className={`${styles.lightboxNav} ${styles.lightboxPrev}`} onClick={onPrevious} aria-label="Previous image">
+              <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M12.5 5l-5 5 5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          )}
+          <img src={image.src} alt={image.alt} className={styles.lightboxImg} />
+          {canStep && (
+            <button type="button" className={`${styles.lightboxNav} ${styles.lightboxNext}`} onClick={onNext} aria-label="Next image">
+              <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M7.5 5l5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          )}
+        </div>
+
+        {caption && <p className={styles.lightboxCaption}>{caption}</p>}
+      </div>
+    </div>
+  )
+}
+
+function getInspectableImages(project, heroSrc, hasCuratedMedia) {
+  const images = [
+    {
+      id: 'hero',
+      src: heroSrc,
+      alt: project.title,
+      caption: project.heroCaption,
+    },
+  ]
+
+  if (hasCuratedMedia) {
+    project.caseStudySections.forEach((section) => {
+      const imagePath = (file) => `/denky-portfolio-website/screenshots/${project.slug}/${file}`
+
+      if (section.type === 'featureImage') {
+        images.push({
+          id: `feature-${section.image}`,
+          src: imagePath(section.image),
+          alt: section.alt || section.caption || section.title,
+          caption: section.caption,
+        })
+      }
+
+      if (section.images) {
+        section.images.forEach((image) => {
+          images.push({
+            id: `media-${image.file}`,
+            src: imagePath(image.file),
+            alt: image.alt || image.caption,
+            caption: image.caption,
+          })
+        })
+      }
+    })
+
+    return images
+  }
+
+  images.push({
+    id: 'project-visual',
+    src: project.thumbnail,
+    alt: `${project.title} project visual`,
+    caption: project.heroCaption,
+  })
+
+  if (project.screenshots) {
+    project.screenshots.forEach((shot) => {
+      images.push({
+        id: `screenshot-${shot.file}`,
+        src: `/denky-portfolio-website/screenshots/${project.slug}/${shot.file}`,
+        alt: shot.label,
+        caption: shot.label,
+      })
+    })
+  }
+
+  return images
 }
 
 function NextProject({ current }) {
