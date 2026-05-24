@@ -51,7 +51,7 @@ export default function CaseStudy() {
 
         <Section title="Overview" items={overview} />
         <Section title="My Role" items={role} />
-        <Section title="Impact" items={impact} accent />
+        <Section title="Impact" items={impact} />
 
         {project.screenshots && project.screenshots.length > 0 && (
           <div className={styles.screenshotsSection}>
