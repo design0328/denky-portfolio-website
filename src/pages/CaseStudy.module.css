@@ -75,18 +75,19 @@
 }
 .metaDot { width: 3px; height: 3px; border-radius: 50%; background: var(--cyan); opacity: .5; flex-shrink: 0; }
 .title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(40px, 5.5vw, 72px);
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5.5vw, 4.5rem);
+  font-weight: 700;
   color: var(--text);
   line-height: 0.95;
   letter-spacing: 0.02em;
   margin-bottom: 20px;
 }
 .desc {
-  font-size: 18px;
+  font-size: 17px;
   color: var(--muted);
-  line-height: 1.7;
-  font-weight: 500;
+  line-height: 1.75;
+  font-weight: 400;
   max-width: 660px;
   margin-bottom: 24px;
   border-left: 2px solid var(--cyan);
@@ -132,10 +133,10 @@
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  font-size: 16px;
+  font-size: 17px;
   color: var(--muted);
-  line-height: 24px;
-  font-weight: 300;
+  line-height: 1.75;
+  font-weight: 400;
 }
 .listItem.accent { color: var(--text2, #c8d0e0); }
 .listDot {
@@ -179,8 +180,8 @@
 }
 .nextLabel {
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
+  font-size: 11px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--dim);
 }

@@ -51,8 +51,8 @@
 
 .colLabel {
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
+  font-size: 11px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--dim);
   margin-bottom: 16px;
@@ -127,7 +127,7 @@
 
 .byline {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 11px;
   color: rgba(255, 255, 255, 0.15);
   letter-spacing: 0.1em;
 }

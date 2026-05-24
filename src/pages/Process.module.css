@@ -1,12 +1,12 @@
 .page { min-height: 100vh; padding: 8rem 1.5rem 4rem; }
 .container { max-width: 780px; margin: 0 auto; }
 .hero { margin-bottom: 3rem; }
-.eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fuchsia); margin: 0 0 1.25rem; display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px 4px 8px; border-radius: 999px; border: 1px solid var(--fuchsia); background: var(--fuchsia-dim); }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fuchsia); margin: 0 0 1.25rem; display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px 4px 8px; border-radius: 999px; border: 1px solid var(--fuchsia); background: var(--fuchsia-dim); }
 .eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--fuchsia); flex-shrink: 0; }
-.title { font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 4rem); line-height: 1.05; letter-spacing: 0.01em; color: var(--text); margin: 0 0 1.25rem; font-weight: 700; }
+.title { font-family: var(--font-display); font-size: clamp(3rem, 5.5vw, 4.5rem); line-height: 0.95; letter-spacing: 0.01em; color: var(--text); margin: 0 0 1.25rem; font-weight: 700; }
 .gradient { background: linear-gradient(90deg, var(--fuchsia), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.subtitle { font-size: 1.05rem; line-height: 1.75; color: var(--text-muted); max-width: 540px; margin: 0; }
-.sectionLabel { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fuchsia); margin: 0 0 1.5rem; display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px 4px 8px; border-radius: 999px; border: 1px solid var(--fuchsia); background: var(--fuchsia-dim); }
+.subtitle { font-family: var(--font-body); font-size: 15px; line-height: 1.65; color: var(--text-muted); max-width: 540px; margin: 0; }
+.sectionLabel { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fuchsia); margin: 0 0 1.5rem; display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px 4px 8px; border-radius: 999px; border: 1px solid var(--fuchsia); background: var(--fuchsia-dim); }
 .sectionLabel::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--fuchsia); flex-shrink: 0; }
 .qaSection { margin-bottom: 0; }
 .qaItem { border-radius: 10px; margin-bottom: 8px; border: 1px solid rgba(255,255,255,0.06); background: var(--bg2); overflow: hidden; transition: border-color 0.2s, background 0.2s; }
@@ -14,14 +14,14 @@
 .qaButton { width: 100%; background: none; border: none; text-align: left; padding: 1.1rem 1.25rem; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; color: var(--text); }
 .qaButton:focus-visible { outline: 2px solid var(--fuchsia); outline-offset: -2px; border-radius: 10px; }
 .qaLeft { display: flex; align-items: flex-start; gap: 12px; flex: 1; }
-.qaTag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; border: 0.5px solid var(--fuchsia); color: var(--fuchsia); white-space: nowrap; margin-top: 2px; flex-shrink: 0; }
+.qaTag { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; border: 0.5px solid var(--fuchsia); color: var(--fuchsia); white-space: nowrap; margin-top: 2px; flex-shrink: 0; }
 .open .qaTag { background: var(--fuchsia-dim); }
-.qaQuestion { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.4; font-family: var(--font-body); }
+.qaQuestion { font-size: 20px; font-weight: 600; color: var(--text); line-height: 1.4; font-family: var(--font-body); }
 .qaButton:hover .qaQuestion { color: #fff; }
 .qaChevron { flex-shrink: 0; color: var(--text-muted); margin-top: 2px; transition: transform 0.25s ease; }
 .open .qaChevron { transform: rotate(180deg); color: var(--fuchsia); }
 .qaAnswer { padding: 1rem 1.5rem 2rem 1.5rem; }
-.qaAnswer p { font-size: 16px; line-height: 1.85; color: var(--text-muted); margin: 0 0 1rem; font-family: var(--font-body); }
+.qaAnswer p { font-size: 17px; line-height: 1.75; color: var(--text-muted); margin: 0 0 1rem; font-family: var(--font-body); }
 .qaAnswer p:last-child { margin: 0; }
 .qaAnswer strong { color: var(--text); font-weight: 600; }
 .principlesSection { margin: 3rem 0 0; }
@@ -29,11 +29,11 @@
 .principleCard { background: var(--bg2); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 1.5rem; transition: border-color 0.2s, background 0.2s; }
 .principleCard:hover { border-color: rgba(232,16,122,0.35); background: var(--bg3); }
 .principleIcon { color: var(--fuchsia); margin-bottom: 1rem; display: flex; }
-.principleTitle { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; font-family: var(--font-body); line-height: 1.3; }
-.principleBody { font-size: 13px; line-height: 1.65; color: var(--text-muted); font-family: var(--font-body); }
+.principleTitle { font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 8px; font-family: var(--font-body); line-height: 1.4; }
+.principleBody { font-size: 15px; line-height: 1.65; color: var(--text-muted); font-family: var(--font-body); font-weight: 400; }
 .toolsSection { margin: 3rem 0 0; }
 .toolCategory { margin-bottom: 2rem; }
-.toolCatLabel { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 0.75rem; display: flex; align-items: center; gap: 10px; }
+.toolCatLabel { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 0.75rem; display: flex; align-items: center; gap: 10px; }
 .toolCatLabel::after { content: ''; flex: 1; height: 0.5px; background: rgba(255,255,255,0.07); }
 .toolGrid { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { display: inline-flex; align-items: center; gap: 7px; padding: 6px 13px 6px 9px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.15); background: var(--bg2); font-size: 12px; font-weight: 500; color: var(--text-muted); white-space: nowrap; cursor: default; position: relative; transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease; font-family: var(--font-body); }
@@ -44,8 +44,8 @@
 .chipIcon svg { width: 16px; height: 16px; fill: currentColor; }
 .cta { margin-top: 3rem; padding: 1.5rem; background: var(--bg2); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
 .ctaText { display: flex; flex-direction: column; gap: 3px; }
-.ctaText strong { font-size: 15px; font-weight: 700; color: var(--text); font-family: var(--font-body); }
-.ctaText span { font-size: 13px; color: var(--text-muted); font-family: var(--font-body); }
+.ctaText strong { font-size: 20px; font-weight: 600; color: var(--text); font-family: var(--font-body); }
+.ctaText span { font-size: 15px; color: var(--text-muted); font-family: var(--font-body); line-height: 1.65; }
 .ctaBtn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 22px; border-radius: 999px; background: linear-gradient(90deg, var(--fuchsia), var(--orange)); color: #fff; font-size: 13px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: opacity 0.2s, filter 0.2s; font-family: var(--font-body); }
 .ctaBtn:hover { opacity: 0.9; filter: brightness(1.1); }
 @media (max-width: 600px) { .page { padding: 6rem 1rem 3rem; } .qaLeft { flex-direction: column; gap: 6px; } .qaAnswer { padding-left: 1.25rem; } .principlesGrid { grid-template-columns: 1fr 1fr; } .cta { flex-direction: column; align-items: flex-start; } }

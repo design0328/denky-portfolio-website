@@ -15,7 +15,7 @@
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -42,7 +42,7 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-size: clamp(3rem, 5.5vw, 4.5rem);
   font-weight: 700;
   line-height: 0.95;
   letter-spacing: 0.02em;
@@ -59,8 +59,8 @@
 
 .subtitle {
   font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.65;
   color: var(--text-muted);
   max-width: 580px;
   margin-bottom: 32px;
@@ -104,15 +104,15 @@
 }
 .labelNum {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   color: var(--fuchsia);
   opacity: 0.7;
 }
 .labelText {
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.14em;
+  font-size: 12px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
 }
@@ -164,8 +164,8 @@
 .cardLabel {
   display: block;
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
+  font-size: 11px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: 6px;
@@ -173,7 +173,7 @@
 .cardValue {
   display: block;
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 16px;
   color: var(--text);
   word-break: break-word;
 }
@@ -220,8 +220,8 @@
 
 .lookingIntro {
   font-family: var(--font-body);
-  font-size: 0.95rem;
-  line-height: 1.75;
+  font-size: 15px;
+  line-height: 1.65;
   color: var(--text-muted);
   max-width: 600px;
   margin-bottom: 28px;
@@ -265,8 +265,8 @@
 
 .closingText {
   font-family: var(--font-body);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.65;
   color: var(--text-muted);
   max-width: 380px;
   margin: 0;

@@ -12,7 +12,7 @@
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -49,8 +49,9 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(52px, 7vw, 96px);
-  line-height: 0.92;
+  font-size: clamp(3rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 0.95;
   letter-spacing: 0.02em;
   color: var(--text);
   margin-bottom: 24px;
@@ -138,7 +139,7 @@
   align-items: center;
   gap: 7px;
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -163,7 +164,7 @@
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -192,20 +193,19 @@
 }
 
 .bioPull {
-  font-family: var(--font-display);
-  font-size: 30px;
+  font-family: var(--font-body);
+  font-size: 28px;
   font-weight: 600;
   color: var(--text);
-  line-height: 36px;
-  letter-spacing: 0.01em;
+  line-height: 1.3;
   margin-bottom: 28px;
 }
 
 .bioPara {
-  font-size: 16px;
+  font-size: 17px;
   color: var(--muted);
-  line-height: 24px;
-  font-weight: 300;
+  line-height: 1.75;
+  font-weight: 400;
   margin-bottom: 18px;
 }
 .bioPara:last-child { margin-bottom: 0; }
@@ -227,8 +227,8 @@
 
 .bioCardLabel {
   font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.16em;
+  font-size: 11px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--dim);
   margin-bottom: 6px;
@@ -242,7 +242,7 @@
 }
 .bioCardSub {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 11px;
   color: var(--dim);
   line-height: 1.5;
 }
@@ -286,16 +286,16 @@
 .valueTitle {
   font-family: var(--font-body);
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text);
   margin-bottom: 10px;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 .valueDesc {
-  font-size: 16px;
+  font-size: 15px;
   color: var(--muted);
-  line-height: 24px;
-  font-weight: 300;
+  line-height: 1.65;
+  font-weight: 400;
 }
 
 /* ── Skills ── */
@@ -456,7 +456,8 @@
 }
 
 .timelineRole {
-  font-size: 15px;
+  font-family: var(--font-body);
+  font-size: 20px;
   font-weight: 600;
   color: var(--text);
   margin-bottom: 8px;
@@ -464,10 +465,11 @@
 }
 
 .timelineDesc {
-  font-size: 13px;
+  font-family: var(--font-body);
+  font-size: 15px;
   color: var(--muted);
   line-height: 1.65;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .timelineEdu {
@@ -479,15 +481,16 @@
 
 .timelineEduLabel {
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
+  font-size: 11px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--dim);
   margin-bottom: 6px;
 }
 
 .timelineEduSchool {
-  font-size: 14px;
+  font-family: var(--font-body);
+  font-size: 16px;
   font-weight: 600;
   color: var(--text);
   margin-bottom: 3px;
@@ -522,8 +525,9 @@
 
 .testimonialQuote {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.75;
+  font-weight: 400;
   color: var(--muted);
   font-style: italic;
   margin: 0;
@@ -590,20 +594,19 @@
 }
 
 .communityPull {
-  font-family: var(--font-display);
-  font-size: 30px;
+  font-family: var(--font-body);
+  font-size: 28px;
   font-weight: 600;
   color: var(--text);
-  line-height: 1.2;
+  line-height: 1.3;
   margin-bottom: 24px;
-  letter-spacing: 0.01em;
 }
 
 .communityPara {
-  font-size: 16px;
+  font-size: 17px;
   color: var(--muted);
-  line-height: 24px;
-  font-weight: 300;
+  line-height: 1.75;
+  font-weight: 400;
   margin-bottom: 16px;
 }
 .communityPara:last-child { margin-bottom: 0; }
@@ -624,15 +627,16 @@
   margin-bottom: 14px;
 }
 .communityCardTitle {
-  font-size: 14px;
+  font-family: var(--font-body);
+  font-size: 16px;
   font-weight: 600;
   color: var(--text);
-  line-height: 1.3;
+  line-height: 1.4;
   margin-bottom: 4px;
 }
 .communityCardRole {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--fuchsia);
@@ -675,11 +679,11 @@
 }
 
 .ctaText {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text);
-  letter-spacing: 0.02em;
+  line-height: 1.4;
 }
 
 .ctaBtn {
