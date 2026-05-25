@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styles from './About.module.css'
 
-const BASE = '/denky-portfolio-website'
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '')
 
 function CompanyLogo({ domain, initials }) {
   const [imgError, setImgError] = useState(false)
@@ -262,7 +262,7 @@ export default function About() {
             <span className={styles.labelText}>Experience</span>
           </div>
           <a
-            href="/denky-portfolio-website/Resume_Denky_Begonja_2026.pdf"
+            href={`${BASE}/Resume_Denky_Begonja_2026.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.resumeBtn}

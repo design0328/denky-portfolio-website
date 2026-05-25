@@ -4,6 +4,8 @@ import { useParams, Link, Navigate } from 'react-router-dom'
 import { projects } from '../data/projects'
 import styles from './CaseStudy.module.css'
 
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '')
+
 export default function CaseStudy() {
   const { slug } = useParams()
   const project = projects.find((p) => p.slug === slug)
@@ -142,7 +144,7 @@ function CaseStudyContent({ project, slug }) {
             {caseStudySections.map((section) => (
               <MediaSection
                 key={`${section.label}-${section.title}`}
-                projectSlug={project.slug}
+                projectSlug={project.assetFolder || project.slug}
                 section={section}
                 onInspect={openLightbox}
               />
@@ -163,7 +165,7 @@ function CaseStudyContent({ project, slug }) {
                     .map((shot) => (
                       <figure key={shot.file} className={styles.screenshotFigure}>
                         <InspectableImage
-                          src={`/denky-portfolio-website/screenshots/${project.slug}/${shot.file}`}
+                          src={`${BASE}/screenshots/${project.assetFolder || project.slug}/${shot.file}`}
                           alt={shot.label}
                           className={styles.screenshotImg}
                           buttonClassName={styles.screenshotButton}
@@ -284,7 +286,7 @@ function ProjectVisual({ project, onInspect }) {
 }
 
 function MediaSection({ projectSlug, section, onInspect }) {
-  const imagePath = (file) => `/denky-portfolio-website/screenshots/${projectSlug}/${file}`
+  const imagePath = (file) => `${BASE}/screenshots/${projectSlug}/${file}`
 
   return (
     <section className={styles.mediaSection}>
@@ -446,6 +448,7 @@ function ImageLightbox({ image, currentIndex, total, canStep, onClose, onPreviou
 }
 
 function getInspectableImages(project, heroSrc, hasCuratedMedia) {
+  const assetFolder = project.assetFolder || project.slug
   const images = [
     {
       id: 'hero',
@@ -457,7 +460,7 @@ function getInspectableImages(project, heroSrc, hasCuratedMedia) {
 
   if (hasCuratedMedia) {
     project.caseStudySections.forEach((section) => {
-      const imagePath = (file) => `/denky-portfolio-website/screenshots/${project.slug}/${file}`
+      const imagePath = (file) => `${BASE}/screenshots/${assetFolder}/${file}`
 
       if (section.type === 'featureImage') {
         images.push({
@@ -494,7 +497,7 @@ function getInspectableImages(project, heroSrc, hasCuratedMedia) {
     project.screenshots.forEach((shot) => {
       images.push({
         id: `screenshot-${shot.file}`,
-        src: `/denky-portfolio-website/screenshots/${project.slug}/${shot.file}`,
+        src: `${BASE}/screenshots/${assetFolder}/${shot.file}`,
         alt: shot.label,
         caption: shot.label,
       })

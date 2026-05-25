@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Hero from '../components/Hero'
 import styles from './Home.module.css'
 
-const BASE = '/denky-portfolio-website'
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '')
 
 const testimonials = [
   {

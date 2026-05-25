@@ -4,7 +4,7 @@
 //  Categories: 'Brand & Visual' | 'Print & Packaging' | 'UI & Screens' | 'Design Systems'
 // ─────────────────────────────────────────────
 
-const BASE = '/denky-portfolio-website'
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '')
 
 export const galleryItems = [
 
@@ -197,48 +197,6 @@ export const galleryItems = [
       'Pattern library section documenting reusable UI compositions — data tables, filter patterns, empty states, and more. Provided teams with pre-approved, accessible patterns to accelerate design and maintain consistency at scale.',
     tags: ['Design Systems', 'Patterns', 'Accessibility'],
     image: `${BASE}/thumbnails/gallery/design-system-3.png`,
-  },
-  {
-    id: 'ai-fundamentals-portal',
-    year: '2025',
-    era: 'Era 03 — AI & Systems',
-    eraShort: '03',
-    category: 'UI & Screens',
-    company: 'ZoomInfo',
-    title: 'AI Fundamentals',
-    subtitle: 'AI Training Portal — Core Modules',
-    description:
-      'Course hub design for the AI Fundamentals curriculum within ZoomInfo\'s internal AI Training Portal. Each module page covered a distinct AI literacy topic — from LLM basics to design governance. Designed for both dark and light contexts across the org.',
-    tags: ['AI/UX', 'Training', 'Education'],
-    image: `${BASE}/thumbnails/gallery/ai-fundamentals.png`,
-  },
-  {
-    id: 'ai-workshops',
-    year: '2025',
-    era: 'Era 03 — AI & Systems',
-    eraShort: '03',
-    category: 'UI & Screens',
-    company: 'ZoomInfo',
-    title: 'AI Workshops',
-    subtitle: 'AI Training Portal — Workshop Hub',
-    description:
-      'Workshop directory and recording archive for hands-on AI sessions. Designers could browse upcoming sessions, watch recorded walkthroughs on tools like Claude Code and GitHub for Designers, and access companion resources — all in one place.',
-    tags: ['AI/UX', 'Training', 'Workshops'],
-    image: `${BASE}/thumbnails/gallery/ai-workshops.png`,
-  },
-  {
-    id: 'chai-framework',
-    year: '2025',
-    era: 'Era 03 — AI & Systems',
-    eraShort: '03',
-    category: 'UI & Screens',
-    company: 'ZoomInfo',
-    title: 'CHAI Framework',
-    subtitle: 'AI Training Portal — CHAI Phases',
-    description:
-      'Multi-phase framework documentation for the CHAI (Collaborative Human-AI Integration) design process. Designed the full phase navigation, content hierarchy, and visual system — covering Discovery, Framing, Ideation, and Convergence across a structured 4-phase process.',
-    tags: ['AI/UX', 'Framework', 'Documentation'],
-    image: `${BASE}/thumbnails/gallery/chai-framework.png`,
   },
   {
     id: 'slack-notifications',

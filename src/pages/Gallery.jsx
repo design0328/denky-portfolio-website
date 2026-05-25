@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useCallback } from 'react'
 import { galleryItems, eras, categories } from '../data/gallery'
 import styles from './Gallery.module.css'
 
-const BASE = '/denky-portfolio-website'
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '')
 
 export default function Gallery() {
   const [activeEra, setActiveEra]         = useState('all')

@@ -1,3 +1,5 @@
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '')
+
 export const projects = [
   {
     slug:       'dqe',
@@ -6,14 +8,14 @@ export const projects = [
     year:       '2026',
     discipline: 'Design Systems',
     desc:       'A modular AI-powered audit system built in Claude Code that evaluates UI features against 5 guardrail domains — accessibility, usability, AIUI, content, and monetization — and outputs structured HTML reports, Markdown decision logs, and YAML findings files.',
-    thumbnail:  '/denky-portfolio-website/screenshots/dqe/DQE-overview.png',
+    thumbnail:  `${BASE}/screenshots/dqe/DQE-overview.png`,
     featured:   true,
     summary:    'A solo-built design governance system that turns static product evidence into structured, review-ready quality findings.',
     roleLabel:  'Sole creator',
     timeline:   '2026 pilot',
     team:       'Design, PM, engineering stakeholders',
     outcome:    'Created ZoomInfo\'s first automated multi-domain design quality checkpoint.',
-    heroImage:  '/denky-portfolio-website/screenshots/dqe/DQE-overview.png',
+    heroImage:  `${BASE}/screenshots/dqe/DQE-overview.png`,
     heroCaption: 'Polished overview of the Design Quality Engine system, guardrail domains, and audit outputs.',
     chips: [
       { label: 'Governance',    accent: 'cyan'  },
@@ -174,11 +176,13 @@ export const projects = [
     year:       '2026',
     discipline: 'Design Operations',
     desc:       'A centralized learning platform hosting AI workshops, course modules, recordings, and enablement resources for the ZoomInfo design organization.',
-    thumbnail:  '/denky-portfolio-website/thumbnails/ai-training-portal.svg',
+    thumbnail:  `${BASE}/screenshots/training-portal/ai-training-portal.svg`,
+    assetFolder: 'training-portal',
     roleLabel:  'Product designer and builder',
     timeline:   '2026',
     team:       'ZoomInfo design organization',
     outcome:    'Centralized AI learning resources into a reusable enablement platform.',
+    heroImage:  `${BASE}/screenshots/training-portal/ai-training-portal-overview.png`,
     heroCaption: 'Project visual for the centralized AI learning and workshop enablement platform.',
     chips: [
       { label: 'AI Enablement', accent: 'cyan'  },
@@ -206,6 +210,105 @@ export const projects = [
       'Supported AI adoption across the design organization',
       'Created reusable infrastructure for future AI training initiatives',
     ],
+    caseStudySections: [
+      {
+        type: 'featureImage',
+        label: 'Learning Platform',
+        title: 'A single home for AI enablement',
+        body: 'The portal brings foundational coursework, workshops, recordings, and practical guidance together in one place so designers can learn at their own pace.',
+        image: 'ai-training-portal-home-1.png',
+        alt: 'AI Training Portal home page with course and workshop pathways.',
+        caption: 'Portal home page organizing the learning program and its primary pathways.',
+        notes: [
+          'Centralizes training content and announcements',
+          'Makes asynchronous learning resources easy to discover',
+          'Connects workshops and structured coursework in one experience',
+        ],
+      },
+      {
+        type: 'imagePair',
+        label: 'Program Overview',
+        title: 'Learning architecture built for navigation',
+        body: 'Overview and home-page states clarify where to begin, what is available, and how content supports an ongoing enablement program.',
+        images: [
+          {
+            file: 'ai-training-portal-overview.png',
+            alt: 'AI Training Portal overview page showing program structure.',
+            caption: 'Program overview and content architecture.',
+          },
+          {
+            file: 'ai-training-portal-home-2.png',
+            alt: 'Alternate AI Training Portal home page presentation.',
+            caption: 'Home-page view for discovering portal resources.',
+          },
+        ],
+      },
+      {
+        type: 'imageGrid',
+        label: 'AI Fundamentals',
+        title: 'Course modules that make AI concepts actionable',
+        body: 'The fundamentals track organizes learning around practical design concerns, including inclusive experiences and UX application.',
+        images: [
+          {
+            file: 'ai-training-portal-fundamentals.png',
+            alt: 'AI Fundamentals course landing page.',
+            caption: 'AI Fundamentals course structure.',
+          },
+          {
+            file: 'ai-training-portal-fundamentals-ux.png',
+            alt: 'AI Fundamentals UX-focused module page.',
+            caption: 'UX-focused learning module.',
+          },
+          {
+            file: 'ai-training-portal-fundamentals-a11y.png',
+            alt: 'AI Fundamentals accessibility-focused module page.',
+            caption: 'Accessibility-focused learning module.',
+          },
+        ],
+      },
+      {
+        type: 'featureImage',
+        label: 'Workshops',
+        title: 'A reusable archive for hands-on sessions',
+        body: 'Workshop content stays available after live sessions through an organized recording and resources experience, supporting distributed teams and repeat learning.',
+        image: 'ai-training-portal-workshops.png',
+        alt: 'AI Training Portal workshops page with recordings and supporting resources.',
+        caption: 'Workshop hub organizing session recordings and supporting resources.',
+        notes: [
+          'Supports both live and asynchronous participation',
+          'Keeps recordings and companion resources together',
+          'Provides a repeatable publishing model for future sessions',
+        ],
+      },
+      {
+        type: 'imageGrid',
+        label: 'CHAI Framework',
+        title: 'Guidance from framework overview to phase detail',
+        body: 'The CHAI documentation translates a multi-phase human-AI collaboration framework into navigable, practical reference content.',
+        images: [
+          {
+            file: 'ai-training-portal-chai-light.png',
+            alt: 'CHAI framework overview shown in a light theme.',
+            caption: 'CHAI framework overview.',
+          },
+          {
+            file: 'ai-training-portal-chai-p1.png',
+            alt: 'CHAI framework phase one documentation page.',
+            caption: 'Phase one guidance.',
+          },
+          {
+            file: 'ai-training-portal-chai-p3.png',
+            alt: 'CHAI framework phase three documentation page.',
+            caption: 'Phase three guidance.',
+          },
+          {
+            file: 'ai-training-portal-chai-p4.png',
+            alt: 'CHAI framework phase four documentation page.',
+            caption: 'Phase four guidance.',
+          },
+        ],
+      },
+    ],
   },
   {
     slug:       'aiui-pattern-library',
@@ -214,7 +317,7 @@ export const projects = [
     year:       '2026',
     discipline: 'UX Systems',
     desc:       'A governance-focused interaction pattern library establishing reusable standards for trustworthy, accessible, human-in-the-loop AI product experiences.',
-    thumbnail:  '/denky-portfolio-website/thumbnails/aiui-pattern-library.svg',
+    thumbnail:  `${BASE}/thumbnails/aiui-pattern-library.svg`,
     roleLabel:  'Strategic owner',
     timeline:   '2026',
     team:       'Design, PM, engineering, and reviewers',
@@ -255,7 +358,7 @@ export const projects = [
     year:       '2026',
     discipline: 'Design Operations',
     desc:       'Centralized design operations infrastructure — onboarding, AI enablement, training archives, and resource discoverability for a distributed team.',
-    thumbnail:  '/denky-portfolio-website/thumbnails/design-hub.svg',
+    thumbnail:  `${BASE}/thumbnails/design-hub.svg`,
     roleLabel:  'Primary owner and builder',
     timeline:   '2026',
     team:       'Distributed design organization',
