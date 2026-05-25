@@ -297,3 +297,12 @@
     gap: 12px;
   }
 }
+
+/* ── Light mode overrides ── */
+[data-theme="light"] .card              { background: var(--bg2); }
+[data-theme="light"] .featured          { background: linear-gradient(135deg, rgba(232,16,122,0.06), transparent 44%), var(--bg2); }
+[data-theme="light"] .chip              { color: var(--text); }
+[data-theme="light"] .chip.cyan         { color: var(--fuchsia); }
+[data-theme="light"] .chip.green        { color: var(--orange); }
+[data-theme="light"] .featured .desc    { color: var(--muted); }
+[data-theme="light"] .outcome           { background: var(--bg3); }

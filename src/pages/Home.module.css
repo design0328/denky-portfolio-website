@@ -185,3 +185,8 @@
   .card { padding: 28px 24px; }
   .cardTop { flex-direction: column; align-items: flex-start; gap: 16px; }
 }
+
+/* ── Light mode overrides ── */
+[data-theme="light"] .testimonials { border-top-color: var(--border); }
+[data-theme="light"] .card         { border-color: var(--border); }
+[data-theme="light"] .arrowBtn     { border-color: var(--border); color: var(--dim); }

@@ -306,3 +306,6 @@
   .disciplines   { left: 24px; right: 24px; bottom: 32px; }
   .ctaGroup      { flex-wrap: wrap; }
 }
+
+/* ── Light mode overrides ── */
+[data-theme="light"] .statLabel { color: var(--text); }

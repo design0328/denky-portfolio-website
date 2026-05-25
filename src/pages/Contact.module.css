@@ -298,3 +298,10 @@
   0%, 100% { opacity: 1; }
   50%       { opacity: 0.4; }
 }
+
+/* ── Light mode overrides ── */
+[data-theme="light"] .statusPill { border-color: var(--border); background: var(--bg3); }
+[data-theme="light"] .card       { border-color: var(--border); }
+[data-theme="light"] .socialIcon { border-color: var(--border); color: var(--dim); }
+[data-theme="light"] .chip       { border-color: var(--border); }
+[data-theme="light"] .closing    { border-color: var(--border); }
