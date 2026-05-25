@@ -385,8 +385,8 @@ function ImageLightbox({ image, currentIndex, total, canStep, onClose, onPreviou
   return (
     <div className={styles.lightbox} role="dialog" aria-modal="true" aria-label={caption}>
       <button type="button" className={styles.lightboxBackdrop} aria-label="Close image preview" onClick={onClose} />
-      <button ref={closeButtonRef} type="button" className={styles.lightboxClose} onClick={onClose} aria-label="Close image preview">
-        <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+      <button ref={closeButtonRef} type="button" className={styles.lightboxClose} onClick={onClose} aria-label="Close image viewer">
+        <svg width="22" height="22" viewBox="0 0 18 18" aria-hidden="true">
           <path d="M4.5 4.5l9 9M13.5 4.5l-9 9" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
         </svg>
       </button>
@@ -396,18 +396,6 @@ function ImageLightbox({ image, currentIndex, total, canStep, onClose, onPreviou
             <span>{String(currentIndex + 1).padStart(2, '0')}</span>
             <span className={styles.lightboxDivider} />
             <span>{String(total).padStart(2, '0')}</span>
-          </div>
-          <div className={styles.lightboxControls} aria-label="Image zoom controls">
-            <button type="button" className={styles.lightboxControl} onClick={zoomOut} disabled={zoom === 1} aria-label="Zoom out">
-              <span aria-hidden="true">-</span>
-            </button>
-            <button type="button" className={styles.lightboxControl} onClick={resetZoom} disabled={zoom === 1} aria-label="Reset image to fit screen">
-              Fit
-            </button>
-            <span className={styles.lightboxZoom} aria-live="polite">{Math.round(zoom * 100)}%</span>
-            <button type="button" className={styles.lightboxControl} onClick={zoomIn} disabled={zoom === 3} aria-label="Zoom in">
-              <span aria-hidden="true">+</span>
-            </button>
           </div>
         </div>
 
@@ -437,6 +425,18 @@ function ImageLightbox({ image, currentIndex, total, canStep, onClose, onPreviou
         </div>
 
         {caption && <p className={styles.lightboxCaption}>{caption}</p>}
+      </div>
+      <div className={styles.lightboxControls} role="toolbar" aria-label="Image zoom controls">
+        <button type="button" className={styles.lightboxControl} onClick={zoomOut} disabled={zoom === 1} aria-label="Zoom out">
+          <span aria-hidden="true">-</span>
+        </button>
+        <button type="button" className={styles.lightboxControl} onClick={resetZoom} disabled={zoom === 1} aria-label="Reset image to fit screen">
+          Fit
+        </button>
+        <span className={styles.lightboxZoom} aria-live="polite">{Math.round(zoom * 100)}%</span>
+        <button type="button" className={styles.lightboxControl} onClick={zoomIn} disabled={zoom === 3} aria-label="Zoom in">
+          <span aria-hidden="true">+</span>
+        </button>
       </div>
     </div>
   )
