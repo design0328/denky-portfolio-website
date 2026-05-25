@@ -185,7 +185,7 @@ export default function About() {
         <div className={styles.headshotWrap}>
           <div className={styles.headshotFrame}>
             <img
-              src="/headshot_bg.png"
+              src={`${BASE}/headshot_bg.png`}
               alt="Denky Girasaki Begonja"
               className={styles.headshot}
             />
@@ -259,7 +259,7 @@ export default function About() {
         <div className={styles.sectionHeader}>
           <div className={styles.sectionLabel}>
             <span className={styles.labelNum}>03</span>
-            <span className={styles.labelText}>03 / Experience</span>
+            <span className={styles.labelText}>Experience</span>
           </div>
           <a
             href="/denky-portfolio-website/Resume_Denky_Begonja_2026.pdf"
@@ -312,7 +312,7 @@ export default function About() {
       <section className={styles.section}>
         <div className={styles.sectionLabel}>
           <span className={styles.labelNum}>04</span>
-          <span className={styles.labelText}>04 / Testimonials</span>
+          <span className={styles.labelText}>Testimonials</span>
         </div>
 
         <div className={styles.testimonialsGrid}>

@@ -65,7 +65,7 @@ const contactCards = [
     ),
     label: 'LinkedIn',
     value: 'linkedin.com/in/denky-girasaki-begonja',
-    href: 'https://www.linkedin.com/in/denky-girasaki-begonja-531936419',
+    href: 'https://www.linkedin.com/in/denky-girasaki-begonja-b5136b119/',
     cta: 'View profile',
   },
 ]

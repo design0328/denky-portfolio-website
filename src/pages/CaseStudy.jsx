@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { projects } from '../data/projects'
 import styles from './CaseStudy.module.css'
@@ -182,7 +183,7 @@ function CaseStudyContent({ project, slug }) {
       {/* Next project */}
       <NextProject current={slug} />
 
-      {activeImage && (
+      {activeImage && createPortal(
         <ImageLightbox
           key={activeImage.id}
           image={activeImage}
@@ -192,7 +193,8 @@ function CaseStudyContent({ project, slug }) {
           onClose={closeLightbox}
           onPrevious={() => showImageAt(activeImageIndex - 1)}
           onNext={() => showImageAt(activeImageIndex + 1)}
-        />
+        />,
+        document.body,
       )}
 
     </main>
@@ -385,11 +387,6 @@ function ImageLightbox({ image, currentIndex, total, canStep, onClose, onPreviou
   return (
     <div className={styles.lightbox} role="dialog" aria-modal="true" aria-label={caption}>
       <button type="button" className={styles.lightboxBackdrop} aria-label="Close image preview" onClick={onClose} />
-      <button ref={closeButtonRef} type="button" className={styles.lightboxClose} onClick={onClose} aria-label="Close image viewer">
-        <svg width="22" height="22" viewBox="0 0 18 18" aria-hidden="true">
-          <path d="M4.5 4.5l9 9M13.5 4.5l-9 9" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-        </svg>
-      </button>
       <div className={styles.lightboxPanel}>
         <div className={styles.lightboxTopbar}>
           <div className={styles.lightboxMeta}>
@@ -426,7 +423,7 @@ function ImageLightbox({ image, currentIndex, total, canStep, onClose, onPreviou
 
         {caption && <p className={styles.lightboxCaption}>{caption}</p>}
       </div>
-      <div className={styles.lightboxControls} role="toolbar" aria-label="Image zoom controls">
+      <div className={styles.lightboxControls} role="toolbar" aria-label="Image viewer controls">
         <button type="button" className={styles.lightboxControl} onClick={zoomOut} disabled={zoom === 1} aria-label="Zoom out">
           <span aria-hidden="true">-</span>
         </button>
@@ -436,6 +433,12 @@ function ImageLightbox({ image, currentIndex, total, canStep, onClose, onPreviou
         <span className={styles.lightboxZoom} aria-live="polite">{Math.round(zoom * 100)}%</span>
         <button type="button" className={styles.lightboxControl} onClick={zoomIn} disabled={zoom === 3} aria-label="Zoom in">
           <span aria-hidden="true">+</span>
+        </button>
+        <button ref={closeButtonRef} type="button" className={`${styles.lightboxControl} ${styles.lightboxCloseControl}`} onClick={onClose} aria-label="Close image viewer">
+          <svg width="14" height="14" viewBox="0 0 18 18" aria-hidden="true">
+            <path d="M4.5 4.5l9 9M13.5 4.5l-9 9" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+          </svg>
+          Close
         </button>
       </div>
     </div>
