@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import ThemeToggle from './ThemeToggle'
 import styles from './Nav.module.css'
 
 const links = [
@@ -38,6 +39,8 @@ export default function Nav() {
           </li>
         ))}
       </ul>
+
+      <ThemeToggle />
     </nav>
   )
 }

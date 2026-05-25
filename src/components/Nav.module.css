@@ -20,6 +20,10 @@
   padding: 16px 48px;
 }
 
+[data-theme="light"] .scrolled {
+  background: rgba(255, 255, 255, 0.92);
+}
+
 /* Logo */
 .logo {
   font-family: var(--font-mono);

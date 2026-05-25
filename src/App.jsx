@@ -1,4 +1,5 @@
 import { HashRouter, Routes, Route } from 'react-router-dom'
+import { ThemeProvider } from './context/ThemeContext'
 import Background  from './components/Background'
 import Cursor      from './components/Cursor'
 import Nav         from './components/Nav'
@@ -12,6 +13,7 @@ import Contact             from './pages/Contact'
 
 export default function App() {
   return (
+    <ThemeProvider>
     <HashRouter>
       <Cursor />
       <Background />
@@ -28,5 +30,6 @@ export default function App() {
 
       <Footer />
     </HashRouter>
+    </ThemeProvider>
   )
 }
