@@ -35,7 +35,6 @@ const socialLinks = [
 const workLinks = [
   { to: '/work/dqe',                label: 'Design Quality Engine' },
   { to: '/work/ai-training-portal', label: 'AI Training Portal'    },
-  { to: '/work/aiui-pattern-library',label: 'AIUI Pattern Library' },
   { to: '/work/design-hub',         label: 'Design Hub'            },
 ]
 

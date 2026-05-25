@@ -1,21 +1,18 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
-import { galleryItems, eras, categories } from '../data/gallery'
+import { galleryItems, categories } from '../data/gallery'
 import styles from './Gallery.module.css'
 
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, '')
 
 export default function Gallery() {
-  const [activeEra, setActiveEra]         = useState('all')
   const [activeCategory, setActiveCategory] = useState('All')
   const [lightbox, setLightbox]           = useState(null) // galleryItem | null
   const cardRefs = useRef([])
 
   // ── Filtering ──────────────────────────────────────────────────────────
-  const filtered = galleryItems.filter((item) => {
-    const eraMatch = activeEra === 'all' || item.eraShort === activeEra
-    const catMatch = activeCategory === 'All' || item.category === activeCategory
-    return eraMatch && catMatch
-  })
+  const filtered = galleryItems
+    .filter((item) => activeCategory === 'All' || item.category === activeCategory)
+    .sort((a, b) => Number(b.year) - Number(a.year))
 
   // ── Scroll reveal ──────────────────────────────────────────────────────
   useEffect(() => {
@@ -61,11 +58,12 @@ export default function Gallery() {
 
   const currentIdx = lightbox ? filtered.findIndex((i) => i.id === lightbox.id) : -1
 
-  // ── Era accent colors ──────────────────────────────────────────────────
-  const eraColor = (eraShort) => {
-    if (eraShort === '01') return 'var(--orange)'
-    if (eraShort === '02') return 'var(--fuchsia)'
-    if (eraShort === '03') return '#00c4ff'
+  // ── Content-type accent colors ─────────────────────────────────────────
+  const categoryColor = (category) => {
+    if (category === 'Brand & Visual') return 'var(--orange)'
+    if (category === 'Print & Packaging') return 'var(--fuchsia)'
+    if (category === 'Design Systems') return '#00c4ff'
+    if (category === 'UI & Screens') return 'var(--emerald)'
     return 'var(--muted)'
   }
 
@@ -80,28 +78,9 @@ export default function Gallery() {
         </div>
         <h1 className={styles.title}>Gallery</h1>
         <p className={styles.subtitle}>
-          Visual work across three career eras — brand &amp; print, digital product, AI systems.
+          Selected visual work across design systems, digital products, brand, and print.
         </p>
       </header>
-
-      {/* ── Era timeline tabs ── */}
-      <div className={styles.eraRow}>
-        {eras.map((era) => (
-          <button
-            key={era.id}
-            className={`${styles.eraTab} ${activeEra === era.id ? styles.eraTabActive : ''}`}
-            onClick={() => { setActiveEra(era.id); setActiveCategory('All') }}
-          >
-            {era.id !== 'all' && (
-              <span
-                className={styles.eraDot}
-                style={{ background: eraColor(era.id) }}
-              />
-            )}
-            {era.label}
-          </button>
-        ))}
-      </div>
 
       {/* ── Category filters ── */}
       <div className={styles.filters}>
@@ -149,10 +128,10 @@ export default function Gallery() {
               <div className={styles.cardBody}>
                 <div className={styles.cardMeta}>
                   <span
-                    className={styles.eraBadge}
-                    style={{ color: eraColor(item.eraShort), borderColor: eraColor(item.eraShort) + '44' }}
+                    className={styles.typeBadge}
+                    style={{ color: categoryColor(item.category), borderColor: categoryColor(item.category) + '44' }}
                   >
-                    {item.era}
+                    {item.category}
                   </span>
                   <span className={styles.year}>{item.year}</span>
                 </div>
@@ -215,10 +194,10 @@ export default function Gallery() {
             <div className={styles.lbInfo}>
               <div className={styles.lbMeta}>
                 <span
-                  className={styles.lbEraBadge}
-                  style={{ color: eraColor(lightbox.eraShort), borderColor: eraColor(lightbox.eraShort) + '55' }}
+                  className={styles.lbTypeBadge}
+                  style={{ color: categoryColor(lightbox.category), borderColor: categoryColor(lightbox.category) + '55' }}
                 >
-                  {lightbox.era}
+                  {lightbox.category}
                 </span>
                 <span className={styles.lbCompany}>{lightbox.company}</span>
                 <span className={styles.lbYear}>{lightbox.year}</span>

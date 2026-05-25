@@ -1,20 +1,30 @@
 // ─────────────────────────────────────────────
 //  GALLERY DATA
-//  Chronological — tells the career story
+//  Reverse chronological — newest visual work appears first
 //  Categories: 'Brand & Visual' | 'Print & Packaging' | 'UI & Screens' | 'Design Systems'
 // ─────────────────────────────────────────────
 
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, '')
 
 export const galleryItems = [
+  {
+    id: 'aiui-pattern-library',
+    year: '2026',
+    category: 'Design Systems',
+    company: 'ZoomInfo',
+    title: 'AIUI Pattern Library',
+    subtitle: 'AI Interaction Standards',
+    description:
+      'Governance-focused pattern library defining trustworthy, accessible, human-in-the-loop interaction guidance for AI-assisted product experiences. Built as a reusable reference for designers, product partners, engineers, and reviewers.',
+    tags: ['AI/UX', 'Governance', 'Accessibility'],
+    image: `${BASE}/thumbnails/aiui-pattern-library.svg`,
+  },
 
-  // ── ERA 1 · Visual & Brand Systems (2001–2016) ──────────────────────────
+  // ── Earlier brand and visual systems ────────────────────────────────────
 
   {
     id: 'bot-scanner-xfinity',
     year: '2014',
-    era: 'Era 01 — Visual & Brand',
-    eraShort: '01',
     category: 'UI & Screens',
     company: 'Total Defense / Xfinity',
     title: 'Xfinity BotScanner',
@@ -27,8 +37,6 @@ export const galleryItems = [
   {
     id: 'untangle-banners',
     year: '2013',
-    era: 'Era 01 — Visual & Brand',
-    eraShort: '01',
     category: 'Brand & Visual',
     company: 'Total Defense / Untangle',
     title: 'Untangle Campaign',
@@ -41,8 +49,6 @@ export const galleryItems = [
   {
     id: 'nsi-packaging',
     year: '2005',
-    era: 'Era 01 — Visual & Brand',
-    eraShort: '01',
     category: 'Print & Packaging',
     company: 'NSI International',
     title: 'NSI Toy Packaging',
@@ -55,8 +61,6 @@ export const galleryItems = [
   {
     id: 'ca-isbu-print',
     year: '2007',
-    era: 'Era 01 — Visual & Brand',
-    eraShort: '01',
     category: 'Print & Packaging',
     company: 'CA Technologies',
     title: 'CA ISBU Collateral',
@@ -67,13 +71,11 @@ export const galleryItems = [
     image: `${BASE}/thumbnails/gallery/placeholder.svg`,
   },
 
-  // ── ERA 2 · Hybrid Digital/Product Transition (2016–2021) ───────────────
+  // ── Digital product and design operations work ───────────────────────────
 
   {
     id: 'design-portal-home',
     year: '2022',
-    era: 'Era 02 — Digital Product',
-    eraShort: '02',
     category: 'UI & Screens',
     company: 'ZoomInfo',
     title: 'Design Hub Portal',
@@ -81,13 +83,11 @@ export const galleryItems = [
     description:
       'Homepage and navigation system for ZoomInfo\'s internal Design Hub — a Google Sites-based knowledge platform serving 30+ designers and cross-functional stakeholders. Designed information architecture, visual layout, and wayfinding across all major sections.',
     tags: ['DesignOps', 'Information Architecture', 'Internal Tools'],
-    image: `${BASE}/thumbnails/gallery/design-portal-home.png`,
+    image: `${BASE}/screenshots/design-hub/design-hub-home.png`,
   },
   {
     id: 'design-portal-onboarding',
     year: '2022',
-    era: 'Era 02 — Digital Product',
-    eraShort: '02',
     category: 'UI & Screens',
     company: 'ZoomInfo',
     title: 'Designer Onboarding',
@@ -95,13 +95,11 @@ export const galleryItems = [
     description:
       'Structured onboarding flow for new designers joining ZoomInfo. Organized tooling access, team introductions, process documentation, and first-week checklists into a scannable, self-service experience. Reduced onboarding load on design leads.',
     tags: ['DesignOps', 'Onboarding', 'Documentation'],
-    image: `${BASE}/thumbnails/gallery/design-portal-onboarding.png`,
+    image: `${BASE}/screenshots/design-hub/design-hub-onboarding.png`,
   },
   {
     id: 'design-portal-repos',
     year: '2022',
-    era: 'Era 02 — Digital Product',
-    eraShort: '02',
     category: 'UI & Screens',
     company: 'ZoomInfo',
     title: 'Product Repos',
@@ -109,13 +107,11 @@ export const galleryItems = [
     description:
       'Directory of all product design repositories, organized by product area and build process. Gave designers a single source of truth for finding Figma files, component libraries, and engineering handoff docs across a complex multi-product org.',
     tags: ['DesignOps', 'Repositories', 'Navigation'],
-    image: `${BASE}/thumbnails/gallery/design-portal-repos.png`,
+    image: `${BASE}/screenshots/design-hub/design-hub-repos.png`,
   },
   {
     id: 'design-portal-resources',
     year: '2022',
-    era: 'Era 02 — Digital Product',
-    eraShort: '02',
     category: 'UI & Screens',
     company: 'ZoomInfo',
     title: 'Design Resources',
@@ -123,13 +119,11 @@ export const galleryItems = [
     description:
       'Centralized resources section for templates, brand assets, tooling guides, and external references. Designed for quick scanning — grouped by type with visual hierarchy that surfaces the most-needed items without burying others.',
     tags: ['DesignOps', 'Resources', 'Documentation'],
-    image: `${BASE}/thumbnails/gallery/design-portal-resources.png`,
+    image: `${BASE}/screenshots/design-hub/design-hub-resources.png`,
   },
   {
     id: 'design-portal-newsletter',
     year: '2022',
-    era: 'Era 02 — Digital Product',
-    eraShort: '02',
     category: 'UI & Screens',
     company: 'ZoomInfo',
     title: 'Design Newsletter',
@@ -137,13 +131,35 @@ export const galleryItems = [
     description:
       'Archive and layout system for the ZoomInfo design team newsletter. Standardized the format for recurring design updates, spotlights, and announcements — making the newsletter consistent and easy to produce on a recurring cadence.',
     tags: ['DesignOps', 'Communication', 'Content'],
-    image: `${BASE}/thumbnails/gallery/design-portal-newsletter.png`,
+    image: `${BASE}/screenshots/design-hub/design-hub-newsletter.png`,
+  },
+  {
+    id: 'design-portal-team',
+    year: '2022',
+    category: 'UI & Screens',
+    company: 'ZoomInfo',
+    title: 'Design Team Directory',
+    subtitle: 'Design Hub — Team Section',
+    description:
+      'Team-facing directory providing organizational context and a more connected view of the distributed design organization within the shared Design Hub.',
+    tags: ['DesignOps', 'Team', 'Internal Tools'],
+    image: `${BASE}/screenshots/design-hub/design-hub-team.png`,
+  },
+  {
+    id: 'design-portal-bet2build',
+    year: '2022',
+    category: 'UI & Screens',
+    company: 'ZoomInfo',
+    title: 'Bet2Build Program',
+    subtitle: 'Design Hub — Initiative Page',
+    description:
+      'Initiative content page extending Design Hub to support shared team programs, with resources and context gathered into a discoverable destination.',
+    tags: ['DesignOps', 'Programs', 'Resources'],
+    image: `${BASE}/screenshots/design-hub/design-hub-bet2build.png`,
   },
   {
     id: 'sales-hub-playbook',
     year: '2023',
-    era: 'Era 02 — Digital Product',
-    eraShort: '02',
     category: 'UI & Screens',
     company: 'ZoomInfo',
     title: 'Sales Hub Playbook',
@@ -154,13 +170,11 @@ export const galleryItems = [
     image: `${BASE}/thumbnails/gallery/sales-hub-playbook.png`,
   },
 
-  // ── ERA 3 · Operational UX & AI Systems (2023–present) ──────────────────
+  // ── Operational UX and AI systems ───────────────────────────────────────
 
   {
     id: 'design-system-1',
     year: '2024',
-    era: 'Era 03 — AI & Systems',
-    eraShort: '03',
     category: 'Design Systems',
     company: 'ZoomInfo',
     title: 'Design System — Foundations',
@@ -173,8 +187,6 @@ export const galleryItems = [
   {
     id: 'design-system-2',
     year: '2024',
-    era: 'Era 03 — AI & Systems',
-    eraShort: '03',
     category: 'Design Systems',
     company: 'ZoomInfo',
     title: 'Design System — Components',
@@ -187,8 +199,6 @@ export const galleryItems = [
   {
     id: 'design-system-3',
     year: '2024',
-    era: 'Era 03 — AI & Systems',
-    eraShort: '03',
     category: 'Design Systems',
     company: 'ZoomInfo',
     title: 'Design System — Patterns',
@@ -201,8 +211,6 @@ export const galleryItems = [
   {
     id: 'slack-notifications',
     year: '2024',
-    era: 'Era 03 — AI & Systems',
-    eraShort: '03',
     category: 'UI & Screens',
     company: 'ZoomInfo',
     title: 'Slack Notification System',
@@ -215,8 +223,6 @@ export const galleryItems = [
   {
     id: 'operations-os',
     year: '2025',
-    era: 'Era 03 — AI & Systems',
-    eraShort: '03',
     category: 'UI & Screens',
     company: 'ZoomInfo',
     title: 'Operations OS',
@@ -226,13 +232,6 @@ export const galleryItems = [
     tags: ['Design Ops', 'Dashboard', 'AI Tools'],
     image: `${BASE}/thumbnails/gallery/operations-os.png`,
   },
-]
-
-export const eras = [
-  { id: 'all',  label: 'All Work' },
-  { id: '01',   label: 'Era 01 — Visual & Brand' },
-  { id: '02',   label: 'Era 02 — Digital Product' },
-  { id: '03',   label: 'Era 03 — AI & Systems' },
 ]
 
 export const categories = ['All', 'Brand & Visual', 'Print & Packaging', 'UI & Screens', 'Design Systems']

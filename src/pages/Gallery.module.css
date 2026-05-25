@@ -57,52 +57,6 @@
   line-height: 1.6;
 }
 
-/* ── Era tabs ────────────────────────────── */
-
-.eraRow {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 20px;
-}
-
-.eraTab {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  background: transparent;
-  border: 1px solid transparent;
-  padding: 7px 16px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
-}
-
-.eraTab:hover {
-  color: var(--text);
-  border-color: var(--border);
-  background: var(--bg2);
-}
-
-.eraTabActive {
-  color: var(--text) !important;
-  border-color: var(--border2) !important;
-  background: var(--fuchsia-dim) !important;
-}
-
-.eraDot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
 /* ── Category filters ────────────────────── */
 
 .filters {
@@ -253,7 +207,7 @@
   margin-bottom: 4px;
 }
 
-.eraBadge {
+.typeBadge {
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.1em;
@@ -433,7 +387,7 @@
   flex-wrap: wrap;
 }
 
-.lbEraBadge {
+.lbTypeBadge {
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.1em;
@@ -517,10 +471,8 @@
 [data-theme="light"] .card:hover { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); }
 [data-theme="light"] .imageWrap { background: var(--bg3); }
 [data-theme="light"] .tag { background: var(--bg3); color: var(--dim); }
-[data-theme="light"] .eraTab:hover { background: var(--bg2); }
 [data-theme="light"] .filter { background: var(--bg3); }
 [data-theme="light"] .title { border-bottom-color: var(--border); }
-[data-theme="light"] .eraRow { border-bottom-color: var(--border); }
 
 /* ═══════════════════════════════════════════
    RESPONSIVE
@@ -533,8 +485,6 @@
 @media (max-width: 768px) {
   .page { padding: 100px 24px 60px; }
   .grid { grid-template-columns: 1fr; gap: 16px; }
-  .eraRow { gap: 6px; }
-  .eraTab { font-size: 10px; padding: 6px 12px; }
   .lightboxPanel { flex-direction: column; max-height: 95vh; }
   .lbArrowPrev { left: 6px; }
   .lbArrowNext { right: 6px; }
