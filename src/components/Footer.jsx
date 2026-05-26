@@ -39,10 +39,12 @@ const workLinks = [
 ]
 
 const pageLinks = [
+  { to: '/',        label: 'Home'       },
+  { to: '/work',    label: 'Work'       },
+  { to: '/gallery', label: 'Gallery'    },
   { to: '/about',   label: 'About'      },
   { to: '/process', label: 'Process'    },
   { to: '/contact', label: 'Contact'    },
-  { href: 'https://www.linkedin.com/in/denkybegonja/', label: 'LinkedIn ↗', external: true },
 ]
 
 export default function Footer() {
@@ -76,12 +78,9 @@ export default function Footer() {
           <div className={styles.col}>
             <div className={styles.colLabel}>Pages</div>
             <ul className={styles.colLinks}>
-              {pageLinks.map(({ to, href, label, external }) => (
+              {pageLinks.map(({ to, label }) => (
                 <li key={label}>
-                  {external
-                    ? <a href={href} target="_blank" rel="noreferrer" className={styles.colLink}>{label}</a>
-                    : <Link to={to} className={styles.colLink}>{label}</Link>
-                  }
+                  <Link to={to} className={styles.colLink}>{label}</Link>
                 </li>
               ))}
             </ul>

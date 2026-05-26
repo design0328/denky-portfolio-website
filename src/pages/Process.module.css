@@ -17,7 +17,7 @@
 .qaTag { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; border: 0.5px solid var(--fuchsia); color: var(--fuchsia); white-space: nowrap; margin-top: 2px; flex-shrink: 0; }
 .open .qaTag { background: var(--fuchsia-dim); }
 .qaQuestion { font-size: 20px; font-weight: 600; color: var(--text); line-height: 1.4; font-family: var(--font-body); }
-.qaButton:hover .qaQuestion { color: #fff; }
+.qaButton:hover .qaQuestion { color: var(--text); }
 .qaChevron { flex-shrink: 0; color: var(--text-muted); margin-top: 2px; transition: transform 0.25s ease; }
 .open .qaChevron { transform: rotate(180deg); color: var(--fuchsia); }
 .qaAnswer { padding: 1rem 1.5rem 2rem 1.5rem; }

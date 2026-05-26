@@ -1,0 +1,27 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Archived project visual placeholder</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#11111D"/>
+      <stop offset="1" stop-color="#171626"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(166 126) rotate(28) scale(540 354)">
+      <stop stop-color="#E8107A" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#E8107A" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.4" fill="#37344B"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#dots)" opacity=".42"/>
+  <rect width="1200" height="675" fill="url(#glow)"/>
+  <rect x="76" y="74" width="1048" height="527" rx="16" stroke="#27253A"/>
+  <path d="M122 493H1078" stroke="#28253C"/>
+  <rect x="122" y="122" width="134" height="24" rx="12" fill="#211527" stroke="#5E2345"/>
+  <circle cx="142" cy="134" r="4" fill="#E8107A"/>
+  <text x="158" y="138" fill="#E591B8" font-family="monospace" font-size="11" letter-spacing="1.8">ARCHIVE</text>
+  <text x="122" y="333" fill="#F0F0F8" font-family="Arial, sans-serif" font-size="46" font-weight="700">PROJECT VISUAL</text>
+  <text x="122" y="372" fill="#817D96" font-family="monospace" font-size="15" letter-spacing="2">IMAGE ARCHIVE IN PROGRESS</text>
+  <text x="122" y="545" fill="#625E78" font-family="monospace" font-size="12" letter-spacing="2">SELECTED WORK  /  DB.DESIGN</text>
+</svg>

@@ -44,6 +44,10 @@ function CaseStudyContent({ project, slug }) {
   const activeImage = activeImageIndex >= 0 ? inspectableImages[activeImageIndex] : null
   const canStepImages = inspectableImages.length > 1
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [slug])
+
   const openLightbox = (imageId) => setActiveImageId(imageId)
   const closeLightbox = () => setActiveImageId(null)
   const showImageAt = (index) => {
