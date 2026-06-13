@@ -27,7 +27,57 @@ const testimonials = [
   {
     id: 1,
     quote:
-      "Denky is one of those rare people who elevates both the work and the people around her — someone who consistently led with empathy, positivity, curiosity, and a genuine desire to help others succeed. She has an exceptional ability to hold space for complexity while keeping the team grounded and moving forward. In every project she touched, she brought both rigor and heart.",
+      "She has a great ability to take complex problems — especially around AI, workflows, and design operations — and turn them into practical, scalable solutions.",
+    name: 'Meghan Cartlidge',
+    title: 'Director of Product Design',
+    company: 'ZoomInfo',
+    avatar: `${BASE}/testimonials/meghan-cartlidge.jpeg`,
+    initials: 'MC',
+  },
+  {
+    id: 2,
+    quote:
+      "Denky brought a rare combination of reliability, creativity, and genuine care to everything she did. She took ownership of her work, followed through on commitments, and approached challenges with a positive attitude and willingness to learn.",
+    name: 'Seth Hartman',
+    title: 'Staff Product Designer',
+    company: 'ZoomInfo',
+    avatar: `${BASE}/testimonials/seth-hartman.jpeg`,
+    initials: 'SH',
+  },
+  {
+    id: 3,
+    quote:
+      "I watched her grow from a UI and graphic design background into a genuinely strong UX designer — and she did it faster than most people do.",
+    name: 'Oren Cohen',
+    title: 'Senior Product Manager',
+    company: 'ZoomInfo',
+    avatar: `${BASE}/testimonials/oren-cohen.jpeg`,
+    initials: 'OC',
+  },
+  {
+    id: 4,
+    quote:
+      "One of the things I appreciated most was her ability to make accessibility guidance, workflows, and resources feel approachable and useful for teams across the organization.",
+    name: 'Ofra Pinhas Matalon',
+    title: 'Senior Product Designer',
+    company: 'ZoomInfo',
+    avatar: `${BASE}/testimonials/ofra-pinhas-matalon.jpeg`,
+    initials: 'OM',
+  },
+  {
+    id: 5,
+    quote:
+      "Denky brings a thoughtful and structured approach to her work, with a strong balance of UX thinking, systems mindset, collaboration, and operational thinking.",
+    name: 'Roni Mergie',
+    title: 'Director of Product Design',
+    company: 'SysAid',
+    avatar: `${BASE}/testimonials/roni_mergie.jpeg`,
+    initials: 'RM',
+  },
+  {
+    id: 6,
+    quote:
+      "Denky is one of those rare people who elevates both the work and the people around her — someone who consistently led with empathy, positivity, curiosity, and a genuine desire to help others succeed.",
     name: 'Megan Daoedsjah',
     title: 'Product Design Manager',
     company: 'ZoomInfo',
@@ -35,19 +85,19 @@ const testimonials = [
     initials: 'MD',
   },
   {
-    id: 2,
+    id: 7,
     quote:
-      "Working with Denky was truly inspiring. She didn't just learn the rules of accessibility; she truly understood the purpose behind them. Her commitment to inclusive design was evident in every decision she made — always thoughtful, always intentional. She builds for impact, not just for the moment. I was particularly impressed by her ability to translate complex accessibility requirements into practical, user-centered solutions that the whole team could rally around.",
-    name: 'Talyah Aviran',
-    title: 'CPWA / HFI CUA — Accessibility Specialist',
-    company: '',
-    avatar: `${BASE}/testimonials/Talyah.jpeg`,
-    initials: 'TA',
+      "Denky has an eye for detail and her expertise in accessibility guided many decisions that were critical to the scalability and wide spread adoption of our work.",
+    name: 'Vineet Kaushik',
+    title: 'Senior Software Engineer',
+    company: 'ZoomInfo',
+    avatar: null,
+    initials: 'VK',
   },
   {
-    id: 3,
+    id: 8,
     quote:
-      "Denky is far from 'yet another creative' designer. Over the course of our collaboration, she consistently proved that this demanding work can be executed flawlessly, balancing high professional standards with an incredibly positive attitude. Her ability to navigate complex engineering constraints while maintaining design excellence was remarkable, and her willingness to deeply understand technical requirements made her an invaluable bridge between design and development.",
+      "I highly recommend Denky as an exceptional UX/UI designer and a remarkably solid professional. We worked closely together on building our corporate Component Library and establishing comprehensive accessibility (WCAG 2.2 AA) standards across the company.",
     name: 'Denis Levkov',
     title: 'Software Engineering Manager',
     company: 'ZoomInfo',
@@ -55,34 +105,24 @@ const testimonials = [
     initials: 'DL',
   },
   {
-    id: 4,
+    id: 9,
     quote:
-      "The Design Quality Engine initiative created a lot of excitement across design, PM, and engineering teams. It was a great example of raising quality while still moving incredibly fast — Denky drove that initiative with conviction, clarity, and remarkable cross-functional alignment. She managed to get everyone on the same page about quality standards without slowing down delivery, which is a genuinely rare skill.",
-    name: 'Roni Mergie',
-    title: 'UX Manager',
-    company: 'ZoomInfo',
-    avatar: `${BASE}/testimonials/roni_mergie.jpeg`,
-    initials: 'RM',
-  },
-  {
-    id: 5,
-    quote:
-      "When it came to anything UI/UX, I always reached out to Denky to get well-written, well-thought-out feedback. Her insights consistently pushed my work to a higher level, and she had a unique ability to articulate design problems in a way that engineers could immediately act on. Her combination of strong aesthetic sensibility and systems thinking made collaboration with her genuinely productive.",
+      "When it came to anything UI/UX, I always reached out to Denky to get well-written, well-thought-out feedback — which motivated a project that Denky initiated to help review and automate the improvement of accessibility and usability components across various projects.",
     name: 'Urmzd Mukhammadnaim',
-    title: 'AI Engineer',
+    title: 'Senior AI Engineer',
     company: 'ZoomInfo',
     avatar: `${BASE}/testimonials/urmzd_M.jpeg`,
     initials: 'UM',
   },
   {
-    id: 6,
+    id: 10,
     quote:
-      "Her expertise in accessibility guided many decisions that were critical to the scalability and wide spread adoption of our work. Denky brought a level of care and precision to accessibility that elevated the entire product — she didn't just flag issues, she actively shaped solutions and helped the team build a shared vocabulary around inclusive design.",
-    name: 'Vineet Kaushik',
-    title: 'Senior Software Engineer',
-    company: 'ZoomInfo',
-    avatar: null,
-    initials: 'VK',
+      "She didn't just learn the rules of accessibility; she truly understood the purpose behind them. That distinction matters enormously.",
+    name: 'Talyah Aviran',
+    title: 'Certified Professional in Web Accessibility',
+    company: 'Client',
+    avatar: `${BASE}/testimonials/Talyah.jpeg`,
+    initials: 'TA',
   },
 ]
 
