@@ -262,7 +262,7 @@ export default function About() {
             <span className={styles.labelText}>Experience</span>
           </div>
           <a
-            href={`${BASE}/Resume_Denky_Begonja_2026.pdf`}
+            href={`${BASE}/Denky_Girasaki_Begonja_Resume_2026.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.resumeBtn}

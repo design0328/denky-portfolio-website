@@ -36,7 +36,7 @@ export const galleryItems = [
     description:
       'Slack Block Kit system broadcasting design org news, CHAI training, AI workshops, and Design Hub updates',
     tags: ['AI/UX', 'Design Ops', 'Notifications'],
-    image: `${BASE}/thumbnails/gallery/slack-notifications.png`,
+    image: `${BASE}/gallery/zoominfo/comms-bot-blockkit.png`,
   },
   {
     id: 'muze-design-system',
