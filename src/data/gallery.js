@@ -168,18 +168,6 @@ export const galleryItems = [
     tags: ['Packaging', 'Print', 'Retail'],
     image: `${BASE}/gallery/ca-technologies/ca-packaging.png`,
   },
-  {
-    id: 'nsi-retail-packaging',
-    year: '2005',
-    category: 'Print & Packaging',
-    company: 'NSI International',
-    title: 'NSI — National Retail Packaging',
-    subtitle: 'Consumer product packaging sold nationwide in Target, Walmart, and CVS',
-    description:
-      'Consumer product packaging sold nationwide in Target, Walmart, and CVS',
-    tags: ['Packaging', 'Print', 'Retail'],
-    image: `${BASE}/gallery/placeholder.svg`,
-  },
 ]
 
 export const categories = [
