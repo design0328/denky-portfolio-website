@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 import styles from './Hero.module.css'
 
 const stats = [
-  { value: '8+',  label: 'Years Experience'         },
-  { value: '40+', label: 'AI Interaction Patterns'  },
-  { value: '3',   label: 'Orgs Impacted'            },
+  { value: '80%', label: 'Pilot Agreement Rate' },
+  { value: '14',  label: 'AI Training Modules'  },
+  { value: '4',   label: 'Enterprise Platforms' },
 ]
 
 const disciplines = [
