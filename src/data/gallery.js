@@ -9,61 +9,6 @@
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, '')
 
 export const galleryItems = [
-  // ── 2026 — AI, governance, and design systems operations ─────────────────
-
-  {
-    id: 'muze-mui-migration',
-    year: '2026',
-    category: 'Design Systems',
-    company: 'ZoomInfo',
-    title: 'Muze → MUI Migration',
-    subtitle: 'Design system migration enablement',
-    description:
-      'Design system migration enablement',
-    tags: ['Design Systems', 'Design Operations', 'AI/UX'],
-    image: `${BASE}/gallery/zoominfo/aiui-pattern-library.svg`,
-    link: '/work/muze-mui-migration',
-  },
-  {
-    id: 'dqe',
-    year: '2026',
-    category: 'AI & Governance',
-    company: 'ZoomInfo',
-    title: 'Design Quality Engine',
-    subtitle: 'AI-powered audit system evaluating UI against accessibility, usability, AIUI, content, and monetization guardrails',
-    description:
-      'AI-powered audit system evaluating UI against accessibility, usability, AIUI, content, and monetization guardrails',
-    tags: ['Governance', 'Accessibility', 'AIUI'],
-    image: `${BASE}/screenshots/dqe/DQE-overview.png`,
-    link: '/work/dqe',
-  },
-  {
-    id: 'ai-training-portal',
-    year: '2026',
-    category: 'AI & Governance',
-    company: 'ZoomInfo',
-    title: 'AI Training Portal & CHAI',
-    subtitle: 'Centralized AI learning platform — workshops, course modules, and the CHAI framework for collaborative human-AI design',
-    description:
-      'Centralized AI learning platform — workshops, course modules, and the CHAI framework for collaborative human-AI design',
-    tags: ['AI Enablement', 'Design Ops', 'Learning Infra'],
-    image: `${BASE}/screenshots/training-portal/01-portal-home.png`,
-    link: '/work/ai-training-portal',
-  },
-  {
-    id: 'design-hub',
-    year: '2026',
-    category: 'UI & Screens',
-    company: 'ZoomInfo',
-    title: 'Design Hub',
-    subtitle: 'Organizational knowledge platform — onboarding, repos, processes, resources',
-    description:
-      'Organizational knowledge platform — onboarding, repos, processes, resources',
-    tags: ['Design Ops', 'Information Architecture', 'Enablement'],
-    image: `${BASE}/screenshots/design-hub/01-hub-home.png`,
-    link: '/work/design-hub',
-  },
-
   // ── 2025 ───────────────────────────────────────────────────────────────
 
   {
