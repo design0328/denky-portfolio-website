@@ -25,7 +25,6 @@ export default function Hero() {
 
       {/* ── Eyebrow ── */}
       <div className={styles.eyebrow}>
-        <span className={styles.eyebrowDot} />
         <span className={styles.eyebrowText}>Available for new opportunities</span>
       </div>
 
