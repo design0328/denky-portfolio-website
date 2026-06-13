@@ -1,27 +1,189 @@
 // ─────────────────────────────────────────────
 //  GALLERY DATA
 //  Reverse chronological — newest visual work appears first
-//  Categories: 'Brand & Visual' | 'Print & Packaging' | 'UI & Screens' | 'Design Systems'
+//  Categories: 'Brand & Visual' | 'Print & Packaging' | 'Web & Marketing'
+//            | 'UI & Screens' | 'Design Systems' | 'AI & Governance'
+//  `year` is kept for sorting only — it is not rendered on cards.
 // ─────────────────────────────────────────────
 
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, '')
 
 export const galleryItems = [
+  // ── 2026 — AI, governance, and design systems operations ─────────────────
+
   {
-    id: 'aiui-pattern-library',
+    id: 'muze-mui-migration',
     year: '2026',
     category: 'Design Systems',
     company: 'ZoomInfo',
-    title: 'AIUI Pattern Library',
-    subtitle: 'AI Interaction Standards',
+    title: 'Muze → MUI Migration',
+    subtitle: 'Design system migration enablement',
     description:
-      'Governance-focused pattern library defining trustworthy, accessible, human-in-the-loop interaction guidance for AI-assisted product experiences. Built as a reusable reference for designers, product partners, engineers, and reviewers.',
-    tags: ['AI/UX', 'Governance', 'Accessibility'],
-    image: `${BASE}/thumbnails/aiui-pattern-library.svg`,
+      'Design system migration enablement',
+    tags: ['Design Systems', 'Design Operations', 'AI/UX'],
+    image: `${BASE}/gallery/zoominfo/aiui-pattern-library.svg`,
+    link: '/work/muze-mui-migration',
+  },
+  {
+    id: 'dqe',
+    year: '2026',
+    category: 'AI & Governance',
+    company: 'ZoomInfo',
+    title: 'Design Quality Engine',
+    subtitle: 'AI-powered audit system evaluating UI against accessibility, usability, AIUI, content, and monetization guardrails',
+    description:
+      'AI-powered audit system evaluating UI against accessibility, usability, AIUI, content, and monetization guardrails',
+    tags: ['Governance', 'Accessibility', 'AIUI'],
+    image: `${BASE}/screenshots/dqe/DQE-overview.png`,
+    link: '/work/dqe',
+  },
+  {
+    id: 'ai-training-portal',
+    year: '2026',
+    category: 'AI & Governance',
+    company: 'ZoomInfo',
+    title: 'AI Training Portal & CHAI',
+    subtitle: 'Centralized AI learning platform — workshops, course modules, and the CHAI framework for collaborative human-AI design',
+    description:
+      'Centralized AI learning platform — workshops, course modules, and the CHAI framework for collaborative human-AI design',
+    tags: ['AI Enablement', 'Design Ops', 'Learning Infra'],
+    image: `${BASE}/screenshots/training-portal/01-portal-home.png`,
+    link: '/work/ai-training-portal',
+  },
+  {
+    id: 'design-hub',
+    year: '2026',
+    category: 'UI & Screens',
+    company: 'ZoomInfo',
+    title: 'Design Hub',
+    subtitle: 'Organizational knowledge platform — onboarding, repos, processes, resources',
+    description:
+      'Organizational knowledge platform — onboarding, repos, processes, resources',
+    tags: ['Design Ops', 'Information Architecture', 'Enablement'],
+    image: `${BASE}/screenshots/design-hub/01-hub-home.png`,
+    link: '/work/design-hub',
   },
 
-  // ── Earlier brand and visual systems ────────────────────────────────────
+  // ── 2025 ───────────────────────────────────────────────────────────────
 
+  {
+    id: 'operations-os',
+    year: '2025',
+    category: 'UI & Screens',
+    company: 'ZoomInfo',
+    title: 'OperationsOS',
+    subtitle: 'Rebranding RingLead into the ZoomInfo platform — feature UI with the Tel Aviv team, plus Discover and Enrich Premium+ Beta launch collateral',
+    description:
+      'Rebranding RingLead into the ZoomInfo platform — feature UI with the Tel Aviv team, plus Discover and Enrich Premium+ Beta launch collateral',
+    tags: ['Design Ops', 'Rebrand', 'Product UI'],
+    image: `${BASE}/gallery/zoominfo/operations-os.png`,
+  },
+
+  // ── 2024 — Design systems and AI/governance comms ─────────────────────────
+
+  {
+    id: 'design-comms-bot',
+    year: '2024',
+    category: 'AI & Governance',
+    company: 'ZoomInfo',
+    title: 'Design Comms Bot',
+    subtitle: 'Slack Block Kit system broadcasting design org news, CHAI training, AI workshops, and Design Hub updates',
+    description:
+      'Slack Block Kit system broadcasting design org news, CHAI training, AI workshops, and Design Hub updates',
+    tags: ['AI/UX', 'Design Ops', 'Notifications'],
+    image: `${BASE}/thumbnails/gallery/slack-notifications.png`,
+  },
+  {
+    id: 'muze-design-system',
+    year: '2024',
+    category: 'Design Systems',
+    company: 'ZoomInfo',
+    title: 'Muze Design System',
+    subtitle: 'Component library standards — tokens, states, patterns, WCAG 2.2 AA specs adopted company-wide',
+    description:
+      'Component library standards — tokens, states, patterns, WCAG 2.2 AA specs adopted company-wide',
+    tags: ['Design Systems', 'Tokens', 'Accessibility'],
+    image: `${BASE}/gallery/placeholder.svg`,
+  },
+
+  // ── RingLead ─────────────────────────────────────────────────────────────
+
+  {
+    id: 'ringlead-platform-ui',
+    year: '2021',
+    category: 'UI & Screens',
+    company: 'RingLead',
+    title: 'RingLead Platform UI',
+    subtitle: 'Data quality platform — duplicate health checks, field analysis, and report card dashboards',
+    description:
+      'Data quality platform — duplicate health checks, field analysis, and report card dashboards',
+    tags: ['Product Design', 'Design Systems', 'Dashboards'],
+    image: `${BASE}/gallery/ringlead/ringlead-platform-ui.png`,
+    link: '/work/ringlead-brand-to-product',
+  },
+  {
+    id: 'ringlead-data-orchestration',
+    year: '2019',
+    category: 'Web & Marketing',
+    company: 'RingLead',
+    title: 'RingLead.com — Data Orchestration',
+    subtitle: 'Site redesign for the RevOps automation platform era',
+    description:
+      'Site redesign for the RevOps automation platform era',
+    tags: ['Web Design', 'Branding', 'RevOps'],
+    image: `${BASE}/gallery/ringlead/ringlead-site-blue.png`,
+  },
+  {
+    id: 'dms-product-suite',
+    year: '2018',
+    category: 'Web & Marketing',
+    company: 'RingLead',
+    title: 'DMS Product Suite & Campaigns',
+    subtitle: 'Enrichment 360° product system, Intelligent Forms, and ringlead.com',
+    description:
+      'Enrichment 360° product system, Intelligent Forms, and ringlead.com',
+    tags: ['Product Marketing', 'Campaign', 'Web Design'],
+    image: `${BASE}/gallery/ringlead/dms-enrichment.png`,
+  },
+  {
+    id: 'talkdatatome',
+    year: '2018',
+    category: 'Brand & Visual',
+    company: 'RingLead',
+    title: '#talkdatatome Event Series',
+    subtitle: 'Virtual event brand and promotion system',
+    description:
+      'Virtual event brand and promotion system',
+    tags: ['Event Branding', 'Campaign', 'Social'],
+    image: `${BASE}/gallery/ringlead/talkdatatome.png`,
+  },
+  {
+    id: 'ringlead-sales-enablement',
+    year: '2017',
+    category: 'Brand & Visual',
+    company: 'RingLead',
+    title: 'Sales Enablement Content System',
+    subtitle: 'Ebooks, tip sheets, API integration decks, and Data Hero gamification',
+    description:
+      'Ebooks, tip sheets, API integration decks, and Data Hero gamification',
+    tags: ['Sales Enablement', 'Print', 'Gamification'],
+    image: `${BASE}/gallery/ringlead/content-enablement.png`,
+  },
+
+  // ── Total Defense ────────────────────────────────────────────────────────
+
+  {
+    id: 'td-product-web-ux',
+    year: '2014',
+    category: 'UI & Screens',
+    company: 'Total Defense',
+    title: 'Total Defense — Product & Web UX',
+    subtitle: 'Activation flows, in-product experiences, and totaldefense.com',
+    description:
+      'Activation flows, in-product experiences, and totaldefense.com',
+    tags: ['UI Design', 'Product', 'Web Design'],
+    image: `${BASE}/gallery/total-defense/td-product-site.png`,
+  },
   {
     id: 'bot-scanner-xfinity',
     year: '2014',
@@ -32,206 +194,55 @@ export const galleryItems = [
     description:
       "End-to-end UI design for a co-branded malware scanning tool shipped inside Xfinity's customer portal, powered by Total Defense. Designed 12+ screen states covering onboarding, scan progress, threat detection, and resolution flows — all within strict Xfinity brand guidelines.",
     tags: ['UI Design', 'Product', 'Security'],
-    image: `${BASE}/thumbnails/gallery/placeholder.svg`,
+    image: `${BASE}/gallery/placeholder.svg`,
   },
   {
-    id: 'untangle-banners',
+    id: 'td-brand-campaigns',
     year: '2013',
     category: 'Brand & Visual',
-    company: 'Total Defense / Untangle',
-    title: 'Untangle Campaign',
-    subtitle: 'Digital & Print Banners',
+    company: 'Total Defense',
+    title: 'Total Defense — Brand & Campaigns',
+    subtitle: 'Go Beyond Protection celebrity campaigns, NCMEC partnership, retail presence',
     description:
-      'Digital ad campaign and print collateral for Untangle network security software. Designed web banners, email headers, and trade show assets across co-branded product lines. Balanced two brand voices in a single campaign system.',
-    tags: ['Campaign', 'Print', 'Digital'],
-    image: `${BASE}/thumbnails/gallery/placeholder.svg`,
+      'Go Beyond Protection celebrity campaigns, NCMEC partnership, retail presence',
+    tags: ['Campaign', 'Brand', 'Retail'],
+    image: `${BASE}/gallery/total-defense/td-go-beyond-protection.png`,
   },
+
+  // ── Earlier print and packaging systems ───────────────────────────────────
+
   {
-    id: 'nsi-packaging',
-    year: '2005',
-    category: 'Print & Packaging',
-    company: 'NSI International',
-    title: 'NSI Toy Packaging',
-    subtitle: 'Consumer Product Packaging',
-    description:
-      'Retail packaging design for consumer toy products at NSI International. Designed end-to-end from concept to mechanical — front panels, back copy, regulatory icons, UPC placement, and dieline setup for print production.',
-    tags: ['Packaging', 'Print', 'Retail'],
-    image: `${BASE}/thumbnails/gallery/placeholder.svg`,
-  },
-  {
-    id: 'ca-isbu-print',
+    id: 'ca-packaging-product',
     year: '2007',
     category: 'Print & Packaging',
     company: 'CA Technologies',
-    title: 'CA ISBU Collateral',
-    subtitle: 'Print & Digital Media',
+    title: 'CA Internet Security — Packaging & Product',
+    subtitle: 'Retail packaging systems (ISS 2007–2010, K9), ISBU marketing, and in-product UI',
     description:
-      'In-house print and online media design for CA Technologies\' Internet Security Business Unit. Created promotional materials across Home, Home Office, and B2B product lines, working in collaboration with external agencies to maintain visual consistency across campaigns.',
-    tags: ['Print', 'B2B', 'Campaign'],
-    image: `${BASE}/thumbnails/gallery/placeholder.svg`,
-  },
-
-  // ── Digital product and design operations work ───────────────────────────
-
-  {
-    id: 'design-portal-home',
-    year: '2022',
-    category: 'UI & Screens',
-    company: 'ZoomInfo',
-    title: 'Design Hub Portal',
-    subtitle: 'Internal Design Platform',
-    description:
-      'Homepage and navigation system for ZoomInfo\'s internal Design Hub — a Google Sites-based knowledge platform serving 30+ designers and cross-functional stakeholders. Designed information architecture, visual layout, and wayfinding across all major sections.',
-    tags: ['DesignOps', 'Information Architecture', 'Internal Tools'],
-    image: `${BASE}/screenshots/design-hub/design-hub-home.png`,
+      'Retail packaging systems (ISS 2007–2010, K9), ISBU marketing, and in-product UI',
+    tags: ['Packaging', 'Print', 'Retail'],
+    image: `${BASE}/gallery/ca-technologies/ca-packaging.png`,
   },
   {
-    id: 'design-portal-onboarding',
-    year: '2022',
-    category: 'UI & Screens',
-    company: 'ZoomInfo',
-    title: 'Designer Onboarding',
-    subtitle: 'Design Hub — Onboarding Section',
+    id: 'nsi-retail-packaging',
+    year: '2005',
+    category: 'Print & Packaging',
+    company: 'NSI International',
+    title: 'NSI — National Retail Packaging',
+    subtitle: 'Consumer product packaging sold nationwide in Target, Walmart, and CVS',
     description:
-      'Structured onboarding flow for new designers joining ZoomInfo. Organized tooling access, team introductions, process documentation, and first-week checklists into a scannable, self-service experience. Reduced onboarding load on design leads.',
-    tags: ['DesignOps', 'Onboarding', 'Documentation'],
-    image: `${BASE}/screenshots/design-hub/design-hub-onboarding.png`,
-  },
-  {
-    id: 'design-portal-repos',
-    year: '2022',
-    category: 'UI & Screens',
-    company: 'ZoomInfo',
-    title: 'Product Repos',
-    subtitle: 'Design Hub — Repository Directory',
-    description:
-      'Directory of all product design repositories, organized by product area and build process. Gave designers a single source of truth for finding Figma files, component libraries, and engineering handoff docs across a complex multi-product org.',
-    tags: ['DesignOps', 'Repositories', 'Navigation'],
-    image: `${BASE}/screenshots/design-hub/design-hub-repos.png`,
-  },
-  {
-    id: 'design-portal-resources',
-    year: '2022',
-    category: 'UI & Screens',
-    company: 'ZoomInfo',
-    title: 'Design Resources',
-    subtitle: 'Design Hub — Resources Section',
-    description:
-      'Centralized resources section for templates, brand assets, tooling guides, and external references. Designed for quick scanning — grouped by type with visual hierarchy that surfaces the most-needed items without burying others.',
-    tags: ['DesignOps', 'Resources', 'Documentation'],
-    image: `${BASE}/screenshots/design-hub/design-hub-resources.png`,
-  },
-  {
-    id: 'design-portal-newsletter',
-    year: '2022',
-    category: 'UI & Screens',
-    company: 'ZoomInfo',
-    title: 'Design Newsletter',
-    subtitle: 'Design Hub — Newsletter Archive',
-    description:
-      'Archive and layout system for the ZoomInfo design team newsletter. Standardized the format for recurring design updates, spotlights, and announcements — making the newsletter consistent and easy to produce on a recurring cadence.',
-    tags: ['DesignOps', 'Communication', 'Content'],
-    image: `${BASE}/screenshots/design-hub/design-hub-newsletter.png`,
-  },
-  {
-    id: 'design-portal-team',
-    year: '2022',
-    category: 'UI & Screens',
-    company: 'ZoomInfo',
-    title: 'Design Team Directory',
-    subtitle: 'Design Hub — Team Section',
-    description:
-      'Team-facing directory providing organizational context and a more connected view of the distributed design organization within the shared Design Hub.',
-    tags: ['DesignOps', 'Team', 'Internal Tools'],
-    image: `${BASE}/screenshots/design-hub/design-hub-team.png`,
-  },
-  {
-    id: 'design-portal-bet2build',
-    year: '2022',
-    category: 'UI & Screens',
-    company: 'ZoomInfo',
-    title: 'Bet2Build Program',
-    subtitle: 'Design Hub — Initiative Page',
-    description:
-      'Initiative content page extending Design Hub to support shared team programs, with resources and context gathered into a discoverable destination.',
-    tags: ['DesignOps', 'Programs', 'Resources'],
-    image: `${BASE}/screenshots/design-hub/design-hub-bet2build.png`,
-  },
-  {
-    id: 'sales-hub-playbook',
-    year: '2023',
-    category: 'UI & Screens',
-    company: 'ZoomInfo',
-    title: 'Sales Hub Playbook',
-    subtitle: 'Monorepo Component Showcase',
-    description:
-      'Visual playbook and component documentation site for the SalesHub product UI library. Built to communicate the component catalog to design and engineering, supporting adoption of the shared monorepo design system across product teams.',
-    tags: ['Design Systems', 'Documentation', 'Components'],
-    image: `${BASE}/thumbnails/gallery/sales-hub-playbook.png`,
-  },
-
-  // ── Operational UX and AI systems ───────────────────────────────────────
-
-  {
-    id: 'design-system-1',
-    year: '2024',
-    category: 'Design Systems',
-    company: 'ZoomInfo',
-    title: 'Design System — Foundations',
-    subtitle: 'Component Library Documentation',
-    description:
-      'Foundation layer documentation for ZoomInfo\'s design system — covering color tokens, type scale, spacing, and core primitive components. Built as a living reference to unify design decisions across a multi-team product org.',
-    tags: ['Design Systems', 'Tokens', 'Documentation'],
-    image: `${BASE}/thumbnails/gallery/design-system-1.png`,
-  },
-  {
-    id: 'design-system-2',
-    year: '2024',
-    category: 'Design Systems',
-    company: 'ZoomInfo',
-    title: 'Design System — Components',
-    subtitle: 'Component States & Variants',
-    description:
-      'Component-level documentation covering interaction states, variant breakdowns, and usage guidance. Designed to bridge the gap between Figma spec and engineering implementation — reducing handoff friction and component misuse.',
-    tags: ['Design Systems', 'Components', 'Figma'],
-    image: `${BASE}/thumbnails/gallery/design-system-2.png`,
-  },
-  {
-    id: 'design-system-3',
-    year: '2024',
-    category: 'Design Systems',
-    company: 'ZoomInfo',
-    title: 'Design System — Patterns',
-    subtitle: 'Interaction Patterns & Compositions',
-    description:
-      'Pattern library section documenting reusable UI compositions — data tables, filter patterns, empty states, and more. Provided teams with pre-approved, accessible patterns to accelerate design and maintain consistency at scale.',
-    tags: ['Design Systems', 'Patterns', 'Accessibility'],
-    image: `${BASE}/thumbnails/gallery/design-system-3.png`,
-  },
-  {
-    id: 'slack-notifications',
-    year: '2024',
-    category: 'UI & Screens',
-    company: 'ZoomInfo',
-    title: 'Slack Notification System',
-    subtitle: 'Block Kit Builder — Governance Alerts',
-    description:
-      'Designed Slack notification templates using Block Kit Builder for the DQE governance system. Structured alerts surface design quality findings directly in Slack — keeping teams informed without requiring them to context-switch to a separate tool.',
-    tags: ['AI/UX', 'Design Ops', 'Notifications'],
-    image: `${BASE}/thumbnails/gallery/slack-notifications.png`,
-  },
-  {
-    id: 'operations-os',
-    year: '2025',
-    category: 'UI & Screens',
-    company: 'ZoomInfo',
-    title: 'Operations OS',
-    subtitle: 'Mini Muze — Design Ops Dashboard',
-    description:
-      'Dashboard concept for Mini Muze, ZoomInfo\'s internal design operations tool. Visualized team health, project velocity, and workflow state in a single operational view — helping design leads monitor capacity and prioritize work across multiple product squads.',
-    tags: ['Design Ops', 'Dashboard', 'AI Tools'],
-    image: `${BASE}/thumbnails/gallery/operations-os.png`,
+      'Consumer product packaging sold nationwide in Target, Walmart, and CVS',
+    tags: ['Packaging', 'Print', 'Retail'],
+    image: `${BASE}/gallery/placeholder.svg`,
   },
 ]
 
-export const categories = ['All', 'Brand & Visual', 'Print & Packaging', 'UI & Screens', 'Design Systems']
+export const categories = [
+  'All',
+  'Brand & Visual',
+  'Print & Packaging',
+  'Web & Marketing',
+  'UI & Screens',
+  'Design Systems',
+  'AI & Governance',
+]

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import { galleryItems, categories } from '../data/gallery'
 import styles from './Gallery.module.css'
 
@@ -62,8 +63,10 @@ export default function Gallery() {
   const categoryColor = (category) => {
     if (category === 'Brand & Visual') return 'var(--orange)'
     if (category === 'Print & Packaging') return 'var(--fuchsia)'
+    if (category === 'Web & Marketing') return '#ffb800'
     if (category === 'Design Systems') return '#00c4ff'
     if (category === 'UI & Screens') return 'var(--emerald)'
+    if (category === 'AI & Governance') return '#7c5cff'
     return 'var(--muted)'
   }
 
@@ -117,7 +120,7 @@ export default function Gallery() {
                   alt={item.title}
                   className={styles.image}
                   loading="lazy"
-                  onError={(e) => { e.target.src = `${BASE}/thumbnails/gallery/placeholder.svg` }}
+                  onError={(e) => { e.target.src = `${BASE}/gallery/placeholder.svg` }}
                 />
                 <div className={styles.imageOverlay}>
                   <span className={styles.overlayIcon}>↗</span>
@@ -133,7 +136,6 @@ export default function Gallery() {
                   >
                     {item.category}
                   </span>
-                  <span className={styles.year}>{item.year}</span>
                 </div>
                 <h2 className={styles.cardTitle}>{item.title}</h2>
                 <p className={styles.cardSub}>{item.subtitle}</p>
@@ -186,7 +188,7 @@ export default function Gallery() {
                 src={lightbox.image}
                 alt={lightbox.title}
                 className={styles.lbImage}
-                onError={(e) => { e.target.src = `${BASE}/thumbnails/gallery/placeholder.svg` }}
+                onError={(e) => { e.target.src = `${BASE}/gallery/placeholder.svg` }}
               />
             </div>
 
@@ -212,6 +214,12 @@ export default function Gallery() {
                   <span key={tag} className={styles.lbTag}>{tag}</span>
                 ))}
               </div>
+
+              {lightbox.link && (
+                <Link to={lightbox.link} className={styles.lbCaseStudyLink}>
+                  View Case Study ↗
+                </Link>
+              )}
 
               <div className={styles.lbCounter}>
                 {currentIdx + 1} / {filtered.length}

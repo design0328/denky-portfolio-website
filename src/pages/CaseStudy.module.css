@@ -294,6 +294,8 @@
   flex-shrink: 0;
 }
 .listItem.accent .listDot { background: var(--cyan); opacity: .6; }
+.inlineLink { color: var(--cyan); text-decoration: underline; text-underline-offset: 2px; }
+.inlineLink:hover { color: var(--fuchsia-lt, var(--cyan)); }
 
 /* Single visual fallback */
 .visualSection {

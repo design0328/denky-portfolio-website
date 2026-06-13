@@ -251,7 +251,12 @@ function Section({ title, items, accent, index }) {
         {items.map((item, i) => (
           <li key={i} className={`${styles.listItem} ${accent ? styles.accent : ''}`}>
             <span className={styles.listDot} />
-            {item}
+            {typeof item === 'string' ? item : (
+              <>
+                {item.text && `${item.text} `}
+                <Link to={item.linkTo} className={styles.inlineLink}>{item.linkLabel}</Link>
+              </>
+            )}
           </li>
         ))}
       </ul>
@@ -290,7 +295,8 @@ function ProjectVisual({ project, onInspect }) {
 }
 
 function MediaSection({ projectSlug, section, onInspect }) {
-  const imagePath = (file) => `${BASE}/screenshots/${projectSlug}/${file}`
+  const imagePath = (file, folder) =>
+    file.startsWith('/') ? `${BASE}${file}` : `${BASE}/screenshots/${folder || projectSlug}/${file}`
 
   return (
     <section className={styles.mediaSection}>
@@ -304,7 +310,7 @@ function MediaSection({ projectSlug, section, onInspect }) {
         <div className={styles.featureMedia}>
           <figure className={styles.featureFigure}>
             <InspectableImage
-              src={imagePath(section.image)}
+              src={imagePath(section.image, section.folder)}
               alt={section.alt || section.caption || section.title}
               className={styles.featureImg}
               buttonClassName={styles.imageButton}
@@ -327,7 +333,7 @@ function MediaSection({ projectSlug, section, onInspect }) {
           {section.images.map((image) => (
             <MediaFigure
               key={image.file}
-              src={imagePath(image.file)}
+              src={imagePath(image.file, image.folder)}
               alt={image.alt}
               caption={image.caption}
               onInspect={() => onInspect(`media-${image.file}`)}
@@ -341,7 +347,7 @@ function MediaSection({ projectSlug, section, onInspect }) {
           {section.images.map((image) => (
             <MediaFigure
               key={image.file}
-              src={imagePath(image.file)}
+              src={imagePath(image.file, image.folder)}
               alt={image.alt}
               caption={image.caption}
               onInspect={() => onInspect(`media-${image.file}`)}
@@ -464,12 +470,13 @@ function getInspectableImages(project, heroSrc, hasCuratedMedia) {
 
   if (hasCuratedMedia) {
     project.caseStudySections.forEach((section) => {
-      const imagePath = (file) => `${BASE}/screenshots/${assetFolder}/${file}`
+      const imagePath = (file, folder) =>
+        file.startsWith('/') ? `${BASE}${file}` : `${BASE}/screenshots/${folder || assetFolder}/${file}`
 
       if (section.type === 'featureImage') {
         images.push({
           id: `feature-${section.image}`,
-          src: imagePath(section.image),
+          src: imagePath(section.image, section.folder),
           alt: section.alt || section.caption || section.title,
           caption: section.caption,
         })
@@ -479,7 +486,7 @@ function getInspectableImages(project, heroSrc, hasCuratedMedia) {
         section.images.forEach((image) => {
           images.push({
             id: `media-${image.file}`,
-            src: imagePath(image.file),
+            src: imagePath(image.file, image.folder),
             alt: image.alt || image.caption,
             caption: image.caption,
           })

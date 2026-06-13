@@ -217,12 +217,6 @@
   padding: 3px 9px;
 }
 
-.year {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--dim);
-}
-
 .cardTitle {
   font-family: var(--font-body);
   font-size: 15px;
@@ -454,6 +448,28 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 4px;
   padding: 3px 8px;
+}
+
+.lbCaseStudyLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--fuchsia);
+  border: 1px solid var(--border2);
+  background: var(--fuchsia-dim);
+  border-radius: 999px;
+  padding: 7px 16px;
+  margin-bottom: 16px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.lbCaseStudyLink:hover {
+  background: var(--fuchsia);
+  color: #fff;
 }
 
 .lbCounter {
