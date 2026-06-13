@@ -41,7 +41,7 @@
   font-size: 12px;
   color: var(--dim);
   line-height: 1.7;
-  max-width: 200px;
+  max-width: 280px;
   font-family: var(--font-mono);
   letter-spacing: 0.04em;
 }
@@ -74,6 +74,18 @@
 }
 
 .colLink:hover { color: var(--text); }
+
+.colLinkAll {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--fuchsia-lt);
+  text-decoration: none;
+  transition: color 0.2s;
+  font-family: var(--font-body);
+}
+
+.colLinkAll:hover { color: var(--orange-lt); }
 
 /* ── Bottom bar ── */
 .bottom {

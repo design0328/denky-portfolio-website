@@ -10,8 +10,46 @@
   margin: 0 auto;
 }
 
+/* ── Dot grid overlay ── */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Glows ── */
+.glowFuchsia {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  top: -100px;
+  right: -80px;
+  z-index: 1;
+  background: radial-gradient(circle, rgba(232,16,122,0.22) 0%, rgba(232,16,122,0.09) 40%, transparent 70%);
+  pointer-events: none;
+}
+
+.glowOrange {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  bottom: -60px;
+  left: 60px;
+  z-index: 1;
+  background: radial-gradient(circle, rgba(255,82,0,0.16) 0%, rgba(255,82,0,0.06) 40%, transparent 70%);
+  pointer-events: none;
+}
+
 /* ── Eyebrow ── */
 .eyebrow {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -40,6 +78,8 @@
 
 /* ── Name ── */
 .name {
+  position: relative;
+  z-index: 2;
   font-family: var(--font-display);
   font-size: clamp(72px, 11vw, 148px);
   line-height: 0.92;
@@ -94,6 +134,8 @@
 
 /* ── Title row ── */
 .titleRow {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -117,6 +159,8 @@
 
 /* ── Description ── */
 .desc {
+  position: relative;
+  z-index: 2;
   max-width: 520px;
   font-family: var(--font-body);
   font-size: 17px;
@@ -130,6 +174,8 @@
 
 /* ── CTAs ── */
 .ctaGroup {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 24px;
@@ -186,6 +232,7 @@
 /* ── Stat cards — right side, vertically centred ── */
 .statCluster {
   position: absolute;
+  z-index: 2;
   right: 48px;
   top: 50%;
   transform: translateY(-50%);
@@ -245,6 +292,7 @@
 /* ── Discipline tags ── */
 .disciplines {
   position: absolute;
+  z-index: 2;
   bottom: 24px;
   left: 48px;
   right: 48px;

@@ -19,6 +19,10 @@ export default function Hero() {
   return (
     <section className={styles.hero}>
 
+      {/* ── Glows ── */}
+      <div className={styles.glowFuchsia} />
+      <div className={styles.glowOrange} />
+
       {/* ── Eyebrow ── */}
       <div className={styles.eyebrow}>
         <span className={styles.eyebrowDot} />

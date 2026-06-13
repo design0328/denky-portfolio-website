@@ -3,7 +3,7 @@
 ───────────────────────────────────────────── */
 :root {
   /* Backgrounds */
-  --bg:        #13151f;
+  --bg:        #07070d;
   --bg-nav:    #0f1018;
   --bg2:       #181a28;
   --bg3:       #1c1e30;
@@ -33,9 +33,9 @@
   --border2:   rgba(232, 16, 122, 0.25);
 
   /* Text */
-  --text:      #f0f0f8;
+  --text:      rgba(255, 255, 255, 0.9);
   --dim:       #6b7280;
-  --muted:     #9ca3af;
+  --muted:     rgba(255, 255, 255, 0.55);
 
   /* Typography */
   --font-display: 'Bebas Neue', sans-serif;
