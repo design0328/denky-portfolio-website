@@ -122,13 +122,21 @@ const toolCategories = [
     ],
   },
   {
-    label: 'Design Systems & Docs',
+    label: 'Design Systems & Knowledge',
     tools: [
       {
         name: 'Storybook',
         icon: (
           <svg viewBox="0 0 16 16" fill="currentColor">
             <path d="M10.8 1.2L10.5 4H8L9 1.5H3.5C3 1.5 2.5 2 2.5 2.5v11c0 .5.5 1 1 1h9c.5 0 1-.5 1-1V2.5c0-.7-.8-1.4-1.5-1.3l-.2.1zM7 6h4v1H7V6zm0 2.5h4v1H7v-1zM5 6h1v1H5V6zm0 2.5h1v1H5v-1z" />
+          </svg>
+        ),
+      },
+      {
+        name: 'Figma Libraries',
+        icon: (
+          <svg viewBox="0 0 16 16" fill="currentColor">
+            <path d="M5.5 2A1.5 1.5 0 004 3.5v1A1.5 1.5 0 005.5 6H7V4.5A1.5 1.5 0 005.5 2zM7 6H5.5A1.5 1.5 0 004 7.5 1.5 1.5 0 005.5 9H7V6zm0 3H5.5A1.5 1.5 0 004 10.5v1A1.5 1.5 0 005.5 13 1.5 1.5 0 007 11.5V9zm1-3h1.5A1.5 1.5 0 0011 4.5 1.5 1.5 0 009.5 3H8v3zm1.5 3A1.5 1.5 0 008 7.5 1.5 1.5 0 008 10.5a1.5 1.5 0 001.5-1.5z" />
           </svg>
         ),
       },
@@ -153,6 +161,14 @@ const toolCategories = [
         icon: (
           <svg viewBox="0 0 16 16" fill="currentColor">
             <path d="M8 1.5A6.5 6.5 0 101.5 8 6.5 6.5 0 008 1.5zm0 1.3a5.2 5.2 0 11-5.2 5.2A5.2 5.2 0 018 2.8zm0 1.2a4 4 0 100 8 4 4 0 000-8zm-1 1.5h2v1.5l1.5 1.5-1 1L8 7.5 6.5 9l-1-1 1.5-1.5V5.5z" />
+          </svg>
+        ),
+      },
+      {
+        name: 'Slack',
+        icon: (
+          <svg viewBox="0 0 16 16" fill="currentColor">
+            <path d="M6 2a1.5 1.5 0 00-1.5 1.5c0 .83.67 1.5 1.5 1.5h1.5V3.5A1.5 1.5 0 006 2zm0 4H2.5a1.5 1.5 0 000 3H6a1.5 1.5 0 000-3zm4-4a1.5 1.5 0 000 3h1.5V3.5A1.5 1.5 0 0010 2zm0 4a1.5 1.5 0 000 3h3.5a1.5 1.5 0 000-3H10zm-4 4H4.5a1.5 1.5 0 000 3c.83 0 1.5-.67 1.5-1.5V10zm4 0v1.5c0 .83.67 1.5 1.5 1.5a1.5 1.5 0 000-3H10zm-4 0H2.5a1.5 1.5 0 000 3H6v-3zm4 0h3.5a1.5 1.5 0 000-3H10v3z" />
           </svg>
         ),
       },
@@ -221,18 +237,18 @@ const toolCategories = [
         ),
       },
       {
-        name: 'W3C',
+        name: 'LevelAccess',
         icon: (
           <svg viewBox="0 0 16 16" fill="currentColor">
-            <path d="M2 4l2 8 2-5 2 5 2-8h1.5l1 4 1-4H16v-.5L14 3H2zm0 0" />
+            <path d="M2 12.5h12M4 12.5V9m4 3.5V7m4 5.5V5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         ),
       },
       {
-        name: 'NVDA',
+        name: 'Evinced',
         icon: (
           <svg viewBox="0 0 16 16" fill="currentColor">
-            <path d="M3 3h10v2H3zM3 7h10l-5 6-5-6zm5 4L5.5 7h5L8 11z" />
+            <path d="M8 2a6 6 0 100 12A6 6 0 008 2zm-2.5 4h5v1.5h-5V6zm0 2.5h3.5V10H5.5V8.5z" />
           </svg>
         ),
       },
@@ -252,27 +268,6 @@ const toolCategories = [
           <svg viewBox="0 0 16 16" fill="currentColor">
             <rect x="1.5" y="4" width="13" height="8.5" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.2" />
             <path d="M4 7h1.5M6.5 7H8M9 7h1.5M4 9.5h1M5.5 9.5h1M7 9.5h1M8.5 9.5h1M10 9.5h2M11 7h1" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
-          </svg>
-        ),
-      },
-    ],
-  },
-  {
-    label: 'Accessibility Collaboration',
-    tools: [
-      {
-        name: 'LevelAccess',
-        icon: (
-          <svg viewBox="0 0 16 16" fill="currentColor">
-            <path d="M2 12.5h12M4 12.5V9m4 3.5V7m4 5.5V5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-          </svg>
-        ),
-      },
-      {
-        name: 'Evinced',
-        icon: (
-          <svg viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8 2a6 6 0 100 12A6 6 0 008 2zm-2.5 4h5v1.5h-5V6zm0 2.5h3.5V10H5.5V8.5z" />
           </svg>
         ),
       },
@@ -299,6 +294,23 @@ const toolCategories = [
         ),
       },
       {
+        name: 'GitHub Pages',
+        icon: (
+          <svg viewBox="0 0 16 16" fill="currentColor">
+            <rect x="2" y="2" width="12" height="12" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.2" />
+            <path d="M4.5 5.5h7M4.5 8h7M4.5 10.5h4" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" />
+          </svg>
+        ),
+      },
+      {
+        name: 'Netlify',
+        icon: (
+          <svg viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 2L2 13h12L8 2zm0 3.5L11 11H5l3-5.5z" />
+          </svg>
+        ),
+      },
+      {
         name: 'VS Code',
         icon: (
           <svg viewBox="0 0 16 16" fill="currentColor">
@@ -307,43 +319,10 @@ const toolCategories = [
         ),
       },
       {
-        name: 'Cursor',
-        icon: (
-          <svg viewBox="0 0 16 16" fill="currentColor">
-            <path d="M3 2l10 5.5-5 1.5-1.5 5L3 2z" />
-          </svg>
-        ),
-      },
-      {
-        name: 'Roo',
-        icon: (
-          <svg viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8 2C5.24 2 3 4.24 3 7c0 1.85 1 3.46 2.5 4.33V13h5v-1.67C12 10.46 13 8.85 13 7c0-2.76-2.24-5-5-5zm-1.5 8.5v-1h3v1h-3zM6 8.5V7h1.5v1.5H6zm2.5 0V7H10v1.5H8.5z" />
-          </svg>
-        ),
-      },
-      {
-        name: 'Cline',
-        icon: (
-          <svg viewBox="0 0 16 16" fill="currentColor">
-            <path d="M2 4.5h12M2 8h8M2 11.5h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-            <path d="M12 9.5l2 2-2 2" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        ),
-      },
-      {
         name: 'Claude Code',
         icon: (
           <svg viewBox="0 0 16 16" fill="currentColor">
             <path d="M8 1.5C4.41 1.5 1.5 4.41 1.5 8S4.41 14.5 8 14.5 14.5 11.59 14.5 8 11.59 1.5 8 1.5zm-1.5 4l-3 2.5 3 2.5V10L5 8l2.5-2.5V5.5zm3 0V7.5L12 10l-2.5 2.5V11l3-2.5-3-2.5z" />
-          </svg>
-        ),
-      },
-      {
-        name: 'Vercel / V0',
-        icon: (
-          <svg viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8 2L14.5 13H1.5L8 2z" />
           </svg>
         ),
       },
@@ -364,11 +343,19 @@ const toolCategories = [
         ),
       },
       {
-        name: 'Loom',
+        name: 'Markdown',
         icon: (
           <svg viewBox="0 0 16 16" fill="currentColor">
-            <circle cx="8" cy="8" r="2.5" />
-            <path d="M8 2v2M8 12v2M2 8h2M12 8h2M3.75 3.75l1.42 1.42M10.83 10.83l1.42 1.42M3.75 12.25l1.42-1.42M10.83 5.17l1.42-1.42" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+            <rect x="1.5" y="3" width="13" height="10" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.2" />
+            <path d="M3.5 10.5V5.5l2 2.5 2-2.5v5M9 5.5v3.5M9 9l1.5 1.5L12 9" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        ),
+      },
+      {
+        name: 'Vercel / V0',
+        icon: (
+          <svg viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 2L14.5 13H1.5L8 2z" />
           </svg>
         ),
       },
@@ -384,6 +371,14 @@ const toolCategories = [
             <rect x="3" y="2" width="10" height="12" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.3" />
             <path d="M5.5 5.5h5M5.5 8h5M5.5 10.5h3" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" />
             <path d="M3 5h1M3 8h1M3 11h1" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" />
+          </svg>
+        ),
+      },
+      {
+        name: 'Claude API',
+        icon: (
+          <svg viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 1.5C4.41 1.5 1.5 4.41 1.5 8S4.41 14.5 8 14.5 14.5 11.59 14.5 8 11.59 1.5 8 1.5zm-1.5 4l-3 2.5 3 2.5V10L5 8l2.5-2.5V5.5zm3 0V7.5L12 10l-2.5 2.5V11l3-2.5-3-2.5z" />
           </svg>
         ),
       },
@@ -423,16 +418,6 @@ const toolCategories = [
         icon: (
           <svg viewBox="0 0 16 16" fill="currentColor">
             <path d="M8 1.5L1.5 8l3.25 3.25L8 8l3.25 3.25L14.5 8 8 1.5zM8 10.5l-2.25-2.25L8 6l2.25 2.25L8 10.5z" />
-          </svg>
-        ),
-      },
-      {
-        name: 'Trello',
-        icon: (
-          <svg viewBox="0 0 16 16" fill="currentColor">
-            <rect x="2" y="2" width="12" height="12" rx="2" fill="none" stroke="currentColor" strokeWidth="1.2" />
-            <rect x="3.5" y="3.5" width="3.5" height="6" rx="0.75" />
-            <rect x="9" y="3.5" width="3.5" height="4" rx="0.75" />
           </svg>
         ),
       },
