@@ -39,7 +39,37 @@
       "Bash(cp \"/Users/denky/Documents/GitHub/denky-portfolio-website/public/megan D.png\" /Users/denky/Documents/GitHub/denky-portfolio-website/public/testimonials/megan_D.png)",
       "Bash(cp \"/Users/denky/Documents/GitHub/denky-portfolio-website/public/roni mergie.jpeg\" /Users/denky/Documents/GitHub/denky-portfolio-website/public/testimonials/roni_mergie.jpeg)",
       "Bash(cp /Users/denky/Documents/GitHub/denky-portfolio-website/public/Talyah.jpeg /Users/denky/Documents/GitHub/denky-portfolio-website/public/testimonials/Talyah.jpeg)",
-      "Bash(xargs ls)"
+      "Bash(xargs ls)",
+      "Bash(npx eslint *)",
+      "Bash(node -e ' *)",
+      "Read(//tmp/pw-verify/**)",
+      "Read(//private/tmp/pw-verify/**)",
+      "Bash(rm -rf /tmp/pw-verify)",
+      "Read(//tmp/**)",
+      "Bash(curl -s http://localhost:5180/denky-portfolio-website/ -o /dev/null -w \"index: %{http_code}\\\\n\")",
+      "Bash(curl -s \"http://localhost:5180/denky-portfolio-website/src/pages/Gallery.jsx\" -o /tmp/gallery.out -w \"gallery.jsx: %{http_code}\\\\n\")",
+      "Bash(curl -s \"http://localhost:5180/denky-portfolio-website/src/pages/CaseStudy.jsx\" -o /tmp/casestudy.out -w \"casestudy.jsx: %{http_code}\\\\n\")",
+      "Bash(curl -s \"http://localhost:5180/denky-portfolio-website/src/data/gallery.js\" -o /tmp/gallerydata.out -w \"gallery.js: %{http_code}\\\\n\")",
+      "Bash(curl -s \"http://localhost:5180/denky-portfolio-website/src/data/projects.js\" -o /tmp/projectsdata.out -w \"projects.js: %{http_code}\\\\n\")",
+      "Bash(npx --yes playwright --version)",
+      "Bash(npx playwright *)",
+      "Bash(ls ~/Library/Caches/ms-playwright 2>/dev/null || ls ~/.cache/ms-playwright 2>/dev/null || echo \"none\")",
+      "Read(//Users/denky/.cache/**)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(node /tmp/check.mjs)",
+      "Bash(node /tmp/check4.mjs)",
+      "Bash(pkill -f \"vite --port 5180\")",
+      "Bash(npx vite *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4173/denky-portfolio-website/ --max-time 3)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(list\\(d.get\\('devDependencies',{}\\).keys\\(\\)\\)\\); print\\(list\\(d.get\\('dependencies',{}\\).keys\\(\\)\\)\\)\")",
+      "Bash(ls ~/Library/Caches/ms-playwright 2>/dev/null; which chromium chromium-browser google-chrome 2>/dev/null; ls \"/Applications/Google Chrome.app\" 2>/dev/null && echo \"chrome exists\")",
+      "Read(//Applications/Google Chrome.app/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/denky-portfolio-website/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:5173/denky-portfolio-website/Denky_Girasaki_Begonja_Resume_2026.pdf\")"
+    ],
+    "additionalDirectories": [
+      "/private/tmp/pw-verify"
     ]
   }
 }
