@@ -296,6 +296,7 @@ export const projects = [
     slug: 'design-hub',
     title: 'Design Hub',
     company: 'ZoomInfo',
+    thumbnail: `/denky-portfolio-website/screenshots/design-hub/01-hub-home.png`,
     year: '2026',
     discipline: 'Design Operations · Information Architecture · Internal Tooling',
     roleLabel: 'Sole Designer & Content Architect',
