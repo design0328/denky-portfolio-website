@@ -296,10 +296,10 @@ export const projects = [
     slug: 'design-hub',
     title: 'Design Hub',
     company: 'ZoomInfo',
-    year: '2026',
+    year: '2023–2026',
     discipline: 'Design Operations · Information Architecture · Internal Tooling',
     roleLabel: 'Sole Designer & Content Architect',
-    timeline: '2026',
+    timeline: '2023–2026',
     team: 'ZoomInfo Design Org (35 designers, PMs, managers)',
     outcome: 'KNOWLEDGE PLATFORM · 35-PERSON DESIGN ORG',
     eyebrow: 'KNOWLEDGE PLATFORM · 35-PERSON DESIGN ORG',
@@ -370,18 +370,18 @@ export const projects = [
         images: [
           {
             file: '04-build-process.png',
-            alt: 'Build process documentation within the hub',
-            caption: 'Build Process — how design ships, documented and accessible.',
-          },
-          {
-            file: '05-resources.png',
             alt: 'Resources section',
             caption: 'Resources — tools, references, and shared design assets.',
           },
           {
-            file: '06-newsletter.png',
+            file: '05-resources.png',
             alt: 'Newsletter archive',
             caption: 'Newsletter — bi-weekly Design Team Digest archive.',
+          },
+          {
+            file: '06-newsletter.png',
+            alt: 'Teams page with directory and calendars',
+            caption: 'Teams — directory, recurring sessions, shared calendars.',
           },
         ],
       },
