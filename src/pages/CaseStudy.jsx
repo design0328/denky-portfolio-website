@@ -112,7 +112,19 @@ function CaseStudyContent({ project, slug }) {
           <span className={styles.metaDot} />
           {discipline}
         </div>
-        <h1 className={styles.title}>{title}</h1>
+        <div className={styles.titleRow}>
+          <h1 className={styles.title}>{title}</h1>
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.liveButton} ${styles.liveButtonDesktop}`}
+            >
+              {project.liveLabel || 'View Live'}
+            </a>
+          )}
+        </div>
         <p className={styles.desc}>{desc}</p>
         <div className={styles.chips}>
           {chips.map((chip) => (
@@ -121,6 +133,16 @@ function CaseStudyContent({ project, slug }) {
             </span>
           ))}
         </div>
+        {project.liveUrl && (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.liveButton} ${styles.liveButtonMobile}`}
+          >
+            {project.liveLabel || 'View Live'}
+          </a>
+        )}
       </header>
 
       <ProjectSnapshot
@@ -298,15 +320,30 @@ function MediaSection({ projectSlug, section, onInspect }) {
   const imagePath = (file, folder) =>
     file.startsWith('/') ? `${BASE}${file}` : `${BASE}/screenshots/${folder || projectSlug}/${file}`
 
+  const isLiveEmbed = section.type === 'featureImage' && section.liveEmbed
+
   return (
     <section className={styles.mediaSection}>
+      {isLiveEmbed && (
+        <div className={styles.liveEmbed}>
+          {section.liveLabel && <div className={styles.liveEmbedLabel}>↓ {section.liveLabel}</div>}
+          <iframe
+            src={section.liveUrl}
+            className={styles.liveEmbedFrame}
+            title={section.liveLabel || section.title}
+            sandbox="allow-same-origin allow-scripts"
+            loading="lazy"
+          />
+        </div>
+      )}
+
       <div className={styles.mediaIntro}>
         <div className={styles.mediaLabel}>{section.label}</div>
         <h2 className={styles.mediaTitle}>{section.title}</h2>
         {section.body && <p className={styles.mediaBody}>{section.body}</p>}
       </div>
 
-      {section.type === 'featureImage' && (
+      {section.type === 'featureImage' && !isLiveEmbed && (
         <div className={styles.featureMedia}>
           <figure className={styles.featureFigure}>
             <InspectableImage
@@ -343,17 +380,38 @@ function MediaSection({ projectSlug, section, onInspect }) {
       )}
 
       {section.type === 'imageGrid' && (
-        <div className={styles.mediaGrid}>
-          {section.images.map((image) => (
-            <MediaFigure
-              key={image.file}
-              src={imagePath(image.file, image.folder)}
-              alt={image.alt}
-              caption={image.caption}
-              onInspect={() => onInspect(`media-${image.file}`)}
-            />
-          ))}
-        </div>
+        <>
+          {section.table && (
+            <table className={styles.domainTable}>
+              <thead>
+                <tr>
+                  <th>Domain</th>
+                  <th>What it evaluates</th>
+                </tr>
+              </thead>
+              <tbody>
+                {section.table.map((row) => (
+                  <tr key={row.domain}>
+                    <td><code>{row.domain}</code></td>
+                    <td>{row.covers}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+          {section.tableNote && <p className={styles.tableNote}>{section.tableNote}</p>}
+          <div className={styles.mediaGrid}>
+            {section.images.map((image) => (
+              <MediaFigure
+                key={image.file}
+                src={imagePath(image.file, image.folder)}
+                alt={image.alt}
+                caption={image.caption}
+                onInspect={() => onInspect(`media-${image.file}`)}
+              />
+            ))}
+          </div>
+        </>
       )}
     </section>
   )
@@ -473,7 +531,7 @@ function getInspectableImages(project, heroSrc, hasCuratedMedia) {
       const imagePath = (file, folder) =>
         file.startsWith('/') ? `${BASE}${file}` : `${BASE}/screenshots/${folder || assetFolder}/${file}`
 
-      if (section.type === 'featureImage') {
+      if (section.type === 'featureImage' && !section.liveEmbed) {
         images.push({
           id: `feature-${section.image}`,
           src: imagePath(section.image, section.folder),
