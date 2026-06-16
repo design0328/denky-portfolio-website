@@ -74,7 +74,8 @@
       "Bash(python3 -)",
       "Bash(grep -n \"slug: 'design-hub'\\\\|type: '\\\\|^  },\\\\|^  {\" src/data/projects.js)",
       "Bash(awk -F: '{print}')",
-      "Bash(git checkout *)"
+      "Bash(git checkout *)",
+      "Bash(git -C /Users/denky/Documents/GitHub/denky-portfolio-website add src/data/projects.js)"
     ],
     "additionalDirectories": [
       "/private/tmp/pw-verify",
