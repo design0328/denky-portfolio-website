@@ -184,7 +184,6 @@
 }
 
 .featured .title {
-  font-size: clamp(28px, 3vw, 42px);
   line-height: 1.12;
   margin-bottom: 14px;
 }
@@ -274,10 +273,6 @@
 
   .featured .content {
     padding: 24px 22px 22px;
-  }
-
-  .featured .title {
-    font-size: 28px;
   }
 
   .footer {
