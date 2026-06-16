@@ -230,6 +230,8 @@ function CaseStudyContent({ project, slug }) {
 }
 
 function StoryGrid({ sections }) {
+  const validSections = sections.filter((s) => Array.isArray(s.items) && s.items.length > 0)
+  if (validSections.length === 0) return null
   return (
     <section className={styles.storySection} aria-label="Case study narrative">
       <div className={styles.storyIntro}>
@@ -237,7 +239,7 @@ function StoryGrid({ sections }) {
         <h2 className={styles.storyTitle}>What changed, how it worked, and why it mattered</h2>
       </div>
       <div className={styles.storyGrid}>
-        {sections.map((section, index) => (
+        {validSections.map((section, index) => (
           <Section key={section.title} title={section.title} items={section.items} index={index + 1} />
         ))}
       </div>
@@ -263,6 +265,7 @@ function ProjectSnapshot({ items }) {
 
 function Section({ title, items, accent, index }) {
   const num = String(index || { Overview: 1, 'My Role': 2, Impact: 3 }[title] || 0).padStart(2, '0')
+  if (!Array.isArray(items) || items.length === 0) return null
   return (
     <section className={styles.sectionCard}>
       <h2 className={styles.sectionTitle}>
@@ -320,6 +323,8 @@ function MediaSection({ projectSlug, section, onInspect }) {
   const imagePath = (file, folder) =>
     file.startsWith('/') ? `${BASE}${file}` : `${BASE}/screenshots/${folder || projectSlug}/${file}`
 
+  const imageFile = (image) => image.file || image.src
+
   const isLiveEmbed = section.type === 'featureImage' && section.liveEmbed
 
   return (
@@ -340,7 +345,7 @@ function MediaSection({ projectSlug, section, onInspect }) {
       <div className={styles.mediaIntro}>
         <div className={styles.mediaLabel}>{section.label}</div>
         <h2 className={styles.mediaTitle}>{section.title}</h2>
-        {section.body && <p className={styles.mediaBody}>{section.body}</p>}
+        {section.body && section.type !== 'text' && <p className={styles.mediaBody}>{section.body}</p>}
       </div>
 
       {section.type === 'featureImage' && !isLiveEmbed && (
@@ -365,15 +370,22 @@ function MediaSection({ projectSlug, section, onInspect }) {
         </div>
       )}
 
+      {section.type === 'text' && (
+        <div className={styles.textSection}>
+          {section.heading && <h3 className={styles.textHeading}>{section.heading}</h3>}
+          {section.body && <p className={styles.textBody}>{section.body}</p>}
+        </div>
+      )}
+
       {section.type === 'imagePair' && (
         <div className={styles.mediaPair}>
           {section.images.map((image) => (
             <MediaFigure
-              key={image.file}
-              src={imagePath(image.file, image.folder)}
+              key={imageFile(image)}
+              src={imagePath(imageFile(image), image.folder)}
               alt={image.alt}
               caption={image.caption}
-              onInspect={() => onInspect(`media-${image.file}`)}
+              onInspect={() => onInspect(`media-${imageFile(image)}`)}
             />
           ))}
         </div>
@@ -403,11 +415,11 @@ function MediaSection({ projectSlug, section, onInspect }) {
           <div className={styles.mediaGrid}>
             {section.images.map((image) => (
               <MediaFigure
-                key={image.file}
-                src={imagePath(image.file, image.folder)}
+                key={imageFile(image)}
+                src={imagePath(imageFile(image), image.folder)}
                 alt={image.alt}
                 caption={image.caption}
-                onInspect={() => onInspect(`media-${image.file}`)}
+                onInspect={() => onInspect(`media-${imageFile(image)}`)}
               />
             ))}
           </div>
@@ -542,9 +554,12 @@ function getInspectableImages(project, heroSrc, hasCuratedMedia) {
 
       if (section.images) {
         section.images.forEach((image) => {
+          const file = image.file
+          const src = image.src ?? (file != null ? imagePath(file, image.folder) : null)
+          if (!src) return
           images.push({
-            id: `media-${image.file}`,
-            src: imagePath(image.file, image.folder),
+            id: `media-${file ?? image.src}`,
+            src,
             alt: image.alt || image.caption,
             caption: image.caption,
           })
