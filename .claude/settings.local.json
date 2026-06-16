@@ -66,10 +66,20 @@
       "Bash(ls ~/Library/Caches/ms-playwright 2>/dev/null; which chromium chromium-browser google-chrome 2>/dev/null; ls \"/Applications/Google Chrome.app\" 2>/dev/null && echo \"chrome exists\")",
       "Read(//Applications/Google Chrome.app/**)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/denky-portfolio-website/)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:5173/denky-portfolio-website/Denky_Girasaki_Begonja_Resume_2026.pdf\")"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:5173/denky-portfolio-website/Denky_Girasaki_Begonja_Resume_2026.pdf\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173)",
+      "Bash(lsof -i :5173 -sTCP:LISTEN)",
+      "Bash(lsof -i :3000 -sTCP:LISTEN)",
+      "Bash(node shot.mjs)",
+      "Bash(python3 -)",
+      "Bash(grep -n \"slug: 'design-hub'\\\\|type: '\\\\|^  },\\\\|^  {\" src/data/projects.js)",
+      "Bash(awk -F: '{print}')",
+      "Bash(git checkout *)"
     ],
     "additionalDirectories": [
-      "/private/tmp/pw-verify"
+      "/private/tmp/pw-verify",
+      "/tmp",
+      "/private/tmp"
     ]
   }
 }
