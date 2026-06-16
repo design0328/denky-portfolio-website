@@ -37,8 +37,9 @@ function CaseStudyContent({ project, slug }) {
   } = project
   const heroSrc = heroImage || thumbnail
   const hasCuratedMedia = caseStudySections && caseStudySections.length > 0
+  const hasSections = project.sections && project.sections.length > 0
   const hasScreenshots = project.screenshots && project.screenshots.length > 0
-  const inspectableImages = getInspectableImages(project, heroSrc, hasCuratedMedia)
+  const inspectableImages = getInspectableImages(project, heroSrc, hasCuratedMedia, hasSections)
   const [activeImageId, setActiveImageId] = useState(null)
   const activeImageIndex = inspectableImages.findIndex((image) => image.id === activeImageId)
   const activeImage = activeImageIndex >= 0 ? inspectableImages[activeImageIndex] : null
@@ -176,11 +177,13 @@ function CaseStudyContent({ project, slug }) {
               />
             ))}
           </div>
+        ) : hasSections ? (
+          <ProjectSections sections={project.sections} onInspect={openLightbox} />
         ) : (
           <ProjectVisual project={project} onInspect={openLightbox} />
         )}
 
-        {!hasCuratedMedia && hasScreenshots && (
+        {!hasCuratedMedia && !hasSections && hasScreenshots && (
           <div className={styles.screenshotsSection}>
             {[...new Set(project.screenshots.map((s) => s.section))].map((section) => (
               <div key={section} className={styles.screenshotGroup}>
@@ -315,6 +318,68 @@ function ProjectVisual({ project, onInspect }) {
         </div>
         {project.heroCaption && <figcaption className={styles.deviceCaption}>{project.heroCaption}</figcaption>}
       </figure>
+    </section>
+  )
+}
+
+function ProjectSections({ sections, onInspect }) {
+  return (
+    <div className={styles.mediaSections}>
+      {sections.map((section, i) => (
+        <ProjectSection key={i} section={section} onInspect={onInspect} />
+      ))}
+    </div>
+  )
+}
+
+function ProjectSection({ section, onInspect }) {
+  const hasIntro = section.eyebrow || section.heading
+  return (
+    <section className={styles.mediaSection}>
+      {hasIntro && (
+        <div className={styles.mediaIntro}>
+          {section.eyebrow && <div className={styles.sectionsEyebrow}>{section.eyebrow}</div>}
+          {section.heading && <h2 className={styles.mediaTitle}>{section.heading}</h2>}
+        </div>
+      )}
+
+      {section.type === 'text' && section.body && (
+        <div className={styles.sectionsText}>
+          {section.body.split('\n\n').map((para, i) => (
+            <p key={i} className={styles.sectionsBody}>{para}</p>
+          ))}
+        </div>
+      )}
+
+      {section.type === 'featureImage' && section.src && (
+        <figure className={styles.sectionsFeatureFigure}>
+          <InspectableImage
+            src={section.src}
+            alt={section.caption || ''}
+            className={styles.sectionsImg}
+            buttonClassName={styles.sectionsImageButton}
+            onInspect={() => onInspect(`section-feat-${section.src}`)}
+          />
+          {section.caption && <figcaption className={styles.sectionsCaption}>{section.caption}</figcaption>}
+        </figure>
+      )}
+
+      {section.type === 'imagePair' && section.images && (
+        <div className={styles.sectionsPair}>
+          {section.images.map((image) => (
+            <figure key={image.src} className={styles.sectionsFeatureFigure}>
+              <InspectableImage
+                src={image.src}
+                alt={image.caption || ''}
+                className={styles.sectionsImg}
+                buttonClassName={styles.sectionsImageButton}
+                onInspect={() => onInspect(`section-pair-${image.src}`)}
+              />
+              {image.caption && <figcaption className={styles.sectionsCaption}>{image.caption}</figcaption>}
+            </figure>
+          ))}
+        </div>
+      )}
     </section>
   )
 }
@@ -527,7 +592,7 @@ function ImageLightbox({ image, currentIndex, total, canStep, onClose, onPreviou
   )
 }
 
-function getInspectableImages(project, heroSrc, hasCuratedMedia) {
+function getInspectableImages(project, heroSrc, hasCuratedMedia, hasSections) {
   const assetFolder = project.assetFolder || project.slug
   const images = [
     {
@@ -567,6 +632,30 @@ function getInspectableImages(project, heroSrc, hasCuratedMedia) {
       }
     })
 
+    return images
+  }
+
+  if (hasSections) {
+    project.sections.forEach((section) => {
+      if (section.type === 'featureImage' && section.src) {
+        images.push({
+          id: `section-feat-${section.src}`,
+          src: section.src,
+          alt: section.caption || '',
+          caption: section.caption,
+        })
+      }
+      if (section.type === 'imagePair' && section.images) {
+        section.images.forEach((image) => {
+          images.push({
+            id: `section-pair-${image.src}`,
+            src: image.src,
+            alt: image.caption,
+            caption: image.caption,
+          })
+        })
+      }
+    })
     return images
   }
 
