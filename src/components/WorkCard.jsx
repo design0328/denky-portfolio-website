@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import styles from './WorkCard.module.css'
 
 export default function WorkCard({ project, index }) {
-  const { slug, title, company, year, discipline, desc, chips, thumbnail, featured, summary } = project
+  const { slug, title, company, discipline, desc, chips, thumbnail, featured, summary } = project
 
   return (
     <Link
@@ -32,8 +32,6 @@ export default function WorkCard({ project, index }) {
       <div className={styles.content}>
         <div className={styles.meta}>
           {company}
-          <span className={styles.metaDot} />
-          {year}
           <span className={styles.metaDot} />
           {discipline}
         </div>
