@@ -6,7 +6,7 @@
   margin: 0 auto;
 }
 
-.header { margin-bottom: 48px; }
+.header { margin-bottom: 64px; }
 
 /* ── Pill badge eyebrow ── */
 .eyebrow {
@@ -41,39 +41,6 @@
   line-height: 0.95;
   border-bottom: 1px solid var(--border);
   padding-bottom: 24px;
-}
-
-/* Filters */
-.filters {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-}
-
-.filter {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  padding: 8px 18px;
-  border-radius: 100px;
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
-}
-
-.filter:hover {
-  color: var(--fuchsia);
-  border-color: var(--border2);
-  background: var(--fuchsia-dim);
-}
-
-.filterActive {
-  color: var(--fuchsia) !important;
-  border-color: var(--border2) !important;
-  background: var(--fuchsia-dim) !important;
 }
 
 /* Grid */

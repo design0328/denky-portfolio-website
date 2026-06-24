@@ -594,7 +594,16 @@ export const projects = [
     role: 'Sole Designer',
     outcome: 'Brand, product, and design system — built from scratch to acquisition',
     company: 'RingLead (acquired by ZoomInfo, 2021)',
-    chips: ['Brand Systems', 'Visual Design', 'Product UX', 'Design Systems', 'Figma', 'MUI', 'Sales Enablement', 'Event Design'],
+    chips: [
+      { label: 'Brand Systems' },
+      { label: 'Visual Design' },
+      { label: 'Product UX' },
+      { label: 'Design Systems' },
+      { label: 'Figma' },
+      { label: 'MUI' },
+      { label: 'Sales Enablement' },
+      { label: 'Event Design' },
+    ],
     thumbnail: `${BASE}/screenshots/ringlead/era3-home.png`,
     sections: [
       { type: 'text', eyebrow: 'OVERVIEW', heading: 'Sole designer. Three brand eras. One acquisition.', body: `I joined RingLead in 2016 as the only designer in the company. Over five years I rebuilt the visual identity three times — each rebrand reflecting a shift in the business — and eventually expanded into product UX as the platform scaled toward acquisition.\n\nThe work spans brand strategy, marketing systems, sales enablement, web design, event campaigns, a Figma design system, and platform UI. When ZoomInfo acquired RingLead in 2021, design continuity across the product was already in place.` },
