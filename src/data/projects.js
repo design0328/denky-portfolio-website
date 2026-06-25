@@ -364,27 +364,13 @@ export const projects = [
         ],
       },
       {
-        type: 'imageGrid',
+        type: 'featureImage',
         label: 'DesignOps',
         title: 'The Operational Layer',
         body: 'Design Hub was not a document dump — it was the operational layer the design org had been missing. Every recurring program I ran had a home here. The newsletter archive let new designers onboard into the team\'s history, not just its current state. The footer taxonomy added a self-service support layer: Report a Site Issue, Suggest a Resource, Contact Design Ops, Request Figma Access. I designed it to stay current with minimal maintenance overhead — sustainable without dedicated DesignOps staff.',
-        images: [
-          {
-            file: '04-build-process.png',
-            alt: 'Resources section',
-            caption: 'Resources — tools, references, and shared design assets.',
-          },
-          {
-            file: '05-resources.png',
-            alt: 'Newsletter archive',
-            caption: 'Newsletter — bi-weekly Design Team Digest archive.',
-          },
-          {
-            file: '06-newsletter.png',
-            alt: 'Teams page with directory and calendars',
-            caption: 'Teams — directory, recurring sessions, shared calendars.',
-          },
-        ],
+        image: '04-operational-layer.png',
+        alt: 'Design Hub Bet to Build, Resources, and Design Team News pages shown together',
+        caption: 'Bet to Build, Resources, and Design Team News — the recurring programs that kept the hub current.',
       },
     ],
   },
