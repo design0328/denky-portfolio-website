@@ -416,7 +416,7 @@ export const projects = [
         label: 'Navigation States',
         title: 'Every interaction state defined before a line of code',
         body: 'The spec set documents the full anatomy of the Admin Portal\'s collapsed left navigation — collapsed, expanded, active, hover, and selected states — along with an updated icon system, giving engineering a single source of truth for how the nav should look and behave.',
-        image: '01-nav-states-anatomy.png',
+        image: '01b-nav-states-anatomy.png',
         alt: 'Admin Portal left navigation states — collapsed, expanded, active, hover, and selected — with icon system updates.',
         caption: 'Left nav states — collapsed, expanded, active, hover, and selected, with icon system updates.',
         notes: [
