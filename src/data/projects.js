@@ -337,22 +337,13 @@ export const projects = [
         body: 'The design org had no single place that said: here is how we work, here is where things live, here is who to talk to. New designers spent their first weeks piecing together information from disconnected sources. Veterans relied on Slack memory and tribal knowledge to surface resources that should have been findable in seconds. I diagnosed this as an information architecture problem masquerading as a communication problem — and built the fix.',
       },
       {
-        type: 'imagePair',
+        type: 'featureImage',
         label: 'Platform',
         title: 'What I Built',
         body: 'I built the Design Hub on Google Sites — a deliberate choice given existing tooling and a no-budget constraint. The architecture was role-navigated: a designer joining the team could follow the Onboarding path; a veteran could jump directly to Product/Repos, Resources, or the Newsletter archive. Home surfaced quick links to the latest training, latest newsletter, and design system — plus a live Design Digest embed so the hub was always current.',
-        images: [
-          {
-            file: '01-hub-home.png',
-            alt: 'Design Hub home page',
-            caption: 'Home — quick links, live newsletter embed, Team Events calendar, AI Workshop promos.',
-          },
-          {
-            file: '01b-hub-home.png',
-            alt: 'Design Hub Team Events and AI Workshops page with Design Digest newsletter',
-            caption: 'Team Events and AI Workshops — live session calendar with the Design Digest newsletter.',
-          },
-        ],
+        image: '01b-hub-home.png',
+        alt: 'Design Hub Team Events and AI Workshops page with Design Digest newsletter',
+        caption: 'Team Events and AI Workshops — live session calendar with the Design Digest newsletter.',
       },
       {
         type: 'imagePair',
