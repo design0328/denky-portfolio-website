@@ -180,7 +180,7 @@ export const projects = [
     overview: [
       'Diagnosed learning gaps across the full design org through listening sessions and team meetings before a single line was written',
       'Built the curated content list that became the foundation for all three training tracks',
-      'Coded the training platform from scratch in VS Code — rebuilt from Vivek\'s training generator into a full deployable site',
+      'Coded the training platform from scratch in VS Code — rebuilt from an earlier training generator a colleague had built into a full deployable site',
       'Three tracks: CHAI Framework (mandatory, 7 phases), AI Fundamentals (8 self-paced modules), AI Workshops (bi-weekly, all recorded)',
       'Embedded in the Design Hub via iframe — one front door for all design org knowledge, onboarding, and training',
     ],
@@ -188,8 +188,8 @@ export const projects = [
     // ── Role (detail panel) ─────────────────────────────────
     role: [
       'Ran listening sessions and attended team meetings to surface what designers were struggling with, what they didn\'t understand, and what they needed to learn to move forward — this became the needs assessment the entire platform was built on',
-      'Built the curated content spreadsheet that mapped team learning needs to specific training sources — Vivek used this list to source YouTube content for AI Fundamentals',
-      'Took Vivek\'s training generator and rebuilt it into a full deployable training platform — coded in VS Code with Claude, structured into three distinct learning tracks',
+      'Built the curated content spreadsheet that mapped team learning needs to specific training sources — a colleague used this list to source YouTube content for AI Fundamentals',
+      'Took an earlier training generator a colleague had built and rebuilt it into a full deployable training platform — coded in VS Code with Claude, structured into three distinct learning tracks',
       'Designed the peer-led workshop model: senior designers teaching to their own domain strengths, making the training specific to ZoomInfo\'s environment and context rather than generic YouTube searches',
       'Led Phase 6 of the CHAI Framework myself — Validation Checkpoints, covering accessibility, brand, and ethical review before customer testing',
       'Embedded the portal in the Design Hub (Google Sites) via full-width iframe, making it accessible to a team still ramping up on repo-based workflows',
@@ -518,7 +518,7 @@ export const projects = [
           },
           {
             src: '/denky-portfolio-website/screenshots/design-system/03-a11y-nav-workflows.png',
-            alt: 'Left Navigation for Workflows accessibility annotation canvas showing Default, Tab Order, Name/Role/Value, and Focus Management columns. Status badge reads a11y Ready for Dev. Approved by Talyah Aviran, Accessibility Contractor.',
+            alt: 'Left Navigation for Workflows accessibility annotation canvas showing Default, Tab Order, Name/Role/Value, and Focus Management columns. Status badge reads a11y Ready for Dev. Approved by the accessibility contractor.',
             caption: 'Every component annotated for accessibility — Ready for Dev status, reviewed and approved by the accessibility contractor.',
           },
         ],
@@ -526,7 +526,7 @@ export const projects = [
       {
         type: 'text',
         heading: 'The Accessibility Guidelines Library',
-        body: 'I started by learning from Talyah Aviran, ZoomInfo\'s contracted CPWA accessibility specialist. She taught me how to approach accessibility — not as a checklist but as a design requirement built in from the start. Component by component, I built out the accessibility guidelines library: keyboard interaction specs, Name/Role/Value mappings, focus management rules, landmark structures, live region requirements. The library lived in Figma — designers and PMs referenced the guidelines directly there, and the documentation was published to Confluence. Engineers worked from Storybook: the accessibility specs from the Figma library were implemented into Storybook components, so compliance could be verified inside the platform engineers actually use. Once I had the foundation, Talyah shifted into a review and advisory role — she approved my annotation work, acted as a sounding board for edge cases, and signed off on dev handoff packages. I ran the a11y grooming sessions with engineers, walked them through implementation requirements, and reviewed production builds for compliance. Over time the entire design org started coming to me — I became the accessibility point of contact for every team at ZoomInfo.',
+        body: 'I started by learning from a contracted CPWA accessibility specialist ZoomInfo had brought in. She taught me how to approach accessibility — not as a checklist but as a design requirement built in from the start. Component by component, I built out the accessibility guidelines library: keyboard interaction specs, Name/Role/Value mappings, focus management rules, landmark structures, live region requirements. The library lived in Figma — designers and PMs referenced the guidelines directly there, and the documentation was published to Confluence. Engineers worked from Storybook: the accessibility specs from the Figma library were implemented into Storybook components, so compliance could be verified inside the platform engineers actually use. Once I had the foundation, she shifted into a review and advisory role — she approved my annotation work, acted as a sounding board for edge cases, and signed off on dev handoff packages. I ran the a11y grooming sessions with engineers, walked them through implementation requirements, and reviewed production builds for compliance. Over time the entire design org started coming to me — I became the accessibility point of contact for every team at ZoomInfo.',
       },
       {
         type: 'imageGrid',
@@ -563,7 +563,7 @@ export const projects = [
           },
           {
             src: '/denky-portfolio-website/screenshots/design-system/06-a11y-enable-ai-flow.png',
-            alt: 'Enable AI Account flow accessibility annotation showing multi-step flow with TAGS spec, aria-live polite requirements, and testing object documentation — approved by Talyah Aviran.',
+            alt: 'Enable AI Account flow accessibility annotation showing multi-step flow with TAGS spec, aria-live polite requirements, and testing object documentation — approved by the accessibility contractor.',
             caption: 'Enable AI Account flow — full multi-step annotation including live region specs and implementation notes for dev.',
           },
         ],
@@ -616,7 +616,7 @@ export const projects = [
       { type: 'text', eyebrow: 'ERA 3 · 2020–2021', heading: 'The phoenix. A rebirth — in every sense.', body: `By 2020, RingLead had pivoted from data management to data orchestration — a fundamentally different product story. The brand needed to reflect that transformation.\n\nI conceived the phoenix as the central metaphor: a business rising from its own past and taking a new form. I sketched the concept, developed the mark through iteration, and directed the final execution. The resulting logo — a stylized bird in layered navy, teal, and magenta — became the identity anchor for the company's final chapter before acquisition.\n\nThe third brand system extended to the website, ebooks, data orchestration one-sheets, tip sheets, API integration decks, and the #talkdatatome virtual event campaign — a LinkedIn/Salesforce ecosystem event that ran in partnership with speakers including the ZoomInfo CEO.` },
       { type: 'featureImage', src: '/denky-portfolio-website/screenshots/ringlead/phoenix-logo.png', caption: 'RingLead phoenix mark — conceived, developed, and directed by Denky' },
       { type: 'featureImage', src: '/denky-portfolio-website/screenshots/ringlead/era3-website.png', caption: 'Era 3 website hero — Data Orchestration / RevOps Automation / Technology Consolidation' },
-      { type: 'imagePair', images: [{ src: '/denky-portfolio-website/screenshots/ringlead/era3-talkdatatome.png', caption: '#talkdatatome virtual event landing page — 2021' }, { src: '/denky-portfolio-website/screenshots/ringlead/era3-speaker-cards.png', caption: 'Speaker cards — Henry Schuck keynote (ZoomInfo CEO) and Marketing Ops panel' }] },
+      { type: 'imagePair', images: [{ src: '/denky-portfolio-website/screenshots/ringlead/era3-talkdatatome.png', caption: '#talkdatatome virtual event landing page — 2021' }, { src: '/denky-portfolio-website/screenshots/ringlead/era3-speaker-cards.png', caption: 'Speaker cards — ZoomInfo CEO keynote and Marketing Ops panel' }] },
       { type: 'imagePair', images: [{ src: '/denky-portfolio-website/screenshots/ringlead/era3-content-system.png', caption: 'Era 3 content system — ebook, tip sheet, and data orchestration one-sheet' }, { src: '/denky-portfolio-website/screenshots/ringlead/era3-ebook.png', caption: 'Data Orchestration for Multi-Vendor Enrichment ebook cover' }] },
       { type: 'text', eyebrow: 'THE DESIGN SYSTEM', heading: 'A Figma component library built before ZoomInfo had one.', body: `As RingLead's product matured, I built a full design system in Figma — the infrastructure layer that made consistent UI possible at scale.\n\nThe system covered color tokens (Primary 50–900, Secondary, Logo, Background, Gray, Text, Icon — each with documented accessibility contrast ratios), a Roboto typography scale across H1–Body 2 at all weights, and a complete component library: Buttons (Primary, Secondary, Champion, Next, Back with all states), Checkboxes, Radio Buttons, Dropdowns, Input Text, Left Navigation, Top Navigation, Elevation, and a large icon library.\n\nThis work preceded the ZoomInfo MUI migration and informed how I engaged with design systems thinking when I joined ZoomInfo post-acquisition.` },
       { type: 'imagePair', images: [{ src: '/denky-portfolio-website/screenshots/ringlead/ds-colors.png', caption: 'Color token system — Primary, Secondary, Logo, Background, Gray, Text, Icon' }, { src: '/denky-portfolio-website/screenshots/ringlead/ds-typography.png', caption: 'Typography scale — Roboto, H1–Body 2, weights and line heights' }] },
