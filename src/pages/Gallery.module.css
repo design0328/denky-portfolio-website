@@ -453,22 +453,26 @@
 .lbCaseStudyLink {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  color: var(--fuchsia);
-  border: 1px solid var(--border2);
-  background: var(--fuchsia-dim);
-  border-radius: 999px;
-  padding: 7px 16px;
-  margin-bottom: 16px;
+  gap: 10px;
+  font-family: 'Figtree', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #e8107a, #ff5200);
+  border: none;
+  border-radius: 9999px;
+  padding: 13px 28px;
+  margin-top: 8px;
+  margin-bottom: 20px;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
 }
 
 .lbCaseStudyLink:hover {
-  background: var(--fuchsia);
+  transform: translateY(-2px);
+  filter: brightness(1.12);
+  box-shadow: 0 8px 32px var(--fuchsia-glow);
   color: #fff;
 }
 

@@ -64,7 +64,7 @@ export const galleryItems = [
       'Data quality platform — duplicate health checks, field analysis, and report card dashboards',
     tags: ['Product Design', 'Design Systems', 'Dashboards'],
     image: `${BASE}/gallery/ringlead/ringlead-platform-ui.png`,
-    link: '/work/ringlead-brand-to-product',
+    link: '/work/ringlead',
   },
   {
     id: 'ringlead-data-orchestration',
@@ -89,6 +89,7 @@ export const galleryItems = [
       'Enrichment 360° product system, Intelligent Forms, and ringlead.com',
     tags: ['Product Marketing', 'Campaign', 'Web Design'],
     image: `${BASE}/gallery/ringlead/dms-enrichment.png`,
+    link: '/work/ringlead',
   },
   {
     id: 'talkdatatome',

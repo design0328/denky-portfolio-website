@@ -209,17 +209,17 @@ export default function Gallery() {
               <p className={styles.lbSubtitle}>{lightbox.subtitle}</p>
               <p className={styles.lbDescription}>{lightbox.description}</p>
 
-              <div className={styles.lbTags}>
-                {lightbox.tags.map((tag) => (
-                  <span key={tag} className={styles.lbTag}>{tag}</span>
-                ))}
-              </div>
-
               {lightbox.link && (
                 <Link to={lightbox.link} className={styles.lbCaseStudyLink}>
                   View Case Study ↗
                 </Link>
               )}
+
+              <div className={styles.lbTags}>
+                {lightbox.tags.map((tag) => (
+                  <span key={tag} className={styles.lbTag}>{tag}</span>
+                ))}
+              </div>
 
               <div className={styles.lbCounter}>
                 {currentIdx + 1} / {filtered.length}
