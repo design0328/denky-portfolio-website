@@ -492,7 +492,10 @@ export const projects = [
     company: 'ZoomInfo',
     discipline: 'Design Systems',
     role: 'Sole A11y Designer & Accessibility Champion',
-    outcome: '~100 components · Design system + accessibility',
+    roleLabel: 'Sole A11y Designer & Accessibility Champion',
+    timeline: '2023–2025',
+    team: 'ZoomInfo Design Org',
+    outcome: '~100 COMPONENTS · DESIGN SYSTEM + ACCESSIBILITY',
     desc: 'Building the accessibility layer for a 100-component design system — and growing into the org-wide accessibility champion for a 35-person design team.',
     tags: ['Design Systems', 'Accessibility', 'WCAG', 'Component Library', 'Documentation', 'Dev Handoff'],
     chips: [
@@ -501,23 +504,26 @@ export const projects = [
       { label: 'WCAG' },
     ],
     thumbnail: '/denky-portfolio-website/screenshots/design-system/01-a11y-guidelines-keyboard.png',
+    assetFolder: 'design-system',
+    heroImage: '/denky-portfolio-website/screenshots/design-system/01-a11y-guidelines-keyboard.png',
+    heroCaption: 'PLACEHOLDER — to be replaced with a dedicated hero image.',
     overview: 'When I joined ZoomInfo\'s design system team, Muze — an Angular Material-based component library — was the foundation every product team built on. I came in to learn how components were built, understand what accessibility required, and start documenting it. What followed was two years of building the accessibility infrastructure that the entire org depended on: a guidelines library covering every component, annotation packages across every major product surface, biweekly open hours bringing designers, PMs, and engineers together, and eventually a migration path as MUI React entered the picture.',
     caseStudySections: [
       {
         type: 'text',
-        heading: 'The System',
+        title: 'The System',
         body: 'Muze was the shared foundation — a library of nearly 100 components that every product team customized into their own "Mini Muze": product-specific Figma libraries built on Muze components, configured for their team\'s use cases so no one was rebuilding the same component twice. I co-owned the system alongside the lead design system designer: building and refining components, running Muze Open Hours twice a week, and maintaining documentation in both Figma and Confluence. Every component shipped fully functional, with all interaction states documented and accessible by default.',
       },
       {
         type: 'imagePair',
         images: [
           {
-            src: '/denky-portfolio-website/screenshots/design-system/09-mini-muze-figma-library.png',
+            file: '09-mini-muze-figma-library.png',
             alt: 'OperationsOS Mini Muze Figma file showing Cards BG and Containers BG organized across seven product surfaces: Segment, Route, Matching, Enrich, Working Hours, Licensed Users, and Normalize.',
             caption: 'OperationsOS Mini Muze — product-specific component library built on the core Muze system, organized across 7 product surfaces.',
           },
           {
-            src: '/denky-portfolio-website/screenshots/design-system/03-a11y-nav-workflows.png',
+            file: '03-a11y-nav-workflows.png',
             alt: 'Left Navigation for Workflows accessibility annotation canvas showing Default, Tab Order, Name/Role/Value, and Focus Management columns. Status badge reads a11y Ready for Dev. Approved by the accessibility contractor.',
             caption: 'Every component annotated for accessibility — Ready for Dev status, reviewed and approved by the accessibility contractor.',
           },
@@ -525,24 +531,24 @@ export const projects = [
       },
       {
         type: 'text',
-        heading: 'The Accessibility Guidelines Library',
-        body: 'I started by learning from a contracted CPWA accessibility specialist ZoomInfo had brought in. She taught me how to approach accessibility — not as a checklist but as a design requirement built in from the start. Component by component, I built out the accessibility guidelines library: keyboard interaction specs, Name/Role/Value mappings, focus management rules, landmark structures, live region requirements. The library lived in Figma — designers and PMs referenced the guidelines directly there, and the documentation was published to Confluence. Engineers worked from Storybook: the accessibility specs from the Figma library were implemented into Storybook components, so compliance could be verified inside the platform engineers actually use. Once I had the foundation, she shifted into a review and advisory role — she approved my annotation work, acted as a sounding board for edge cases, and signed off on dev handoff packages. I ran the a11y grooming sessions with engineers, walked them through implementation requirements, and reviewed production builds for compliance. Over time the entire design org started coming to me — I became the accessibility point of contact for every team at ZoomInfo.',
+        title: 'The Accessibility Guidelines Library',
+        body: 'I started by learning from a contracted CPWA accessibility specialist ZoomInfo had brought in. She taught me how to approach accessibility — not as a checklist but as a design requirement built in from the start. Component by component, I built out the accessibility guidelines library: keyboard interaction specs, Name/Role/Value mappings, focus management rules, landmark structures, live region requirements. The library lived in Figma — designers and PMs referenced the guidelines directly there, and the documentation was published to Confluence. Engineers worked from Storybook: the accessibility specs from the Figma library were implemented into Storybook components, so compliance could be verified inside the platform engineers actually use. Once I had the foundation, she shifted into a review and advisory role — she approved my annotation work, acted as a sounding board for edge cases, and signed off on dev handoff packages. I ran the a11y grooming sessions with engineers, walked them through implementation requirements, and reviewed production builds for compliance. Over time, that ownership expanded past the design system team — I became the accessibility point of contact for every team across ZoomInfo\'s design org.',
       },
       {
         type: 'imageGrid',
         images: [
           {
-            src: '/denky-portfolio-website/screenshots/design-system/01-a11y-guidelines-keyboard.png',
+            file: '01-a11y-guidelines-keyboard.png',
             alt: 'Accessibility guidelines library — Keyboard page for the Accordion-with-icon component. Shows full keyboard interaction specification including Enter/Space, Tab, Shift+Tab, arrow key, Home, and End behaviors. For Dev callout specifies exact implementation requirements.',
             caption: 'A11y guidelines library — keyboard interaction spec for Accordion. Every component got this treatment.',
           },
           {
-            src: '/denky-portfolio-website/screenshots/design-system/02-a11y-annotation-canvas.png',
+            file: '02-a11y-annotation-canvas.png',
             alt: 'Full accessibility annotation canvas for a navigation component showing User Navigation Flow, Tab Order, Landmarks, Headings, Name/Role/Value, and Focus Management sections across collapsed and expanded states.',
             caption: 'Six-domain annotation canvas — from user flow through focus management, covering every a11y requirement in a single deliverable.',
           },
           {
-            src: '/denky-portfolio-website/screenshots/design-system/04-a11y-table-component.png',
+            file: '04-a11y-table-component.png',
             alt: 'Table component accessibility annotation showing Default, Landmarks, Headings, Tab Order, and Name/Role/Value columns, plus Limit in table and Empty state edge cases.',
             caption: 'Table component — five annotation types plus edge cases. Every component annotation accounted for all interaction variants.',
           },
@@ -550,19 +556,19 @@ export const projects = [
       },
       {
         type: 'text',
-        heading: 'Accessibility Into AI — and the MUI Transition',
-        body: 'As ZoomInfo\'s product roadmap shifted toward AI features, the accessibility work followed. I extended the annotation practice into new AI-powered surfaces — the Enable AI Accounts flow, AI account summary pages, tooltip and dialog patterns specific to AI interactions — ensuring every new surface met WCAG 2.2 AA before dev handoff. At the same time, leadership made the decision to bring in MUI React as the new component library for new product builds. The team was now dual-track: maintain Muze for native products, prepare for MUI on new builds. I mapped how components translated between systems, communicated what changed and what stayed the same, and helped the team understand how to move forward without losing what they\'d built. The Muze open hours evolved to cover both libraries. As ZoomInfo shifted toward vibe-coding workflows — designers building directly in VS Code rather than Figma — a design technologist started building an MUI component library for VS Code to close the handoff gap. This created a real a11y risk: designers detaching components to restyle them, silently breaking the ARIA behavior and keyboard patterns MUI ships with out of the box.\n\nTo get ahead of it, I built an accessibility audit script using Cline and Playwright. It would hit a live URL, bypass auth, and return a structured report with violations and remediation guidance. That script was the direct precursor to the DQE — same core logic, same output philosophy, formalized into a full guardrail system.\n\nWe were still working out implementation when the layoff happened. The infrastructure held.',
+        title: 'Accessibility Into AI — and the MUI Transition',
+        body: 'As ZoomInfo\'s product roadmap shifted toward AI features, the accessibility work followed. I extended the annotation practice into new AI-powered surfaces — the Enable AI Accounts flow, AI account summary pages, tooltip and dialog patterns specific to AI interactions — ensuring every new surface met WCAG 2.2 AA before dev handoff. At the same time, leadership made the decision to bring in MUI React as the new component library for new product builds. The team was now dual-track: maintain Muze for native products, prepare for MUI on new builds. I mapped how components translated between systems, communicated what changed and what stayed the same, and helped the team understand how to move forward without losing what they\'d built. The Muze open hours evolved to cover both libraries. As ZoomInfo shifted toward vibe-coding workflows — designers building directly in VS Code rather than Figma — a design technologist started building an MUI component library for VS Code to close the handoff gap. This created a real a11y risk: designers detaching components to restyle them, silently breaking the ARIA behavior and keyboard patterns MUI ships with out of the box.\n\nTo get ahead of it, I built an accessibility audit script using Cline and Playwright. It would hit a live URL, bypass auth, and return a structured report with violations and remediation guidance. That script was the direct precursor to the DQE — same core logic, same output philosophy, formalized into a full guardrail system.\n\nWe were still working out implementation when my time at ZoomInfo came to a close. The infrastructure held.',
       },
       {
         type: 'imagePair',
         images: [
           {
-            src: '/denky-portfolio-website/screenshots/design-system/05-a11y-ai-accounts.png',
+            file: '05-a11y-ai-accounts.png',
             alt: 'AI Accounts accessibility annotation showing Tooltips, Toast Messages, and Dialogs — three component types annotated side by side with Default and Name/Role/Value columns for each.',
             caption: 'A11y extended to AI surfaces — Tooltips, Toast Messages, and Dialogs annotated as new AI account features shipped.',
           },
           {
-            src: '/denky-portfolio-website/screenshots/design-system/06-a11y-enable-ai-flow.png',
+            file: '06-a11y-enable-ai-flow.png',
             alt: 'Enable AI Account flow accessibility annotation showing multi-step flow with TAGS spec, aria-live polite requirements, and testing object documentation — approved by the accessibility contractor.',
             caption: 'Enable AI Account flow — full multi-step annotation including live region specs and implementation notes for dev.',
           },
@@ -572,12 +578,12 @@ export const projects = [
         type: 'imagePair',
         images: [
           {
-            src: '/denky-portfolio-website/screenshots/design-system/07-transition-accordion-note.png',
+            file: '07-transition-accordion-note.png',
             alt: 'AdminPortal Websights screen with annotation note: Accordion component will not be supported by CI, but instead the dev team assigned to project will maintain and share once completed with Muze.',
             caption: 'The transition in real time — component-level decisions about what Muze sustains vs. what MUI takes over, documented at the point of handoff.',
           },
           {
-            src: '/denky-portfolio-website/screenshots/design-system/08-transition-profile-storybook.png',
+            file: '08-transition-profile-storybook.png',
             alt: 'Sales+ Profile page accessibility annotation showing component analysis notes: current accordion Storybook component is legacy, new proposed interaction may have similar component in Storybook, design was proposed in Muze open hours then built as a component in Storybook.',
             caption: 'Muze Open Hours → Storybook pipeline — proposals surfaced in open hours became documented components in the new system.',
           },
@@ -590,7 +596,7 @@ export const projects = [
     title: 'RingLead: From Brand to Product',
     eyebrow: 'BRAND SYSTEMS + PRODUCT UX · ACQUIRED BY ZOOMINFO',
     discipline: 'Brand Design · Visual Systems · Product UX · Design Systems',
-    desc: 'Five years as the sole designer at a B2B SaaS data quality company — building three complete brand systems, a Figma component library, and a product UI that helped position RingLead for acquisition by ZoomInfo.',
+    desc: 'Five years as the sole designer at a B2B SaaS data quality company — building three complete brand systems, a Sketch component library, and a product UI that helped position RingLead for acquisition by ZoomInfo.',
     year: '2016–2021',
     role: 'Sole Designer',
     outcome: 'Brand, product, and design system — built from scratch to acquisition',
@@ -600,32 +606,29 @@ export const projects = [
       { label: 'Visual Design' },
       { label: 'Product UX' },
       { label: 'Design Systems' },
-      { label: 'Figma' },
+      { label: 'Sketch' },
       { label: 'MUI' },
       { label: 'Sales Enablement' },
       { label: 'Event Design' },
     ],
     thumbnail: `${BASE}/screenshots/ringlead/era3-home.png`,
     sections: [
-      { type: 'text', eyebrow: 'OVERVIEW', heading: 'Sole designer. Three brand eras. One acquisition.', body: `I joined RingLead in 2016 as the only designer in the company. Over five years I rebuilt the visual identity three times — each rebrand reflecting a shift in the business — and eventually expanded into product UX as the platform scaled toward acquisition.\n\nThe work spans brand strategy, marketing systems, sales enablement, web design, event campaigns, a Figma design system, and platform UI. When ZoomInfo acquired RingLead in 2021, design continuity across the product was already in place.` },
-      { type: 'text', eyebrow: 'ERA 1 · 2016–2018', heading: 'Starting from zero in blue and orange.', body: `When I arrived, RingLead had no cohesive visual identity. I built the first complete brand system from scratch: logo usage guidelines, a full color and type system, and a website spanning the homepage and six product landing pages.\n\nThe sales enablement stack came next — a "Welcome to RingLead Sales" deck, per-product one-pagers, and case study layouts including the MMIT case study documenting 125,000+ duplicates prevented. Every deliverable was built and maintained by me alone.` },
-      { type: 'imagePair', images: [{ src: '/denky-portfolio-website/screenshots/ringlead/era1-sales-deck.png', caption: 'Welcome to RingLead Sales — sales deck, Era 1' }, { src: '/denky-portfolio-website/screenshots/ringlead/era1-enrichment.png', caption: 'DMS Enrichment one-pager — wheel diagram system, 10 features' }] },
-      { type: 'featureImage', src: '/denky-portfolio-website/screenshots/ringlead/era1-intelligent-forms.png', caption: 'DMS Intelligent Forms — "What They See / What You Get" one-pager' },
-      { type: 'text', eyebrow: 'ERA 2 · 2018–2020', heading: 'Rebrand: Unlock the Value of Data.', body: `As RingLead's positioning matured, the brand needed to match. I led a full rebrand to a black and dark-navy + orange system anchored by the new tagline "Unlock the Value of Data." The website was rebuilt from scratch, and the full collateral stack — datasheets, tip sheets, sales decks, technical diagrams — was refreshed in the new system.\n\nCustom illustrations for the blog and social, plus conference materials, rounded out the era. The "Join the RingLead Revolution" deck launched in mid-2018 and became the foundation for field sales conversations.` },
-      { type: 'imagePair', images: [{ src: '/denky-portfolio-website/screenshots/ringlead/era2-website.png', caption: 'Era 2 website — "Unlock the Value of Data" rebrand' }, { src: '/denky-portfolio-website/screenshots/ringlead/era2-dashboard.png', caption: 'Era 2 platform dashboard — 2019 product UI' }] },
-      { type: 'text', eyebrow: 'ERA 3 · 2020–2021', heading: 'The phoenix. A rebirth — in every sense.', body: `By 2020, RingLead had pivoted from data management to data orchestration — a fundamentally different product story. The brand needed to reflect that transformation.\n\nI conceived the phoenix as the central metaphor: a business rising from its own past and taking a new form. I sketched the concept, developed the mark through iteration, and directed the final execution. The resulting logo — a stylized bird in layered navy, teal, and magenta — became the identity anchor for the company's final chapter before acquisition.\n\nThe third brand system extended to the website, ebooks, data orchestration one-sheets, tip sheets, API integration decks, and the #talkdatatome virtual event campaign — a LinkedIn/Salesforce ecosystem event that ran in partnership with speakers including the ZoomInfo CEO.` },
-      { type: 'featureImage', src: '/denky-portfolio-website/screenshots/ringlead/phoenix-logo.png', caption: 'RingLead phoenix mark — conceived, developed, and directed by Denky' },
-      { type: 'featureImage', src: '/denky-portfolio-website/screenshots/ringlead/era3-website.png', caption: 'Era 3 website hero — Data Orchestration / RevOps Automation / Technology Consolidation' },
-      { type: 'imagePair', images: [{ src: '/denky-portfolio-website/screenshots/ringlead/era3-talkdatatome.png', caption: '#talkdatatome virtual event landing page — 2021' }, { src: '/denky-portfolio-website/screenshots/ringlead/era3-speaker-cards.png', caption: 'Speaker cards — ZoomInfo CEO keynote and Marketing Ops panel' }] },
-      { type: 'imagePair', images: [{ src: '/denky-portfolio-website/screenshots/ringlead/era3-content-system.png', caption: 'Era 3 content system — ebook, tip sheet, and data orchestration one-sheet' }, { src: '/denky-portfolio-website/screenshots/ringlead/era3-ebook.png', caption: 'Data Orchestration for Multi-Vendor Enrichment ebook cover' }] },
-      { type: 'text', eyebrow: 'THE DESIGN SYSTEM', heading: 'A Figma component library built before ZoomInfo had one.', body: `As RingLead's product matured, I built a full design system in Figma — the infrastructure layer that made consistent UI possible at scale.\n\nThe system covered color tokens (Primary 50–900, Secondary, Logo, Background, Gray, Text, Icon — each with documented accessibility contrast ratios), a Roboto typography scale across H1–Body 2 at all weights, and a complete component library: Buttons (Primary, Secondary, Champion, Next, Back with all states), Checkboxes, Radio Buttons, Dropdowns, Input Text, Left Navigation, Top Navigation, Elevation, and a large icon library.\n\nThis work preceded the ZoomInfo MUI migration and informed how I engaged with design systems thinking when I joined ZoomInfo post-acquisition.` },
-      { type: 'imagePair', images: [{ src: '/denky-portfolio-website/screenshots/ringlead/ds-colors.png', caption: 'Color token system — Primary, Secondary, Logo, Background, Gray, Text, Icon' }, { src: '/denky-portfolio-website/screenshots/ringlead/ds-typography.png', caption: 'Typography scale — Roboto, H1–Body 2, weights and line heights' }] },
-      { type: 'imagePair', images: [{ src: '/denky-portfolio-website/screenshots/ringlead/ds-buttons.png', caption: 'Button component — all variants and interaction states' }, { src: '/denky-portfolio-website/screenshots/ringlead/ds-left-nav.png', caption: 'Left Navigation component — all dropdown and collapsed states' }] },
-      { type: 'featureImage', src: '/denky-portfolio-website/screenshots/ringlead/ds-form-controls.png', caption: 'Form controls — Checkboxes and Radio Buttons, all states' },
-      { type: 'text', eyebrow: 'PRODUCT UX', heading: 'From Senior Graphic Designer to product UI owner.', body: `In 2020 I transitioned into the UX/UI Designer role, taking full ownership of the platform experience. I redesigned the dashboard, Roles and Administration screen, Salesforce Connections screen, and the Duplicate Health Check and Field Analysis screens.\n\nThe product UI adopted MUI as its component foundation — a decision I drove — which directly paralleled the Muze-to-MUI migration that ZoomInfo undertook after the acquisition. The interface RingLead shipped was already aligned to the design system direction ZoomInfo was moving toward.` },
-      { type: 'featureImage', src: '/denky-portfolio-website/screenshots/ringlead/product-ui-health-check.png', caption: 'Duplicate Health Check and Field Analysis — platform UI, production' },
-      { type: 'imagePair', images: [{ src: '/denky-portfolio-website/screenshots/ringlead/product-ui-roles.png', caption: 'Administration → Roles screen — role-based permission management' }, { src: '/denky-portfolio-website/screenshots/ringlead/product-ui-connections.png', caption: 'Connections → Salesforce — integration management UI' }] },
-      { type: 'text', eyebrow: 'OUTCOME', heading: 'Acquired by ZoomInfo, 2021.', body: `RingLead was acquired by ZoomInfo in September 2021. The design work — brand systems, marketing infrastructure, and product UI — was in production at the time of acquisition and continued forward into the ZoomInfo ecosystem.\n\nThe arc from visual designer to product designer to design systems contributor at RingLead shaped the trajectory of my ZoomInfo work: the same design systems thinking, the same component-level rigor, now applied at 100x the scale.` },
+      // SECTION 1 — THE FOUNDATION
+      { type: 'text', eyebrow: 'Context', heading: 'The Foundation', body: `I joined RingLead in 2016 as the only designer in the company. Over five years I rebuilt the visual identity three times — each rebrand reflecting a shift in the business — and eventually expanded into product UX as the platform scaled toward acquisition.\n\nThe first project I took on was making the existing website more current — not a redesign from scratch, since I had to work within the original blue-and-orange system and existing content. It wasn't great design, but it was a start, and it taught me the platform before I touched the brand itself.\n\nFrom there, I built the first complete brand system from scratch: logo usage guidelines, a full color and type system, and a website spanning the homepage and six product landing pages. The sales enablement stack came next — a 'Welcome to RingLead Sales' deck, per-product one-pagers, and case study layouts including the MMIT case study — RingLead's marketing reported 125,000+ duplicates prevented as the result. I was the sole person responsible for design execution across the entire collateral system.` },
+      { type: 'imageGrid', images: [{ src: '/denky-portfolio-website/screenshots/ringlead/era1-website-refresh-PLACEHOLDER.png', alt: 'PLACEHOLDER — early website refresh screenshot to be added', caption: 'PLACEHOLDER — the first project: refreshing the existing blue-and-orange website within the original content constraints.' }, { src: '/denky-portfolio-website/screenshots/ringlead/era1-sales-deck.png', alt: 'RingLead sales deck cover slide showing the Welcome to RingLead Sales presentation', caption: 'Welcome to RingLead Sales — first complete sales deck' }, { src: '/denky-portfolio-website/screenshots/ringlead/era1-enrichment.png', alt: 'DMS Enrichment one-pager featuring a wheel diagram with 10 product features', caption: 'DMS Enrichment one-pager — wheel diagram system, 10 features.' }, { src: '/denky-portfolio-website/screenshots/ringlead/era1-intelligent-forms.png', alt: 'DMS Intelligent Forms one-pager comparing what prospects see versus what they get', caption: 'DMS Intelligent Forms — "What They See / What You Get" one-pager.' }] },
+
+      // SECTION 2 — THE PIVOT
+      { type: 'text', eyebrow: 'Pivot', heading: 'The Pivot', body: `As RingLead's positioning matured, the brand needed to match. I researched the market and competitive landscape, collected new visual assets and imagery, and rebranded the system for implementation — working alongside a copywriter and website designer on our marketing team. The website was rebuilt from scratch, and the full collateral stack — datasheets, tip sheets, sales decks, technical diagrams — was refreshed in the new system.` },
+      { type: 'featureImage', src: '/denky-portfolio-website/screenshots/ringlead/era2-website.png', alt: 'RingLead website homepage featuring the Unlock the Value of Data tagline in a dark navy and orange brand system', caption: 'RingLead website — "Unlock the Value of Data" rebrand' },
+
+      // SECTION 3 — THE REBIRTH
+      { type: 'text', eyebrow: 'Rebirth', heading: 'The Rebirth', body: `By 2020, RingLead had pivoted from data management to data orchestration — a fundamentally different product story. This was my third brand system in five years, and I brought everything the first two had taught me: tighter process, sharper instincts, more confidence translating a business shift into a visual one.\n\nI conceived the phoenix as the central metaphor: a business rising from its own past and taking a new form. I sketched the concept, developed the mark through iteration, and directed the final execution. The resulting logo — a phoenix rendered in layered navy, teal, and magenta, rising stronger from what came before — became the identity anchor for the company's final chapter before acquisition.\n\nThe rebrand didn't happen in isolation — it ran alongside a parallel effort to modernize the product itself. As the new visual identity took shape, I was also building the design system in Sketch and updating the product UI to match, so the brand and the platform evolved together rather than the UI catching up to the rebrand months later.\n\nThe design system covered color tokens (Primary 50–900, Secondary, Logo, Background, Gray, Text, Icon), a Roboto typography scale across H1–Body 2 at all weights, and a complete component library: Buttons, Checkboxes, Radio Buttons, Dropdowns, Input Text, Left Navigation, Top Navigation, Elevation, and a large icon library. This work preceded the ZoomInfo MUI migration and directly informed how I engaged with design systems thinking when I joined ZoomInfo post-acquisition.\n\nIn 2020 I transitioned into the UX/UI Designer role, taking full ownership of the platform experience. I redesigned the dashboard, Roles and Administration screen, Salesforce Connections screen, and the Duplicate Health Check and Field Analysis screens. The product UI adopted MUI as its component foundation — a decision I drove — which directly paralleled the Muze-to-MUI migration ZoomInfo undertook after the acquisition.` },
+      { type: 'featureImage', src: '/denky-portfolio-website/screenshots/ringlead/phoenix-logo.png', alt: 'RingLead phoenix logo mark rendered in layered navy, teal, and magenta', caption: 'RingLead phoenix mark — conceived, developed, and directed by Denky' },
+      { type: 'imagePair', images: [{ src: '/denky-portfolio-website/screenshots/ringlead/era3-website.png', alt: 'RingLead website hero section promoting Data Orchestration, RevOps Automation, and Technology Consolidation', caption: 'RingLead website hero — Data Orchestration, RevOps Automation, Technology Consolidation' }, { src: '/denky-portfolio-website/screenshots/ringlead/ds-buttons.png', alt: 'RingLead design system button component showing Primary, Secondary, Champion, Next, and Back variants across all interaction states', caption: 'Button component — all variants and interaction states' }] },
+      { type: 'featureImage', src: '/denky-portfolio-website/screenshots/ringlead/product-ui-health-check.png', alt: 'RingLead platform Duplicate Health Check and Field Analysis screens in production', caption: 'Duplicate Health Check and Field Analysis — platform UI, production' },
+
+      // SECTION 4 — ACQUIRED
+      { type: 'text', eyebrow: 'Outcome', heading: 'Acquired by ZoomInfo, 2021.', body: `RingLead was acquired by ZoomInfo in September 2021. The design work — brand systems, marketing infrastructure, and product UI — was in production at the time of acquisition and continued forward into the ZoomInfo ecosystem.\n\nThe arc from visual designer to product designer to design systems contributor at RingLead shaped the trajectory of my ZoomInfo work: the same design systems thinking, the same component-level rigor, now applied at 100x the scale.` },
     ],
   },
 ]
