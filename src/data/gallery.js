@@ -43,12 +43,13 @@ export const galleryItems = [
     year: '2024',
     category: 'Design Systems',
     company: 'ZoomInfo',
-    title: 'Muze Design System',
-    subtitle: 'Component library standards — tokens, states, patterns, WCAG 2.2 AA specs adopted company-wide',
+    title: 'Muze Component Sheets',
+    subtitle: 'Buttons, dropdowns, navigation, and icon system — visual specs from the Muze library',
     description:
-      'Component library standards — tokens, states, patterns, WCAG 2.2 AA specs adopted company-wide',
-    tags: ['Design Systems', 'Tokens', 'Accessibility'],
+      'Buttons, dropdowns, navigation, and icon system — visual specs from the Muze library',
+    tags: ['Design Systems', 'Component Library', 'Visual Specs'],
     image: `${BASE}/gallery/placeholder.svg`,
+    link: '/work/design-system-accessibility',
   },
 
   // ── RingLead ─────────────────────────────────────────────────────────────
