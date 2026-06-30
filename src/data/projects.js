@@ -505,8 +505,8 @@ export const projects = [
     ],
     thumbnail: '/denky-portfolio-website/screenshots/design-system/01-a11y-guidelines-keyboard.png',
     assetFolder: 'design-system',
-    heroImage: '/denky-portfolio-website/screenshots/design-system/01-a11y-guidelines-keyboard.png',
-    heroCaption: 'PLACEHOLDER — to be replaced with a dedicated hero image.',
+    heroImage: `${BASE}/screenshots/design-system/01-hero-image.png`,
+    heroCaption: 'Muze Accessibility Guidelines — a two-year body of work spanning component specs, annotation packages, and org-wide accessibility ownership.',
     overview: 'When I joined ZoomInfo\'s design system team, Muze — an Angular Material-based component library — was the foundation every product team built on. I came in to learn how components were built, understand what accessibility required, and start documenting it. What followed was two years of building the accessibility infrastructure that the entire org depended on: a guidelines library covering every component, annotation packages across every major product surface, biweekly open hours bringing designers, PMs, and engineers together, and eventually a migration path as MUI React entered the picture.',
     caseStudySections: [
       {
@@ -518,7 +518,7 @@ export const projects = [
         type: 'imagePair',
         images: [
           {
-            file: '09-mini-muze-figma-library.png',
+            file: '02-mini-muze-operationsos.png',
             alt: 'OperationsOS Mini Muze Figma file showing Cards BG and Containers BG organized across seven product surfaces: Segment, Route, Matching, Enrich, Working Hours, Licensed Users, and Normalize.',
             caption: 'OperationsOS Mini Muze — product-specific component library built on the core Muze system, organized across 7 product surfaces.',
           },
@@ -538,19 +538,19 @@ export const projects = [
         type: 'imageGrid',
         images: [
           {
-            file: '01-a11y-guidelines-keyboard.png',
-            alt: 'Accessibility guidelines library — Keyboard page for the Accordion-with-icon component. Shows full keyboard interaction specification including Enter/Space, Tab, Shift+Tab, arrow key, Home, and End behaviors. For Dev callout specifies exact implementation requirements.',
-            caption: 'A11y guidelines library — keyboard interaction spec for Accordion. Every component got this treatment.',
+            file: '04-a11y-guidelines-library.png',
+            alt: 'Accessibility guidelines library — Info Tooltip and Info Popover pages showing keyboard behavior, Name/Role/Value specs, approval status, and product team attribution.',
+            caption: 'A11y guidelines library — Info Tooltip and Info Popover specs, each with approval status and implementation notes. Every component in the library got this treatment.',
           },
           {
-            file: '02-a11y-annotation-canvas.png',
+            file: '05-a11y-annotation-canvas.png',
             alt: 'Full accessibility annotation canvas for a navigation component showing User Navigation Flow, Tab Order, Landmarks, Headings, Name/Role/Value, and Focus Management sections across collapsed and expanded states.',
             caption: 'Six-domain annotation canvas — from user flow through focus management, covering every a11y requirement in a single deliverable.',
           },
           {
-            file: '04-a11y-table-component.png',
-            alt: 'Table component accessibility annotation showing Default, Landmarks, Headings, Tab Order, and Name/Role/Value columns, plus Limit in table and Empty state edge cases.',
-            caption: 'Table component — five annotation types plus edge cases. Every component annotation accounted for all interaction variants.',
+            file: '06-a11y-project-examples.png',
+            alt: 'Accessibility guidelines library open in Figma — component list spanning Avatar through Layers, with Info Tooltip and Info Popover detail views showing Approved status, product team attribution, and implementation notes for developers.',
+            caption: 'A11y guidelines in practice — component specs across the full Muze library, each with approval status, product team context, and dev implementation notes.',
           },
         ],
       },
@@ -563,31 +563,22 @@ export const projects = [
         type: 'imagePair',
         images: [
           {
-            file: '05-a11y-ai-accounts.png',
+            file: '07-a11y-ai-surfaces.png',
             alt: 'AI Accounts accessibility annotation showing Tooltips, Toast Messages, and Dialogs — three component types annotated side by side with Default and Name/Role/Value columns for each.',
             caption: 'A11y extended to AI surfaces — Tooltips, Toast Messages, and Dialogs annotated as new AI account features shipped.',
           },
           {
-            file: '06-a11y-enable-ai-flow.png',
+            file: '08-a11y-enable-ai-flow.png',
             alt: 'Enable AI Account flow accessibility annotation showing multi-step flow with TAGS spec, aria-live polite requirements, and testing object documentation — approved by the accessibility contractor.',
             caption: 'Enable AI Account flow — full multi-step annotation including live region specs and implementation notes for dev.',
           },
         ],
       },
       {
-        type: 'imagePair',
-        images: [
-          {
-            file: '07-transition-accordion-note.png',
-            alt: 'AdminPortal Websights screen with annotation note: Accordion component will not be supported by CI, but instead the dev team assigned to project will maintain and share once completed with Muze.',
-            caption: 'The transition in real time — component-level decisions about what Muze sustains vs. what MUI takes over, documented at the point of handoff.',
-          },
-          {
-            file: '08-transition-profile-storybook.png',
-            alt: 'Sales+ Profile page accessibility annotation showing component analysis notes: current accordion Storybook component is legacy, new proposed interaction may have similar component in Storybook, design was proposed in Muze open hours then built as a component in Storybook.',
-            caption: 'Muze Open Hours → Storybook pipeline — proposals surfaced in open hours became documented components in the new system.',
-          },
-        ],
+        type: 'featureImage',
+        image: '10-muze-open-hours.png',
+        alt: 'Muze Open Hours — bi-weekly sessions where designers, PMs, and engineers surfaced component proposals that became documented components in Storybook.',
+        caption: 'Muze Open Hours → Storybook pipeline — proposals surfaced in open hours became documented components in the new system.',
       },
     ],
   },
