@@ -380,6 +380,23 @@ function ProjectSection({ section, onInspect }) {
           ))}
         </div>
       )}
+
+      {section.type === 'imageGrid' && section.images && (
+        <div className={styles.mediaGrid}>
+          {section.images.map((image) => (
+            <figure key={image.src} className={styles.sectionsFeatureFigure}>
+              <InspectableImage
+                src={image.src}
+                alt={image.alt || image.caption || ''}
+                className={styles.sectionsImg}
+                buttonClassName={styles.sectionsImageButton}
+                onInspect={() => onInspect(`section-grid-${image.src}`)}
+              />
+              {image.caption && <figcaption className={styles.sectionsCaption}>{image.caption}</figcaption>}
+            </figure>
+          ))}
+        </div>
+      )}
     </section>
   )
 }
@@ -651,6 +668,16 @@ function getInspectableImages(project, heroSrc, hasCuratedMedia, hasSections) {
             id: `section-pair-${image.src}`,
             src: image.src,
             alt: image.caption,
+            caption: image.caption,
+          })
+        })
+      }
+      if (section.type === 'imageGrid' && section.images) {
+        section.images.forEach((image) => {
+          images.push({
+            id: `section-grid-${image.src}`,
+            src: image.src,
+            alt: image.alt || image.caption,
             caption: image.caption,
           })
         })
