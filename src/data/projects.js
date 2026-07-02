@@ -377,7 +377,7 @@ export const projects = [
   {
     slug:       'admin-settings-navigation',
     title:      'Navigation Governance — Cross-Product Top & Left Nav',
-    eyebrow:    'WCAG 2.2 AA · ENTERPRISE NAVIGATION ACCESSIBILITY',
+    eyebrow:    'ADOPTED ACROSS EVERY PRODUCT · ACCESSIBILITY & INTERACTION LEAD',
     company:    'ZoomInfo',
     year:       '2024–2025',
     discipline: 'Accessibility',
@@ -585,7 +585,7 @@ export const projects = [
   {
     slug: 'ringlead',
     title: 'RingLead: From Brand to Product',
-    eyebrow: 'BRAND SYSTEMS + PRODUCT UX · ACQUIRED BY ZOOMINFO',
+    eyebrow: 'FIVE YEARS · THREE REBRANDS · ACQUIRED BY ZOOMINFO',
     discipline: 'Brand Design · Visual Systems · Product UX · Design Systems',
     desc: 'Five years as the sole designer at a B2B SaaS data quality company — building three complete brand systems, a Sketch component library, and a product UI that helped position RingLead for acquisition by ZoomInfo.',
     year: '2016–2021',
