@@ -348,8 +348,13 @@
 @media (max-width: 900px) {
   .hero          { padding: 0 24px; }
   .statCluster   { display: none; }
-  .disciplines   { left: 24px; right: 24px; bottom: 32px; }
-  .ctaGroup      { flex-wrap: wrap; }
+  .ctaGroup      { flex-wrap: wrap; margin-bottom: 32px; }
+
+  .disciplines {
+    position: static;
+    left: auto; right: auto; bottom: auto;
+    margin-top: 32px;
+  }
 }
 
 /* ── Light mode overrides ── */
