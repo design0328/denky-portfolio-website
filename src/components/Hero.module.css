@@ -68,6 +68,14 @@
   background-clip: text;
 }
 
+/* Light mode: the pink→orange gradient text fails AA contrast on a
+   near-white background, so render it as solid, AA-safe text instead. */
+[data-theme="light"] .eyebrowText {
+  background: none;
+  -webkit-text-fill-color: var(--fuchsia-text);
+  color: var(--fuchsia-text);
+}
+
 /* ── Name ── */
 .name {
   position: relative;

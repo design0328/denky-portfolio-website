@@ -37,6 +37,9 @@
   --dim:       #6b7280;
   --muted:     rgba(255, 255, 255, 0.55);
 
+  /* Fuchsia text on light/tinted backgrounds — AA-safe variant of --fuchsia */
+  --fuchsia-text: var(--fuchsia);
+
   /* Typography */
   --font-display: 'Bebas Neue', sans-serif;
   --font-mono:    'DM Mono', monospace;
@@ -57,6 +60,7 @@
   --text:      #13151f;
   --dim:       #6b7280;
   --muted:     #7c8290;
+  --fuchsia-text: #831843;
 }
 
 /* ─────────────────────────────────────────────

@@ -1,12 +1,12 @@
 .page { min-height: 100vh; padding: 8rem 1.5rem 4rem; }
 .container { max-width: 780px; margin: 0 auto; }
 .hero { margin-bottom: 3rem; }
-.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fuchsia); margin: 0 0 1.25rem; display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px 4px 8px; border-radius: 999px; border: 1px solid var(--fuchsia); background: var(--fuchsia-dim); }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fuchsia-text); margin: 0 0 1.25rem; display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px 4px 8px; border-radius: 999px; border: 1px solid var(--fuchsia); background: var(--fuchsia-dim); }
 .eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--fuchsia); flex-shrink: 0; }
 .title { font-family: var(--font-display); font-size: clamp(3rem, 5.5vw, 4.5rem); line-height: 0.95; letter-spacing: 0.01em; color: var(--text); margin: 0 0 1.25rem; font-weight: 700; }
 .gradient { background: linear-gradient(90deg, var(--fuchsia), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .subtitle { font-family: var(--font-body); font-size: 15px; line-height: 1.65; color: var(--text-muted); max-width: 540px; margin: 0; }
-.sectionLabel { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fuchsia); margin: 0 0 1.5rem; display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px 4px 8px; border-radius: 999px; border: 1px solid var(--fuchsia); background: var(--fuchsia-dim); }
+.sectionLabel { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fuchsia-text); margin: 0 0 1.5rem; display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px 4px 8px; border-radius: 999px; border: 1px solid var(--fuchsia); background: var(--fuchsia-dim); }
 .sectionLabel::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--fuchsia); flex-shrink: 0; }
 .qaSection { margin-bottom: 0; }
 .qaItem { border-radius: 10px; margin-bottom: 8px; border: 1px solid rgba(255,255,255,0.06); background: var(--bg2); overflow: hidden; transition: border-color 0.2s, background 0.2s; }
