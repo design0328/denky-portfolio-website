@@ -75,8 +75,93 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* Actions cluster (theme toggle + hamburger) */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: fadeDown 0.6s 0.3s both;
+}
+
+/* Hamburger button — hidden on desktop */
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0;
+}
+
+.menuBar {
+  display: block;
+  width: 16px;
+  height: 1.5px;
+  background: var(--text);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.menuBarTop { transform: translateY(6.5px) rotate(45deg); }
+.menuBarMid { opacity: 0; }
+.menuBarBot { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile drawer — hidden and non-interactive until opened, and only ever
+   enabled inside the mobile breakpoint below */
+.mobileMenu {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .nav, .scrolled { padding: 18px 24px; }
-  .links { gap: 20px; }
-  .link { font-size: 11px; }
+
+  .links { display: none; }
+  .themeToggleDesktop { display: none; }
+  .menuToggle { display: flex; }
+
+  .mobileMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    background: var(--bg-nav);
+    border-bottom: 1px solid var(--border);
+    transition: max-height 0.3s ease;
+  }
+
+  .mobileMenuOpen {
+    max-height: 420px;
+  }
+
+  .mobileLinks {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 24px 16px;
+  }
+
+  .mobileLink {
+    display: block;
+    padding: 14px 0;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mobileLink:hover { color: var(--fuchsia); }
+
+  .mobileToggleRow {
+    display: flex;
+    padding: 16px 24px 24px;
+  }
 }
