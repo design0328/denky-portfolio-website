@@ -49,12 +49,23 @@ function CaseStudyContent({ project, slug }) {
     window.scrollTo(0, 0)
   }, [slug])
 
-  const openLightbox = (imageId) => setActiveImageId(imageId)
+  const lightboxTriggerRef = useRef(null)
+  const openLightbox = (imageId) => {
+    lightboxTriggerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null
+    setActiveImageId(imageId)
+  }
   const closeLightbox = () => setActiveImageId(null)
   const showImageAt = (index) => {
     const nextIndex = (index + inspectableImages.length) % inspectableImages.length
     setActiveImageId(inspectableImages[nextIndex].id)
   }
+
+  useEffect(() => {
+    if (!activeImage && lightboxTriggerRef.current) {
+      lightboxTriggerRef.current.focus()
+      lightboxTriggerRef.current = null
+    }
+  }, [activeImage])
 
   useEffect(() => {
     if (!activeImage) return undefined
@@ -534,8 +545,11 @@ function InspectableImage({ src, alt, className, buttonClassName, onInspect }) {
   )
 }
 
+const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+
 function ImageLightbox({ image, currentIndex, total, canStep, onClose, onPrevious, onNext }) {
   const caption = image.caption || image.alt
+  const containerRef = useRef(null)
   const closeButtonRef = useRef(null)
   const [zoom, setZoom] = useState(1)
   const isZoomed = zoom > 1
@@ -548,8 +562,35 @@ function ImageLightbox({ image, currentIndex, total, canStep, onClose, onPreviou
     closeButtonRef.current?.focus()
   }, [image.src])
 
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container) return undefined
+
+    const trapTab = (event) => {
+      if (event.key !== 'Tab') return
+      const focusable = Array.from(container.querySelectorAll(FOCUSABLE_SELECTOR))
+      if (focusable.length === 0) return
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      const isInside = container.contains(document.activeElement)
+
+      if (event.shiftKey) {
+        if (!isInside || document.activeElement === first) {
+          event.preventDefault()
+          last.focus()
+        }
+      } else if (!isInside || document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+
+    container.addEventListener('keydown', trapTab)
+    return () => container.removeEventListener('keydown', trapTab)
+  }, [])
+
   return (
-    <div className={styles.lightbox} role="dialog" aria-modal="true" aria-label={caption}>
+    <div ref={containerRef} className={styles.lightbox} role="dialog" aria-modal="true" aria-label={caption}>
       <button type="button" className={styles.lightboxBackdrop} aria-label="Close image preview" onClick={onClose} />
       <div className={styles.lightboxPanel}>
         <div className={styles.lightboxTopbar}>
