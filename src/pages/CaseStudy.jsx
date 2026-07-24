@@ -222,8 +222,11 @@ function CaseStudyContent({ project, slug }) {
 
       </div>
 
-      {/* Next project */}
-      <NextProject current={slug} />
+      {/* Project navigation */}
+      <div className={styles.projectNav}>
+        <PreviousProject current={slug} />
+        <NextProject current={slug} />
+      </div>
 
       {activeImage && createPortal(
         <ImageLightbox
@@ -748,15 +751,31 @@ function getInspectableImages(project, heroSrc, hasCuratedMedia, hasSections) {
   return images
 }
 
+function PreviousProject({ current }) {
+  const idx  = projects.findIndex((p) => p.slug === current)
+  const prev = projects[(idx - 1 + projects.length) % projects.length]
+  return (
+    <div className={`${styles.navItem} ${styles.navPrev}`}>
+      <span className={styles.nextLabel}>Previous Project</span>
+      <Link to={`/work/${prev.slug}`} className={styles.nextLink}>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M11 7H3M7 3L3 7l4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+        {prev.title}
+      </Link>
+    </div>
+  )
+}
+
 function NextProject({ current }) {
   const idx  = projects.findIndex((p) => p.slug === current)
   const next = projects[(idx + 1) % projects.length]
   return (
-    <div className={styles.nextWrap}>
+    <div className={`${styles.navItem} ${styles.navNext}`}>
       <span className={styles.nextLabel}>Next Project</span>
       <Link to={`/work/${next.slug}`} className={styles.nextLink}>
         {next.title}
-        <svg width="18" height="18" viewBox="0 0 14 14" fill="none">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
           <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </Link>
