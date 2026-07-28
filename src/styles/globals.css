@@ -36,6 +36,7 @@
   --text:      rgba(255, 255, 255, 0.9);
   --dim:       #6b7280;
   --muted:     rgba(255, 255, 255, 0.55);
+  --muted-text: var(--muted);
 
   /* Fuchsia text on light/tinted backgrounds — AA-safe variant of --fuchsia */
   --fuchsia-text: var(--fuchsia);
@@ -60,6 +61,7 @@
   --text:      #13151f;
   --dim:       #6b7280;
   --muted:     #7c8290;
+  --muted-text: #4b4c58;
   --fuchsia-text: #831843;
 }
 
